@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D87B4C461D3338C10076B16E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C451D3338C10076B16E /* main.m */; };
+		D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C481D3338C10076B16E /* AppDelegate.m */; };
+		D87B4C4C1D3338C10076B16E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C4B1D3338C10076B16E /* FirstViewController.m */; };
+		D87B4C4F1D3338C10076B16E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C4E1D3338C10076B16E /* SecondViewController.m */; };
+		D87B4C521D3338C10076B16E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87B4C501D3338C10076B16E /* Main.storyboard */; };
+		D87B4C541D3338C10076B16E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87B4C531D3338C10076B16E /* Assets.xcassets */; };
+		D87B4C571D3338C10076B16E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87B4C551D3338C10076B16E /* LaunchScreen.storyboard */; };
+		D87B4C621D3338C10076B16E /* SmartHouseTabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C611D3338C10076B16E /* SmartHouseTabTests.m */; };
+		D87B4C6D1D3338C10076B16E /* SmartHouseTabUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D87B4C5E1D3338C10076B16E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D87B4C391D3338C10076B16E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D87B4C401D3338C10076B16E;
+			remoteInfo = SmartHouseTab;
+		};
+		D87B4C691D3338C10076B16E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D87B4C391D3338C10076B16E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D87B4C401D3338C10076B16E;
+			remoteInfo = SmartHouseTab;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D87B4C411D3338C10076B16E /* SmartHouseTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHouseTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87B4C451D3338C10076B16E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D87B4C471D3338C10076B16E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D87B4C481D3338C10076B16E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D87B4C4A1D3338C10076B16E /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		D87B4C4B1D3338C10076B16E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		D87B4C4D1D3338C10076B16E /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		D87B4C4E1D3338C10076B16E /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		D87B4C511D3338C10076B16E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D87B4C531D3338C10076B16E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D87B4C561D3338C10076B16E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D87B4C581D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D87B4C5D1D3338C10076B16E /* SmartHouseTabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHouseTabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87B4C611D3338C10076B16E /* SmartHouseTabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHouseTabTests.m; sourceTree = "<group>"; };
+		D87B4C631D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D87B4C681D3338C10076B16E /* SmartHouseTabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHouseTabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHouseTabUITests.m; sourceTree = "<group>"; };
+		D87B4C6E1D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D87B4C3E1D3338C10076B16E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D87B4C5A1D3338C10076B16E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D87B4C651D3338C10076B16E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D87B4C381D3338C10076B16E = {
+			isa = PBXGroup;
+			children = (
+				D87B4C431D3338C10076B16E /* SmartHouseTab */,
+				D87B4C601D3338C10076B16E /* SmartHouseTabTests */,
+				D87B4C6B1D3338C10076B16E /* SmartHouseTabUITests */,
+				D87B4C421D3338C10076B16E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D87B4C421D3338C10076B16E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D87B4C411D3338C10076B16E /* SmartHouseTab.app */,
+				D87B4C5D1D3338C10076B16E /* SmartHouseTabTests.xctest */,
+				D87B4C681D3338C10076B16E /* SmartHouseTabUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D87B4C431D3338C10076B16E /* SmartHouseTab */ = {
+			isa = PBXGroup;
+			children = (
+				D87B4C471D3338C10076B16E /* AppDelegate.h */,
+				D87B4C481D3338C10076B16E /* AppDelegate.m */,
+				D87B4C4A1D3338C10076B16E /* FirstViewController.h */,
+				D87B4C4B1D3338C10076B16E /* FirstViewController.m */,
+				D87B4C4D1D3338C10076B16E /* SecondViewController.h */,
+				D87B4C4E1D3338C10076B16E /* SecondViewController.m */,
+				D87B4C501D3338C10076B16E /* Main.storyboard */,
+				D87B4C531D3338C10076B16E /* Assets.xcassets */,
+				D87B4C551D3338C10076B16E /* LaunchScreen.storyboard */,
+				D87B4C581D3338C10076B16E /* Info.plist */,
+				D87B4C441D3338C10076B16E /* Supporting Files */,
+			);
+			path = SmartHouseTab;
+			sourceTree = "<group>";
+		};
+		D87B4C441D3338C10076B16E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D87B4C451D3338C10076B16E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D87B4C601D3338C10076B16E /* SmartHouseTabTests */ = {
+			isa = PBXGroup;
+			children = (
+				D87B4C611D3338C10076B16E /* SmartHouseTabTests.m */,
+				D87B4C631D3338C10076B16E /* Info.plist */,
+			);
+			path = SmartHouseTabTests;
+			sourceTree = "<group>";
+		};
+		D87B4C6B1D3338C10076B16E /* SmartHouseTabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */,
+				D87B4C6E1D3338C10076B16E /* Info.plist */,
+			);
+			path = SmartHouseTabUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D87B4C401D3338C10076B16E /* SmartHouseTab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D87B4C711D3338C10076B16E /* Build configuration list for PBXNativeTarget "SmartHouseTab" */;
+			buildPhases = (
+				D87B4C3D1D3338C10076B16E /* Sources */,
+				D87B4C3E1D3338C10076B16E /* Frameworks */,
+				D87B4C3F1D3338C10076B16E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartHouseTab;
+			productName = SmartHouseTab;
+			productReference = D87B4C411D3338C10076B16E /* SmartHouseTab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D87B4C5C1D3338C10076B16E /* SmartHouseTabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D87B4C741D3338C10076B16E /* Build configuration list for PBXNativeTarget "SmartHouseTabTests" */;
+			buildPhases = (
+				D87B4C591D3338C10076B16E /* Sources */,
+				D87B4C5A1D3338C10076B16E /* Frameworks */,
+				D87B4C5B1D3338C10076B16E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D87B4C5F1D3338C10076B16E /* PBXTargetDependency */,
+			);
+			name = SmartHouseTabTests;
+			productName = SmartHouseTabTests;
+			productReference = D87B4C5D1D3338C10076B16E /* SmartHouseTabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D87B4C671D3338C10076B16E /* SmartHouseTabUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D87B4C771D3338C10076B16E /* Build configuration list for PBXNativeTarget "SmartHouseTabUITests" */;
+			buildPhases = (
+				D87B4C641D3338C10076B16E /* Sources */,
+				D87B4C651D3338C10076B16E /* Frameworks */,
+				D87B4C661D3338C10076B16E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D87B4C6A1D3338C10076B16E /* PBXTargetDependency */,
+			);
+			name = SmartHouseTabUITests;
+			productName = SmartHouseTabUITests;
+			productReference = D87B4C681D3338C10076B16E /* SmartHouseTabUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D87B4C391D3338C10076B16E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Joseph Hardy";
+				TargetAttributes = {
+					D87B4C401D3338C10076B16E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					D87B4C5C1D3338C10076B16E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D87B4C401D3338C10076B16E;
+					};
+					D87B4C671D3338C10076B16E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D87B4C401D3338C10076B16E;
+					};
+				};
+			};
+			buildConfigurationList = D87B4C3C1D3338C10076B16E /* Build configuration list for PBXProject "SmartHouseTab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D87B4C381D3338C10076B16E;
+			productRefGroup = D87B4C421D3338C10076B16E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D87B4C401D3338C10076B16E /* SmartHouseTab */,
+				D87B4C5C1D3338C10076B16E /* SmartHouseTabTests */,
+				D87B4C671D3338C10076B16E /* SmartHouseTabUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D87B4C3F1D3338C10076B16E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D87B4C571D3338C10076B16E /* LaunchScreen.storyboard in Resources */,
+				D87B4C541D3338C10076B16E /* Assets.xcassets in Resources */,
+				D87B4C521D3338C10076B16E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D87B4C5B1D3338C10076B16E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D87B4C661D3338C10076B16E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D87B4C3D1D3338C10076B16E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D87B4C4F1D3338C10076B16E /* SecondViewController.m in Sources */,
+				D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */,
+				D87B4C4C1D3338C10076B16E /* FirstViewController.m in Sources */,
+				D87B4C461D3338C10076B16E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D87B4C591D3338C10076B16E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D87B4C621D3338C10076B16E /* SmartHouseTabTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D87B4C641D3338C10076B16E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D87B4C6D1D3338C10076B16E /* SmartHouseTabUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D87B4C5F1D3338C10076B16E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D87B4C401D3338C10076B16E /* SmartHouseTab */;
+			targetProxy = D87B4C5E1D3338C10076B16E /* PBXContainerItemProxy */;
+		};
+		D87B4C6A1D3338C10076B16E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D87B4C401D3338C10076B16E /* SmartHouseTab */;
+			targetProxy = D87B4C691D3338C10076B16E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D87B4C501D3338C10076B16E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D87B4C511D3338C10076B16E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D87B4C551D3338C10076B16E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D87B4C561D3338C10076B16E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D87B4C6F1D3338C10076B16E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D87B4C701D3338C10076B16E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D87B4C721D3338C10076B16E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SmartHouseTab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D87B4C731D3338C10076B16E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SmartHouseTab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D87B4C751D3338C10076B16E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmartHouseTabTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHouseTab.app/SmartHouseTab";
+			};
+			name = Debug;
+		};
+		D87B4C761D3338C10076B16E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmartHouseTabTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHouseTab.app/SmartHouseTab";
+			};
+			name = Release;
+		};
+		D87B4C781D3338C10076B16E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SmartHouseTabUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SmartHouseTab;
+			};
+			name = Debug;
+		};
+		D87B4C791D3338C10076B16E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SmartHouseTabUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SmartHouseTab;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D87B4C3C1D3338C10076B16E /* Build configuration list for PBXProject "SmartHouseTab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87B4C6F1D3338C10076B16E /* Debug */,
+				D87B4C701D3338C10076B16E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D87B4C711D3338C10076B16E /* Build configuration list for PBXNativeTarget "SmartHouseTab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87B4C721D3338C10076B16E /* Debug */,
+				D87B4C731D3338C10076B16E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D87B4C741D3338C10076B16E /* Build configuration list for PBXNativeTarget "SmartHouseTabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87B4C751D3338C10076B16E /* Debug */,
+				D87B4C761D3338C10076B16E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D87B4C771D3338C10076B16E /* Build configuration list for PBXNativeTarget "SmartHouseTabUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87B4C781D3338C10076B16E /* Debug */,
+				D87B4C791D3338C10076B16E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D87B4C391D3338C10076B16E /* Project object */;
+}
