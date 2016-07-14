@@ -16,6 +16,9 @@
 		D87B4C571D3338C10076B16E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87B4C551D3338C10076B16E /* LaunchScreen.storyboard */; };
 		D87B4C621D3338C10076B16E /* SmartHouseTabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C611D3338C10076B16E /* SmartHouseTabTests.m */; };
 		D87B4C6D1D3338C10076B16E /* SmartHouseTabUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */; };
+		D8D701761D371FD300D99D88 /* JLHBartTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D701751D371FD300D99D88 /* JLHBartTimes.m */; };
+		D8D701791D371FDD00D99D88 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D701781D371FDD00D99D88 /* XMLParser.m */; };
+		D8D7017C1D371FE700D99D88 /* JLHWunderground.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D7017B1D371FE700D99D88 /* JLHWunderground.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		D87B4C681D3338C10076B16E /* SmartHouseTabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHouseTabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHouseTabUITests.m; sourceTree = "<group>"; };
 		D87B4C6E1D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D701741D371FD300D99D88 /* JLHBartTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLHBartTimes.h; sourceTree = "<group>"; };
+		D8D701751D371FD300D99D88 /* JLHBartTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLHBartTimes.m; sourceTree = "<group>"; };
+		D8D701771D371FDD00D99D88 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		D8D701781D371FDD00D99D88 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		D8D7017A1D371FE700D99D88 /* JLHWunderground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLHWunderground.h; sourceTree = "<group>"; };
+		D8D7017B1D371FE700D99D88 /* JLHWunderground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLHWunderground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +120,12 @@
 				D87B4C4D1D3338C10076B16E /* SecondViewController.h */,
 				D87B4C4E1D3338C10076B16E /* SecondViewController.m */,
 				D87B4C501D3338C10076B16E /* Main.storyboard */,
+				D8D7017A1D371FE700D99D88 /* JLHWunderground.h */,
+				D8D7017B1D371FE700D99D88 /* JLHWunderground.m */,
+				D8D701771D371FDD00D99D88 /* XMLParser.h */,
+				D8D701781D371FDD00D99D88 /* XMLParser.m */,
+				D8D701741D371FD300D99D88 /* JLHBartTimes.h */,
+				D8D701751D371FD300D99D88 /* JLHBartTimes.m */,
 				D87B4C531D3338C10076B16E /* Assets.xcassets */,
 				D87B4C551D3338C10076B16E /* LaunchScreen.storyboard */,
 				D87B4C581D3338C10076B16E /* Info.plist */,
@@ -276,8 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87B4C4F1D3338C10076B16E /* SecondViewController.m in Sources */,
+				D8D7017C1D371FE700D99D88 /* JLHWunderground.m in Sources */,
+				D8D701761D371FD300D99D88 /* JLHBartTimes.m in Sources */,
 				D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */,
 				D87B4C4C1D3338C10076B16E /* FirstViewController.m in Sources */,
+				D8D701791D371FDD00D99D88 /* XMLParser.m in Sources */,
 				D87B4C461D3338C10076B16E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +520,7 @@
 				D87B4C731D3338C10076B16E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D87B4C741D3338C10076B16E /* Build configuration list for PBXNativeTarget "SmartHouseTabTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +529,7 @@
 				D87B4C761D3338C10076B16E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D87B4C771D3338C10076B16E /* Build configuration list for PBXNativeTarget "SmartHouseTabUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +538,7 @@
 				D87B4C791D3338C10076B16E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

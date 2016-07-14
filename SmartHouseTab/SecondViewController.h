@@ -10,6 +10,7 @@
 
 @interface SecondViewController : UIViewController
 
+@property (nonatomic) UIButton *insertButton;
 
 @end
 

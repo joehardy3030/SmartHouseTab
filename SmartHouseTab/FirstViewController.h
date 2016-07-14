@@ -10,6 +10,9 @@
 
 @interface FirstViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *WeatherTextView;
+
+@property (weak, nonatomic) IBOutlet UITableView *WeatherTableView;
 
 @end
 
