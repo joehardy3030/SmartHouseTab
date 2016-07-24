@@ -7,16 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JLHBartTimes.h"
 
 @interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *weatherTableView;
-
 @property (strong, nonatomic) NSMutableArray *weatherArray;
-
-@property (weak, nonatomic) IBOutlet UITextView *WeatherTextView;
-
 
 @end
 

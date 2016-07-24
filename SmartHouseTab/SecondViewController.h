@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLHBartTimes.h"
 
 @interface SecondViewController : UIViewController
 
-@property (nonatomic) UIButton *insertButton;
+//@property (nonatomic) UIButton *bartHomeButton;
+
+@property (weak, nonatomic) IBOutlet UITextView *utilitiesTextView;
 
 @end
 

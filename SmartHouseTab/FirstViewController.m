@@ -16,10 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.WeatherTextView.text = @"Ready";
     [self configureView];
-
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,7 +27,7 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    self.weatherArray = [[NSMutableArray alloc] initWithObjects:@"Hello World",@"Goodbye World", nil];
+    self.weatherArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
     //self.weatherArray = [[NSMutableArray alloc] initWithObjects:self.WeatherTextView.text, nil];
     _weatherTableView.dataSource = self;
 }
@@ -73,10 +70,17 @@
     // If it the first row, the data input will be "Data1" from the array.
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [self.weatherArray objectAtIndex:row];
+    cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
     
     return cell;
 }
 
+- (UILabel *)label {
+    UILabel *label = [[UILabel alloc] init];
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    [_weatherTableView addSubview:label];
+    return label;
+}
 
 - (IBAction)WeatherTest:(UIButton *)sender {
     NSString *dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/CA/El_Cerrito.json";
@@ -96,59 +100,58 @@
                                                   NSData *jData = [text dataUsingEncoding:NSUTF8StringEncoding];
                                                   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jData options:0 error:nil];
                                                   
+                                                  //Get the current_observation and put in an NSDictionary
                                                   NSDictionary *currentObservation = [json objectForKey:@"current_observation"];
-                                                  NSString *currentTemp = [currentObservation objectForKey:@"temperature_string"];
+                                                  NSLog(@"%@",currentObservation);
+
+                                                  //Put a header on the table
+                                                  self.weatherArray[0] = @"";
                                                   
                                                   //Get current temperature string
-                                                  NSString *printString = @"Current Temp: ";
-                                                  printString = [printString stringByAppendingString:currentTemp];
+                                                  NSString *currentTemp = [currentObservation objectForKey:@"temperature_string"];
+                                                  NSString *currentTempString = @"Now        ";
+                                                  currentTempString = [currentTempString stringByAppendingString:currentTemp];
+                                                  self.weatherArray[1] = currentTempString;
                                                   
-                                                  //Get current weather string and append to temp
-                                                  NSString *weatherString = [currentObservation objectForKey:@"weather"];
-                                                  printString = [printString stringByAppendingString:@"\n"];
-                                                  printString = [printString stringByAppendingString:weatherString];
-                                                  
-                                                  //Get currrent wind string and append to above
-                                                  NSString *windString = [currentObservation objectForKey:@"wind_string"];
-                                                  printString = [printString stringByAppendingString:@"\n"];
-                                                  printString = [printString stringByAppendingString:windString];
-                                                  
-                                                  //Get forecast for the rest of today
+                                                  //Get forecast for the next several days
                                                   NSDictionary *forecast = [json objectForKey:@"forecast"];
                                                   NSDictionary *textForecast = [forecast objectForKey:@"txt_forecast"];
                                                   NSArray *forecastDay = [textForecast objectForKey:@"forecastday"];
-                                                  
-                                                  //Get today's forecast
-                                                  NSDictionary *todayForecast = [forecastDay objectAtIndex:0];
-                                                  NSString *todayForecastText = [todayForecast objectForKey:@"fcttext"];
-                                                  //printString = [printString stringByAppendingString:@"\n"];
-                                                  printString = [printString stringByAppendingString:@"\n"];
-                                                  printString = [printString stringByAppendingString:todayForecastText];
-                                                  
-                                                  //Get tomorrow's forecast (12 hour chunks)
-                                                  NSDictionary *tomorrowForecast = [forecastDay objectAtIndex:2];
-                                                  NSString *tomorrowForecastText = [tomorrowForecast objectForKey:@"fcttext"];
-                                                  //printString = [printString stringByAppendingString:@"\n"];
-                                                  printString = [printString stringByAppendingString:@"\n"];
-                                                  printString = [printString stringByAppendingString:tomorrowForecastText];
-                                                  
-                                                  
                                                   NSLog(@"%@",forecastDay);
+                                                 
+                                                  //Pull out the simpleforecast which has the discrete values
+                                                  NSDictionary *simpleForecast = [forecast objectForKey:@"simpleforecast"];
+                                                  NSArray *simpleForecastDay = [simpleForecast objectForKey:@"forecastday"];
                                                   
-                                                  //NSLog(@"Data = %@",json);
+                                                  //Extract date, am/pm, and high temperature in Fahrenheit
+                                                  //And add these to the UITableView through it's data source
+                                                  for (NSDictionary *forecastDayLoop in simpleForecastDay)
+                                                  {
+                                                      NSLog(@"%@",forecastDayLoop);
+                                                      NSDictionary *forecastDayLoopDate = [forecastDayLoop objectForKey:@"date"];
+                                                      NSString *forecastDayLoopName = [forecastDayLoopDate objectForKey:@"weekday_short"];
+                                                      NSString *forecastDayLoopString = [forecastDayLoopName stringByAppendingString:@"        "];
+                                                      NSDictionary *forecastDayLoopHigh = [forecastDayLoop objectForKey:@"high"];
+                                                      NSString *forecastDayLoopHighF = [forecastDayLoopHigh objectForKey:@"fahrenheit"];
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopHighF];
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" F"];
+                                                      [self.weatherArray addObject:forecastDayLoopString];
+                                                  }
+                                                  
                                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                                      self.WeatherTextView.text = printString;
+                                                     [self.weatherTableView reloadData];
                                                   });
                                               }
                                               else{
+                                                  self.weatherArray[0] = @"Error loading weather data";
                                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                                      self.WeatherTextView.text = @"error";
+                                                      [self.weatherTableView reloadData];
                                                   });
                                               }
                                           }];
     
     // 3
-    self.WeatherTextView.text = @"Get Weather\n";
+
     [downloadTask resume];
 }
 
