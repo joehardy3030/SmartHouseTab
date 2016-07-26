@@ -14,8 +14,11 @@
 
 @implementation FirstViewController
 
+//CLLocationManager *locationManager;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[self startStandardUpdates];
     [self configureView];
 }
 
@@ -28,10 +31,60 @@
 {
     // Update the user interface for the detail item.
     self.weatherArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
-    //self.weatherArray = [[NSMutableArray alloc] initWithObjects:self.WeatherTextView.text, nil];
     _weatherTableView.dataSource = self;
+/*    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager requestAlwaysAuthorization];
+    [locationManager startUpdatingLocation];
+    NSLog(@"Configured view");*/
 }
 
+/*- (void)startStandardUpdates
+{
+    // Create the location manager if this object does not
+    // already have one.
+    if (nil == locationManager)
+        locationManager = [[CLLocationManager alloc] init];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest; //kCLLocationAccuracyKilometer;
+    
+    // Set a movement threshold for new events.
+    // locationManager.distanceFilter = 500; // meters
+    
+    [locationManager startUpdatingLocation];
+} */
+
+/*#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+    if (currentLocation != nil) {
+        self.longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+    }
+    if (currentLocation != nil) {
+        self.longitudeLabel.text = @"Longitude";
+        self.latitudeLabel.text = @"Latitude";
+    }
+
+    });
+
+}
+*/
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,14 +128,12 @@
     return cell;
 }
 
-- (UILabel *)label {
-    UILabel *label = [[UILabel alloc] init];
-    label.translatesAutoresizingMaskIntoConstraints = NO;
-    [_weatherTableView addSubview:label];
-    return label;
-}
 
 - (IBAction)WeatherTest:(UIButton *)sender {
+ //   locationManager.delegate = self;
+    //   locationManager.delegate = self;
+  //  [locationManager startUpdatingLocation];
+
     NSString *dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/CA/El_Cerrito.json";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
@@ -109,7 +160,7 @@
                                                   
                                                   //Get current temperature string
                                                   NSString *currentTemp = [currentObservation objectForKey:@"temperature_string"];
-                                                  NSString *currentTempString = @"Now        ";
+                                                  NSString *currentTempString = @"Now    ";
                                                   currentTempString = [currentTempString stringByAppendingString:currentTemp];
                                                   self.weatherArray[1] = currentTempString;
                                                   
@@ -130,11 +181,28 @@
                                                       NSLog(@"%@",forecastDayLoop);
                                                       NSDictionary *forecastDayLoopDate = [forecastDayLoop objectForKey:@"date"];
                                                       NSString *forecastDayLoopName = [forecastDayLoopDate objectForKey:@"weekday_short"];
-                                                      NSString *forecastDayLoopString = [forecastDayLoopName stringByAppendingString:@"        "];
+                                                      NSString *forecastDayLoopString = [forecastDayLoopName stringByAppendingString:@"    "];
                                                       NSDictionary *forecastDayLoopHigh = [forecastDayLoop objectForKey:@"high"];
                                                       NSString *forecastDayLoopHighF = [forecastDayLoopHigh objectForKey:@"fahrenheit"];
                                                       forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopHighF];
                                                       forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" F"];
+                                                      NSString *forecastDayLoopIcon = [forecastDayLoop objectForKey:@"icon"];
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@"    "];
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopIcon];
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@"    "];
+                                                      NSDictionary *forecastDayLoopMaxWind = [forecastDayLoop objectForKey:@"maxwind"];
+                                                      NSString *forecastDayLoopWindDir = [forecastDayLoopMaxWind objectForKey:@"dir"];
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopWindDir];
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" "];
+                                                      NSNumber *maxWind = [forecastDayLoopMaxWind objectForKey:@"mph"];
+                                                      NSString *forecastDayLoopMaxWindSpeed = [maxWind stringValue];
+                                                      /*NSLog(@"%@",maxWind);
+                                                      if ([maxWind isKindOfClass:[NSNumber class]]) {
+                                                         NSLog(@"NSString");
+                                                      };
+                                                      */
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopMaxWindSpeed];
+                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" MPH"];
                                                       [self.weatherArray addObject:forecastDayLoopString];
                                                   }
                                                   
