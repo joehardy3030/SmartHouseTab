@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "LocationManager.h"
 
 @interface FirstViewController ()
 - (void)configureView;

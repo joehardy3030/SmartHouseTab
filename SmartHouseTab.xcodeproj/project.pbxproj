@@ -17,6 +17,7 @@
 		D87B4C621D3338C10076B16E /* SmartHouseTabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C611D3338C10076B16E /* SmartHouseTabTests.m */; };
 		D87B4C6D1D3338C10076B16E /* SmartHouseTabUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */; };
 		D88309461D47CACC00EED546 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D88309451D47CACC00EED546 /* LocationManager.m */; };
+		D88309481D47F92900EED546 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88309471D47F92900EED546 /* CoreLocation.framework */; };
 		D8D701761D371FD300D99D88 /* JLHBartTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D701751D371FD300D99D88 /* JLHBartTimes.m */; };
 		D8D701791D371FDD00D99D88 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D701781D371FDD00D99D88 /* XMLParser.m */; };
 		D8D7017C1D371FE700D99D88 /* JLHWunderground.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D7017B1D371FE700D99D88 /* JLHWunderground.m */; };
@@ -60,6 +61,7 @@
 		D87B4C6E1D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D88309441D47CACC00EED546 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		D88309451D47CACC00EED546 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		D88309471D47F92900EED546 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D8D701741D371FD300D99D88 /* JLHBartTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLHBartTimes.h; sourceTree = "<group>"; };
 		D8D701751D371FD300D99D88 /* JLHBartTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLHBartTimes.m; sourceTree = "<group>"; };
 		D8D701771D371FDD00D99D88 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D88309481D47F92900EED546 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,7 @@
 		D87B4C381D3338C10076B16E = {
 			isa = PBXGroup;
 			children = (
+				D88309471D47F92900EED546 /* CoreLocation.framework */,
 				D87B4C431D3338C10076B16E /* SmartHouseTab */,
 				D87B4C601D3338C10076B16E /* SmartHouseTabTests */,
 				D87B4C6B1D3338C10076B16E /* SmartHouseTabUITests */,
