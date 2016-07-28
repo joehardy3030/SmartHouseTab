@@ -7,19 +7,38 @@
 //
 
 #import "FirstViewController.h"
-#import "LocationManager.h"
+//#import "LocationManager.h"
 
 @interface FirstViewController ()
+@property(nonatomic, strong) CLLocationManager* locationManager;
 - (void)configureView;
 @end
 
+
 @implementation FirstViewController
 
+
 //CLLocationManager *locationManager;
+
+/*locationManager = [[CLLocationManager alloc] init];
+locationManager.delegate = self;
+locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+locationManager.distanceFilter = kCLDistanceFilterNone;
+if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+{
+    [locationManager requestWhenInUseAuthorization];
+}
+[locationManager startUpdatingLocation];*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self startStandardUpdates];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
+
     [self configureView];
 }
 
@@ -33,59 +52,30 @@
     // Update the user interface for the detail item.
     self.weatherArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
     _weatherTableView.dataSource = self;
-/*    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager requestAlwaysAuthorization];
-    [locationManager startUpdatingLocation];
-    NSLog(@"Configured view");*/
+//    [LocationManager sharedInstance];
 }
 
-/*- (void)startStandardUpdates
-{
-    // Create the location manager if this object does not
-    // already have one.
-    if (nil == locationManager)
-        locationManager = [[CLLocationManager alloc] init];
-    
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest; //kCLLocationAccuracyKilometer;
-    
-    // Set a movement threshold for new events.
-    // locationManager.distanceFilter = 500; // meters
-    
-    [locationManager startUpdatingLocation];
-} */
-
-/*#pragma mark - CLLocationManagerDelegate
+#pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [errorAlert show];
+    NSLog(@"%@",error);
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-    if (currentLocation != nil) {
-        self.longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-        self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    // If it's a relatively recent event, turn off updates to save power.
+    CLLocation* location = [locations lastObject];
+    NSDate* eventDate = location.timestamp;
+    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    if (fabs(howRecent) < 15.0) {
+        // If the event is recent, do something with it.
+        NSLog(@"latitude %+.6f, longitude %+.6f\n",
+              location.coordinate.latitude,
+              location.coordinate.longitude);
     }
-    if (currentLocation != nil) {
-        self.longitudeLabel.text = @"Longitude";
-        self.latitudeLabel.text = @"Latitude";
-    }
-
-    });
-
 }
-*/
+
+
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -129,12 +119,19 @@
     return cell;
 }
 
-
 - (IBAction)WeatherTest:(UIButton *)sender {
- //   locationManager.delegate = self;
-    //   locationManager.delegate = self;
-  //  [locationManager startUpdatingLocation];
+    
+   // LocationManager *locationManageInstance = [LocationManager sharedInstance];
+    //NSLog(@"%@",locationCoordinates);
+   // CLLocation *currentLocation = [LocationManager locationManager];
+    //self.currentLocation = [self.locationManager location];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"%@",[self.locationManager location]);
+    });
+    
 
+    // self.weatherArray[0] = longitudeString;
+    
     NSString *dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/CA/El_Cerrito.json";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
@@ -152,12 +149,13 @@
                                                   NSData *jData = [text dataUsingEncoding:NSUTF8StringEncoding];
                                                   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jData options:0 error:nil];
                                                   
+                                                  if ([json count] >0){
                                                   //Get the current_observation and put in an NSDictionary
                                                   NSDictionary *currentObservation = [json objectForKey:@"current_observation"];
-                                                  NSLog(@"%@",currentObservation);
+                                                  //NSLog(@"%@",currentObservation);
 
                                                   //Put a header on the table
-                                                  self.weatherArray[0] = @"";
+                                                //  self.weatherArray[0] = @"";
                                                   
                                                   //Get current temperature string
                                                   NSString *currentTemp = [currentObservation objectForKey:@"temperature_string"];
@@ -167,9 +165,9 @@
                                                   
                                                   //Get forecast for the next several days
                                                   NSDictionary *forecast = [json objectForKey:@"forecast"];
-                                                  NSDictionary *textForecast = [forecast objectForKey:@"txt_forecast"];
-                                                  NSArray *forecastDay = [textForecast objectForKey:@"forecastday"];
-                                                  NSLog(@"%@",forecastDay);
+                                                  //NSDictionary *textForecast = [forecast objectForKey:@"txt_forecast"];
+                                                  //NSArray *forecastDay = [textForecast objectForKey:@"forecastday"];
+                                                  //NSLog(@"%@",forecastDay);
                                                  
                                                   //Pull out the simpleforecast which has the discrete values
                                                   NSDictionary *simpleForecast = [forecast objectForKey:@"simpleforecast"];
@@ -179,7 +177,7 @@
                                                   //And add these to the UITableView through it's data source
                                                   for (NSDictionary *forecastDayLoop in simpleForecastDay)
                                                   {
-                                                      NSLog(@"%@",forecastDayLoop);
+                                                   //   NSLog(@"%@",forecastDayLoop);
                                                       NSDictionary *forecastDayLoopDate = [forecastDayLoop objectForKey:@"date"];
                                                       NSString *forecastDayLoopName = [forecastDayLoopDate objectForKey:@"weekday_short"];
                                                       NSString *forecastDayLoopString = [forecastDayLoopName stringByAppendingString:@"    "];
@@ -216,6 +214,7 @@
                                                   dispatch_async(dispatch_get_main_queue(), ^{
                                                       [self.weatherTableView reloadData];
                                                   });
+                                              }
                                               }
                                           }];
     

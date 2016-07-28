@@ -35,8 +35,8 @@
 
 - (void) locationManager
 {
-    if ([CLLocationManager locationServicesEnabled])
-    {
+//    if ([CLLocationManager locationServicesEnabled])
+  //  {
         locationManager = [[CLLocationManager alloc] init];
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -46,13 +46,13 @@
             [locationManager requestWhenInUseAuthorization];
         }
         [locationManager startUpdatingLocation];
-    }
-    else{
+    //}
+   // else{
         
   //      UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled" message:@"You currently have all location services for this device disabled. If you proceed, you will be showing past informations. To enable, Settings->Location->location services->on" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:@"Continue",nil];
     //    [servicesDisabledAlert show];
      //   [servicesDisabledAlert setDelegate:self];
-    }
+   // }
 }
 
 - (void)requestWhenInUseAuthorization
@@ -64,13 +64,13 @@
         NSString *title;
         title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
         NSString *message = @"To use background location you must turn on 'Always' in the Location Services Settings";
-        
-   /*     UIAlertView *alertViews = [[UIAlertView alloc] initWithTitle:title
+        NSLog(@"%@",message);
+ /*       UIAlertView *alertViews = [[UIAlertView alloc] initWithTitle:title
                                                              message:message
                                                             delegate:self
                                                    cancelButtonTitle:@"Cancel"
-                                                   otherButtonTitles:@"Settings", nil];*/
-   //     [alertViews show];
+                                                   otherButtonTitles:@"Settings", nil];
+        [alertViews show]; */
     }
     // The user has not enabled any location services. Request background authorization.
     else if (status == kCLAuthorizationStatusNotDetermined) {
@@ -115,6 +115,8 @@
     _currentLocation = newLocation;
     _longitude = [NSString stringWithFormat:@"%f",coordinate.longitude];
     _latitude = [NSString stringWithFormat:@"%f",coordinate.latitude];
+    NSLog(@"Latidude %f Longitude: %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+
     //    globalObjects.longitude = [NSString stringWithFormat:@"%f",coordinate.longitude];
     //    globalObjects.latitude = [NSString stringWithFormat:@"%f",coordinate.latitude];
 }
