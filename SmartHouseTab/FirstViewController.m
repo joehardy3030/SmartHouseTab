@@ -23,9 +23,7 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestWhenInUseAuthorization];
     [self initializeTextViewDataSource];
-    //[self.locationManager startUpdatingLocation];
-    [self.locationManager requestLocation];
-}
+ }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -59,12 +57,12 @@
     }
     self.currentLocation = [self.locationManager location];
     
-    self.currentLatitude = [NSString stringWithFormat:@"%.4f",self.currentLocation.coordinate.latitude];
-    self.currentLongitude = [NSString stringWithFormat:@"%.4f",self.currentLocation.coordinate.longitude];
+    self.currentLatitude = [NSString stringWithFormat:@"%.6f",self.currentLocation.coordinate.latitude];
+    self.currentLongitude = [NSString stringWithFormat:@"%.6f",self.currentLocation.coordinate.longitude];
     NSString *locationTextString = @"Latitude: ";
-    locationTextString = [locationTextString stringByAppendingString:_currentLatitude];
+    locationTextString = [locationTextString stringByAppendingString:self.currentLatitude];
     locationTextString = [locationTextString stringByAppendingString:@"\nLongitude: "];
-    locationTextString = [locationTextString stringByAppendingString:_currentLongitude];
+    locationTextString = [locationTextString stringByAppendingString:self.currentLongitude];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"%@",[self.locationManager location]);
@@ -116,9 +114,19 @@
     return cell;
 }
 
+- (IBAction)requestLocationButton:(UIButton *)sender {
+   
+    [self.locationManager requestLocation];
+}
+
 - (IBAction)locationButton:(UIButton *)sender {
     
-    [self.locationManager requestLocation];
+    [self.locationManager startUpdatingLocation];
+}
+
+- (IBAction)stopLocationButton:(UIButton *)sender {
+  
+    [self.locationManager stopUpdatingLocation];
 }
 
 - (IBAction)WeatherTest:(UIButton *)sender {

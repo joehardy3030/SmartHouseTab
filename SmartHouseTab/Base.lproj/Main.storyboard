@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgD-FQ-FkI">
-                                <rect key="frame" x="226" y="520" width="84" height="30"/>
+                                <rect key="frame" x="240" y="520" width="84" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Weather"/>
                                 <connections>
@@ -42,11 +42,27 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzN-mG-T1o">
-                                <rect key="frame" x="57" y="520" width="75" height="30"/>
+                                <rect key="frame" x="48" y="516" width="111" height="37"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Location"/>
+                                <state key="normal" title="Start Location"/>
                                 <connections>
                                     <action selector="locationButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="wo6-vs-5f9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKQ-ef-x9E">
+                                <rect key="frame" x="44" y="561" width="119" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Stop Location"/>
+                                <connections>
+                                    <action selector="stopLocationButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="bPW-Vb-Xxx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJt-a5-tEh">
+                                <rect key="frame" x="46" y="477" width="142" height="31"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Request Location"/>
+                                <connections>
+                                    <action selector="requestLocationButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ybK-Z7-57Y"/>
                                 </connections>
                             </button>
                         </subviews>
