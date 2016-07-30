@@ -16,24 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-/*    CGRect buttonFrame = CGRectMake(60,60,90,31);
-    self.bartHomeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.bartHomeButton.frame = buttonFrame;
-    [self.bartHomeButton setTitle:@"Bart Home"
-                       forState:UIControlStateNormal];
-    [self.view addSubview:self.bartHomeButton]; */
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*- (IBAction)bartHomeButton:(UIButton *)sender {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.utilitiesTextView.text = @"Get Bart Home Info\n";
-    }); }
- */
 
 - (IBAction)bartHomeButton:(UIButton *)sender {
     
@@ -52,6 +40,7 @@
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.utilitiesTextView.text = @"error";
+            NSLog(@"%@",error);
         });
     }];
 
@@ -74,6 +63,7 @@
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.utilitiesTextView.text = @"error";
+            NSLog(@"%@",error);
         });
     }];
 }

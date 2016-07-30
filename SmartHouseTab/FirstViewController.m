@@ -14,21 +14,8 @@
 - (void)configureView;
 @end
 
-
 @implementation FirstViewController
 
-
-//CLLocationManager *locationManager;
-
-/*locationManager = [[CLLocationManager alloc] init];
-locationManager.delegate = self;
-locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-locationManager.distanceFilter = kCLDistanceFilterNone;
-if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
-{
-    [locationManager requestWhenInUseAuthorization];
-}
-[locationManager startUpdatingLocation];*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,8 +24,8 @@ if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestWhenInUseAuthorization];
-    [self.locationManager startUpdatingLocation];
-
+   // [self.locationManager startUpdatingLocation];
+    
     [self configureView];
 }
 
@@ -52,7 +39,8 @@ if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)
     // Update the user interface for the detail item.
     self.weatherArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
     _weatherTableView.dataSource = self;
-//    [LocationManager sharedInstance];
+//    [self.locationManager requestLocation];
+
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -73,6 +61,19 @@ if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)
               location.coordinate.latitude,
               location.coordinate.longitude);
     }
+    _currentLocation = [self.locationManager location];
+    
+    _currentLatitude = [NSString stringWithFormat:@"%.4f",self.currentLocation.coordinate.latitude];
+    _currentLongitude = [NSString stringWithFormat:@"%.4f",self.currentLocation.coordinate.longitude];
+    NSString *locationTextString = @"Latitude: ";
+    locationTextString = [locationTextString stringByAppendingString:_currentLatitude];
+    locationTextString = [locationTextString stringByAppendingString:@"\nLongitude: "];
+    locationTextString = [locationTextString stringByAppendingString:_currentLongitude];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"%@",[self.locationManager location]);
+        self.locationTextView.text = locationTextString;
+    });
 }
 
 
@@ -119,22 +120,54 @@ if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)
     return cell;
 }
 
+- (IBAction)locationButton:(UIButton *)sender {
+    
+    [self.locationManager requestLocation];
+}
+
 - (IBAction)WeatherTest:(UIButton *)sender {
     
-   // LocationManager *locationManageInstance = [LocationManager sharedInstance];
-    //NSLog(@"%@",locationCoordinates);
-   // CLLocation *currentLocation = [LocationManager locationManager];
-    //self.currentLocation = [self.locationManager location];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"%@",[self.locationManager location]);
-    });
-    
+    NSString *dataUrl;
+    if (_currentLocation != NULL) {
+        NSLog(@"Current location instance variable: %@",_currentLocation);
+        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/";
+        dataUrl = [dataUrl stringByAppendingString:_currentLatitude];
+        dataUrl = [dataUrl stringByAppendingString:@","];
+        dataUrl = [dataUrl stringByAppendingString:_currentLongitude];
+        dataUrl = [dataUrl stringByAppendingString:@".json"];
+    }
+    else {
+    dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/CA/El_Cerrito.json";
+    }
+    NSLog(@"Current location instance variable: %@",dataUrl);
 
-    // self.weatherArray[0] = longitudeString;
-    
-    NSString *dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/CA/El_Cerrito.json";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
+/*    JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
+    
+    [homeBartTimes parseBartTimeString:url success:^(NSString *responseString) {
+        NSLog(@"%@",responseString);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.utilitiesTextView.text = responseString;
+        });
+    } failure:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.utilitiesTextView.text = @"error";
+            NSLog(@"%@",error);
+        });
+    }];
+*/
+    //  [self configureView];
+    /*dispatch_async(dispatch_get_main_queue(), ^{
+        [self.weatherTableView reloadData];
+    }); */
+    
+    /*self.weatherArray[0] = @"Error loading weather data";
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.weatherTableView reloadData];
+    }); */
+    
+    //self.weatherArray = nil;
     // 2
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
                                           dataTaskWithURL:url completionHandler:^(NSData *data,
@@ -143,6 +176,7 @@ if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)
                                               // 4: Handle response here
                                               if(error == nil)
                                               {
+                                                  [self configureView];
                                                   NSString *text = [[NSString alloc] initWithData:data
                                                                                          encoding:NSUTF8StringEncoding];
                                                   
@@ -155,8 +189,10 @@ if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)
                                                   //NSLog(@"%@",currentObservation);
 
                                                   //Put a header on the table
-                                                //  self.weatherArray[0] = @"";
-                                                  
+                                                  NSDictionary *displayLocation = [currentObservation objectForKey:@"display_location"];
+                                                  NSString *displayLocationFull = [displayLocation objectForKey:@"full"];
+                                                  self.weatherArray[0] = displayLocationFull;
+                                                      
                                                   //Get current temperature string
                                                   NSString *currentTemp = [currentObservation objectForKey:@"temperature_string"];
                                                   NSString *currentTempString = @"Now    ";
@@ -195,11 +231,6 @@ if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)
                                                       forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" "];
                                                       NSNumber *maxWind = [forecastDayLoopMaxWind objectForKey:@"mph"];
                                                       NSString *forecastDayLoopMaxWindSpeed = [maxWind stringValue];
-                                                      /*NSLog(@"%@",maxWind);
-                                                      if ([maxWind isKindOfClass:[NSNumber class]]) {
-                                                         NSLog(@"NSString");
-                                                      };
-                                                      */
                                                       forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopMaxWindSpeed];
                                                       forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" MPH"];
                                                       [self.weatherArray addObject:forecastDayLoopString];

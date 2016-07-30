@@ -11,11 +11,15 @@
 
 @interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *weatherTableView;
+//Data source and table view for displaying weather info
 @property (strong, nonatomic) NSMutableArray *weatherArray;
-@property (strong, nonatomic) CLLocation *currentLocation;
+@property (weak, nonatomic) IBOutlet UITableView *weatherTableView;
 
-//- (void)requestLocation;
+//Data and text view for location information
+@property (strong, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) NSString *currentLongitude;
+@property (strong, nonatomic) NSString *currentLatitude;
+@property (weak, nonatomic) IBOutlet UITextView *locationTextView;
 
 @end
 
