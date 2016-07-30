@@ -7,11 +7,11 @@
 //
 
 #import "FirstViewController.h"
-//#import "LocationManager.h"
+#import "JLHWunderground.h"
 
 @interface FirstViewController ()
 @property(nonatomic, strong) CLLocationManager* locationManager;
-- (void)configureView;
+- (void)initializeTextViewDataSource;
 @end
 
 @implementation FirstViewController
@@ -19,14 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self startStandardUpdates];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestWhenInUseAuthorization];
-   // [self.locationManager startUpdatingLocation];
-    
-    [self configureView];
+    [self initializeTextViewDataSource];
+    //[self.locationManager startUpdatingLocation];
+    [self.locationManager requestLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,13 +33,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)configureView
+- (void)initializeTextViewDataSource
 {
-    // Update the user interface for the detail item.
+    // Set up the weatherArray and set the dataSource for the current
     self.weatherArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
-    _weatherTableView.dataSource = self;
-//    [self.locationManager requestLocation];
-
+    self.weatherTableView.dataSource = self;
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -61,10 +58,10 @@
               location.coordinate.latitude,
               location.coordinate.longitude);
     }
-    _currentLocation = [self.locationManager location];
+    self.currentLocation = [self.locationManager location];
     
-    _currentLatitude = [NSString stringWithFormat:@"%.4f",self.currentLocation.coordinate.latitude];
-    _currentLongitude = [NSString stringWithFormat:@"%.4f",self.currentLocation.coordinate.longitude];
+    self.currentLatitude = [NSString stringWithFormat:@"%.4f",self.currentLocation.coordinate.latitude];
+    self.currentLongitude = [NSString stringWithFormat:@"%.4f",self.currentLocation.coordinate.longitude];
     NSString *locationTextString = @"Latitude: ";
     locationTextString = [locationTextString stringByAppendingString:_currentLatitude];
     locationTextString = [locationTextString stringByAppendingString:@"\nLongitude: "];
@@ -143,118 +140,21 @@
 
     NSURL *url = [NSURL URLWithString:dataUrl];
     
-/*    JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
+    JLHWunderground *wundergroundSimpleForecast = [[JLHWunderground alloc] init];
     
-    [homeBartTimes parseBartTimeString:url success:^(NSString *responseString) {
-        NSLog(@"%@",responseString);
+    [wundergroundSimpleForecast parseWundergroudSimpleForecast:url success:^(NSMutableArray *weatherResponse) {
+        NSLog(@"%@",weatherResponse);
+        self.weatherArray = weatherResponse;
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = responseString;
+            [self.weatherTableView reloadData];
         });
     } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+        self.weatherArray[0] = @"error";
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = @"error";
-            NSLog(@"%@",error);
+            [self.weatherTableView reloadData];
         });
     }];
-*/
-    //  [self configureView];
-    /*dispatch_async(dispatch_get_main_queue(), ^{
-        [self.weatherTableView reloadData];
-    }); */
-    
-    /*self.weatherArray[0] = @"Error loading weather data";
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.weatherTableView reloadData];
-    }); */
-    
-    //self.weatherArray = nil;
-    // 2
-    NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
-                                          dataTaskWithURL:url completionHandler:^(NSData *data,
-                                                                                  NSURLResponse *response,
-                                                                                  NSError *error) {
-                                              // 4: Handle response here
-                                              if(error == nil)
-                                              {
-                                                  [self configureView];
-                                                  NSString *text = [[NSString alloc] initWithData:data
-                                                                                         encoding:NSUTF8StringEncoding];
-                                                  
-                                                  NSData *jData = [text dataUsingEncoding:NSUTF8StringEncoding];
-                                                  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jData options:0 error:nil];
-                                                  
-                                                  if ([json count] >0){
-                                                  //Get the current_observation and put in an NSDictionary
-                                                  NSDictionary *currentObservation = [json objectForKey:@"current_observation"];
-                                                  //NSLog(@"%@",currentObservation);
-
-                                                  //Put a header on the table
-                                                  NSDictionary *displayLocation = [currentObservation objectForKey:@"display_location"];
-                                                  NSString *displayLocationFull = [displayLocation objectForKey:@"full"];
-                                                  self.weatherArray[0] = displayLocationFull;
-                                                      
-                                                  //Get current temperature string
-                                                  NSString *currentTemp = [currentObservation objectForKey:@"temperature_string"];
-                                                  NSString *currentTempString = @"Now    ";
-                                                  currentTempString = [currentTempString stringByAppendingString:currentTemp];
-                                                  self.weatherArray[1] = currentTempString;
-                                                  
-                                                  //Get forecast for the next several days
-                                                  NSDictionary *forecast = [json objectForKey:@"forecast"];
-                                                  //NSDictionary *textForecast = [forecast objectForKey:@"txt_forecast"];
-                                                  //NSArray *forecastDay = [textForecast objectForKey:@"forecastday"];
-                                                  //NSLog(@"%@",forecastDay);
-                                                 
-                                                  //Pull out the simpleforecast which has the discrete values
-                                                  NSDictionary *simpleForecast = [forecast objectForKey:@"simpleforecast"];
-                                                  NSArray *simpleForecastDay = [simpleForecast objectForKey:@"forecastday"];
-                                                  
-                                                  //Extract date, am/pm, and high temperature in Fahrenheit
-                                                  //And add these to the UITableView through it's data source
-                                                  for (NSDictionary *forecastDayLoop in simpleForecastDay)
-                                                  {
-                                                   //   NSLog(@"%@",forecastDayLoop);
-                                                      NSDictionary *forecastDayLoopDate = [forecastDayLoop objectForKey:@"date"];
-                                                      NSString *forecastDayLoopName = [forecastDayLoopDate objectForKey:@"weekday_short"];
-                                                      NSString *forecastDayLoopString = [forecastDayLoopName stringByAppendingString:@"    "];
-                                                      NSDictionary *forecastDayLoopHigh = [forecastDayLoop objectForKey:@"high"];
-                                                      NSString *forecastDayLoopHighF = [forecastDayLoopHigh objectForKey:@"fahrenheit"];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopHighF];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" F"];
-                                                      NSString *forecastDayLoopIcon = [forecastDayLoop objectForKey:@"icon"];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@"    "];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopIcon];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@"    "];
-                                                      NSDictionary *forecastDayLoopMaxWind = [forecastDayLoop objectForKey:@"maxwind"];
-                                                      NSString *forecastDayLoopWindDir = [forecastDayLoopMaxWind objectForKey:@"dir"];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopWindDir];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" "];
-                                                      NSNumber *maxWind = [forecastDayLoopMaxWind objectForKey:@"mph"];
-                                                      NSString *forecastDayLoopMaxWindSpeed = [maxWind stringValue];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopMaxWindSpeed];
-                                                      forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" MPH"];
-                                                      [self.weatherArray addObject:forecastDayLoopString];
-                                                  }
-                                                  
-                                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                                     [self.weatherTableView reloadData];
-                                                  });
-                                              }
-                                              else{
-                                                  self.weatherArray[0] = @"Error loading weather data";
-                                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                                      [self.weatherTableView reloadData];
-                                                  });
-                                              }
-                                              }
-                                          }];
-    
-    // 3
-
-    [downloadTask resume];
-}
-
-
-
+   }
 
 @end
