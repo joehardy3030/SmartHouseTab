@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D87B4C401D3338C10076B16E"
-               BuildableName = "SmartHouseTab.app"
-               BlueprintName = "SmartHouseTab"
-               ReferencedContainer = "container:SmartHouseTab.xcodeproj">
+               BuildableName = "House Hardy.app"
+               BlueprintName = "House Hardy"
+               ReferencedContainer = "container:House Hardy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D87B4C5C1D3338C10076B16E"
-               BuildableName = "SmartHouseTabTests.xctest"
-               BlueprintName = "SmartHouseTabTests"
-               ReferencedContainer = "container:SmartHouseTab.xcodeproj">
+               BuildableName = "House Hardy.xctest"
+               BlueprintName = "House HardyTests"
+               ReferencedContainer = "container:House Hardy.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D87B4C671D3338C10076B16E"
-               BuildableName = "SmartHouseTabUITests.xctest"
-               BlueprintName = "SmartHouseTabUITests"
-               ReferencedContainer = "container:SmartHouseTab.xcodeproj">
+               BuildableName = "House Hardy.xctest"
+               BlueprintName = "House HardyUITests"
+               ReferencedContainer = "container:House Hardy.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
-            BuildableName = "SmartHouseTab.app"
-            BlueprintName = "SmartHouseTab"
-            ReferencedContainer = "container:SmartHouseTab.xcodeproj">
+            BuildableName = "House Hardy.app"
+            BlueprintName = "House Hardy"
+            ReferencedContainer = "container:House Hardy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
-            BuildableName = "SmartHouseTab.app"
-            BlueprintName = "SmartHouseTab"
-            ReferencedContainer = "container:SmartHouseTab.xcodeproj">
+            BuildableName = "House Hardy.app"
+            BlueprintName = "House Hardy"
+            ReferencedContainer = "container:House Hardy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
-            BuildableName = "SmartHouseTab.app"
-            BlueprintName = "SmartHouseTab"
-            ReferencedContainer = "container:SmartHouseTab.xcodeproj">
+            BuildableName = "House Hardy.app"
+            BlueprintName = "House Hardy"
+            ReferencedContainer = "container:House Hardy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
