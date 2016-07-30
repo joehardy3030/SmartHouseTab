@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString *currentLongitude;
 @property (strong, nonatomic) NSString *currentLatitude;
 @property (weak, nonatomic) IBOutlet UITextView *locationTextView;
+@property (nonatomic, strong) CLLocationManager* locationManager;
 
 @end
 

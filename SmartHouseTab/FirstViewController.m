@@ -10,12 +10,11 @@
 #import "JLHWunderground.h"
 
 @interface FirstViewController ()
-@property(nonatomic, strong) CLLocationManager* locationManager;
-- (void)initializeTextViewDataSource;
+//@property(nonatomic, strong) CLLocationManager* locationManager;
+//- (void)initializeTextViewDataSource;
 @end
 
 @implementation FirstViewController
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -125,12 +124,12 @@
 - (IBAction)WeatherTest:(UIButton *)sender {
     
     NSString *dataUrl;
-    if (_currentLocation != NULL) {
-        NSLog(@"Current location instance variable: %@",_currentLocation);
+    if (self.currentLocation != NULL) {
+        NSLog(@"Current location instance variable: %@",self.currentLocation);
         dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/";
-        dataUrl = [dataUrl stringByAppendingString:_currentLatitude];
+        dataUrl = [dataUrl stringByAppendingString:self.currentLatitude];
         dataUrl = [dataUrl stringByAppendingString:@","];
-        dataUrl = [dataUrl stringByAppendingString:_currentLongitude];
+        dataUrl = [dataUrl stringByAppendingString:self.currentLongitude];
         dataUrl = [dataUrl stringByAppendingString:@".json"];
     }
     else {
@@ -142,7 +141,7 @@
     
     JLHWunderground *wundergroundSimpleForecast = [[JLHWunderground alloc] init];
     
-    [wundergroundSimpleForecast parseWundergroudSimpleForecast:url success:^(NSMutableArray *weatherResponse) {
+    [wundergroundSimpleForecast getWundergroudSimpleForecast:url success:^(NSMutableArray *weatherResponse) {
         NSLog(@"%@",weatherResponse);
         self.weatherArray = weatherResponse;
         dispatch_async(dispatch_get_main_queue(), ^{
