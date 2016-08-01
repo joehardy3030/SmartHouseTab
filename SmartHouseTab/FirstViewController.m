@@ -119,7 +119,7 @@
     [self.locationManager requestLocation];
 }
 
-- (IBAction)locationButton:(UIButton *)sender {
+- (IBAction)startLocationButton:(UIButton *)sender {
     
     [self.locationManager startUpdatingLocation];
 }
