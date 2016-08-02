@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D87B4C411D3338C10076B16E /* House Hardy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "House Hardy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87B4C411D3338C10076B16E /* Hardy House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hardy House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B4C451D3338C10076B16E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D87B4C471D3338C10076B16E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D87B4C481D3338C10076B16E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,10 +53,10 @@
 		D87B4C531D3338C10076B16E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D87B4C561D3338C10076B16E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D87B4C581D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D87B4C5D1D3338C10076B16E /* House Hardy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "House Hardy.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87B4C5D1D3338C10076B16E /* Hardy House.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hardy House.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B4C611D3338C10076B16E /* SmartHouseTabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHouseTabTests.m; sourceTree = "<group>"; };
 		D87B4C631D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D87B4C681D3338C10076B16E /* House Hardy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "House Hardy.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87B4C681D3338C10076B16E /* Hardy House.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hardy House.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHouseTabUITests.m; sourceTree = "<group>"; };
 		D87B4C6E1D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D88309471D47F92900EED546 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -110,9 +110,9 @@
 		D87B4C421D3338C10076B16E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D87B4C411D3338C10076B16E /* House Hardy.app */,
-				D87B4C5D1D3338C10076B16E /* House Hardy.xctest */,
-				D87B4C681D3338C10076B16E /* House Hardy.xctest */,
+				D87B4C411D3338C10076B16E /* Hardy House.app */,
+				D87B4C5D1D3338C10076B16E /* Hardy House.xctest */,
+				D87B4C681D3338C10076B16E /* Hardy House.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,9 +172,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D87B4C401D3338C10076B16E /* House Hardy */ = {
+		D87B4C401D3338C10076B16E /* Hardy House */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D87B4C711D3338C10076B16E /* Build configuration list for PBXNativeTarget "House Hardy" */;
+			buildConfigurationList = D87B4C711D3338C10076B16E /* Build configuration list for PBXNativeTarget "Hardy House" */;
 			buildPhases = (
 				D87B4C3D1D3338C10076B16E /* Sources */,
 				D87B4C3E1D3338C10076B16E /* Frameworks */,
@@ -184,14 +184,14 @@
 			);
 			dependencies = (
 			);
-			name = "House Hardy";
+			name = "Hardy House";
 			productName = SmartHouseTab;
-			productReference = D87B4C411D3338C10076B16E /* House Hardy.app */;
+			productReference = D87B4C411D3338C10076B16E /* Hardy House.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D87B4C5C1D3338C10076B16E /* House HardyTests */ = {
+		D87B4C5C1D3338C10076B16E /* Hardy HouseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D87B4C741D3338C10076B16E /* Build configuration list for PBXNativeTarget "House HardyTests" */;
+			buildConfigurationList = D87B4C741D3338C10076B16E /* Build configuration list for PBXNativeTarget "Hardy HouseTests" */;
 			buildPhases = (
 				D87B4C591D3338C10076B16E /* Sources */,
 				D87B4C5A1D3338C10076B16E /* Frameworks */,
@@ -202,14 +202,14 @@
 			dependencies = (
 				D87B4C5F1D3338C10076B16E /* PBXTargetDependency */,
 			);
-			name = "House HardyTests";
+			name = "Hardy HouseTests";
 			productName = SmartHouseTabTests;
-			productReference = D87B4C5D1D3338C10076B16E /* House Hardy.xctest */;
+			productReference = D87B4C5D1D3338C10076B16E /* Hardy House.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D87B4C671D3338C10076B16E /* House HardyUITests */ = {
+		D87B4C671D3338C10076B16E /* Hardy HouseUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D87B4C771D3338C10076B16E /* Build configuration list for PBXNativeTarget "House HardyUITests" */;
+			buildConfigurationList = D87B4C771D3338C10076B16E /* Build configuration list for PBXNativeTarget "Hardy HouseUITests" */;
 			buildPhases = (
 				D87B4C641D3338C10076B16E /* Sources */,
 				D87B4C651D3338C10076B16E /* Frameworks */,
@@ -220,9 +220,9 @@
 			dependencies = (
 				D87B4C6A1D3338C10076B16E /* PBXTargetDependency */,
 			);
-			name = "House HardyUITests";
+			name = "Hardy HouseUITests";
 			productName = SmartHouseTabUITests;
-			productReference = D87B4C681D3338C10076B16E /* House Hardy.xctest */;
+			productReference = D87B4C681D3338C10076B16E /* Hardy House.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -247,7 +247,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D87B4C3C1D3338C10076B16E /* Build configuration list for PBXProject "House Hardy" */;
+			buildConfigurationList = D87B4C3C1D3338C10076B16E /* Build configuration list for PBXProject "Hardy House" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -260,9 +260,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D87B4C401D3338C10076B16E /* House Hardy */,
-				D87B4C5C1D3338C10076B16E /* House HardyTests */,
-				D87B4C671D3338C10076B16E /* House HardyUITests */,
+				D87B4C401D3338C10076B16E /* Hardy House */,
+				D87B4C5C1D3338C10076B16E /* Hardy HouseTests */,
+				D87B4C671D3338C10076B16E /* Hardy HouseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -331,12 +331,12 @@
 /* Begin PBXTargetDependency section */
 		D87B4C5F1D3338C10076B16E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D87B4C401D3338C10076B16E /* House Hardy */;
+			target = D87B4C401D3338C10076B16E /* Hardy House */;
 			targetProxy = D87B4C5E1D3338C10076B16E /* PBXContainerItemProxy */;
 		};
 		D87B4C6A1D3338C10076B16E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D87B4C401D3338C10076B16E /* House Hardy */;
+			target = D87B4C401D3338C10076B16E /* Hardy House */;
 			targetProxy = D87B4C691D3338C10076B16E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -450,7 +450,7 @@
 				INFOPLIST_FILE = SmartHouseTab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTab;
-				PRODUCT_NAME = "House Hardy";
+				PRODUCT_NAME = "Hardy House";
 			};
 			name = Debug;
 		};
@@ -461,7 +461,7 @@
 				INFOPLIST_FILE = SmartHouseTab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTab;
-				PRODUCT_NAME = "House Hardy";
+				PRODUCT_NAME = "Hardy House";
 			};
 			name = Release;
 		};
@@ -472,8 +472,8 @@
 				INFOPLIST_FILE = SmartHouseTabTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTabTests;
-				PRODUCT_NAME = "House Hardy";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/House Hardy.app/House Hardy";
+				PRODUCT_NAME = "Hardy House";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hardy House.app/Hardy House";
 			};
 			name = Debug;
 		};
@@ -484,8 +484,8 @@
 				INFOPLIST_FILE = SmartHouseTabTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTabTests;
-				PRODUCT_NAME = "House Hardy";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/House Hardy.app/House Hardy";
+				PRODUCT_NAME = "Hardy House";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hardy House.app/Hardy House";
 			};
 			name = Release;
 		};
@@ -495,7 +495,7 @@
 				INFOPLIST_FILE = SmartHouseTabUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTabUITests;
-				PRODUCT_NAME = "House Hardy";
+				PRODUCT_NAME = "Hardy House";
 				TEST_TARGET_NAME = SmartHouseTab;
 			};
 			name = Debug;
@@ -506,7 +506,7 @@
 				INFOPLIST_FILE = SmartHouseTabUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTabUITests;
-				PRODUCT_NAME = "House Hardy";
+				PRODUCT_NAME = "Hardy House";
 				TEST_TARGET_NAME = SmartHouseTab;
 			};
 			name = Release;
@@ -514,7 +514,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D87B4C3C1D3338C10076B16E /* Build configuration list for PBXProject "House Hardy" */ = {
+		D87B4C3C1D3338C10076B16E /* Build configuration list for PBXProject "Hardy House" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D87B4C6F1D3338C10076B16E /* Debug */,
@@ -523,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D87B4C711D3338C10076B16E /* Build configuration list for PBXNativeTarget "House Hardy" */ = {
+		D87B4C711D3338C10076B16E /* Build configuration list for PBXNativeTarget "Hardy House" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D87B4C721D3338C10076B16E /* Debug */,
@@ -532,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D87B4C741D3338C10076B16E /* Build configuration list for PBXNativeTarget "House HardyTests" */ = {
+		D87B4C741D3338C10076B16E /* Build configuration list for PBXNativeTarget "Hardy HouseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D87B4C751D3338C10076B16E /* Debug */,
@@ -541,7 +541,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D87B4C771D3338C10076B16E /* Build configuration list for PBXNativeTarget "House HardyUITests" */ = {
+		D87B4C771D3338C10076B16E /* Build configuration list for PBXNativeTarget "Hardy HouseUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D87B4C781D3338C10076B16E /* Debug */,

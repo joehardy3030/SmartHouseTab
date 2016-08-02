@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D87B4C401D3338C10076B16E"
                BuildableName = "House Hardy.app"
-               BlueprintName = "House Hardy"
-               ReferencedContainer = "container:House Hardy.xcodeproj">
+               BlueprintName = "Hardy House"
+               ReferencedContainer = "container:Hardy House.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D87B4C5C1D3338C10076B16E"
-               BuildableName = "House Hardy.xctest"
-               BlueprintName = "House HardyTests"
-               ReferencedContainer = "container:House Hardy.xcodeproj">
+               BuildableName = "Hardy House.xctest"
+               BlueprintName = "Hardy HouseTests"
+               ReferencedContainer = "container:Hardy House.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D87B4C671D3338C10076B16E"
-               BuildableName = "House Hardy.xctest"
-               BlueprintName = "House HardyUITests"
-               ReferencedContainer = "container:House Hardy.xcodeproj">
+               BuildableName = "Hardy House.xctest"
+               BlueprintName = "Hardy HouseUITests"
+               ReferencedContainer = "container:Hardy House.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,8 +54,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
             BuildableName = "House Hardy.app"
-            BlueprintName = "House Hardy"
-            ReferencedContainer = "container:House Hardy.xcodeproj">
+            BlueprintName = "Hardy House"
+            ReferencedContainer = "container:Hardy House.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
             BuildableName = "House Hardy.app"
-            BlueprintName = "House Hardy"
-            ReferencedContainer = "container:House Hardy.xcodeproj">
+            BlueprintName = "Hardy House"
+            ReferencedContainer = "container:Hardy House.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -100,8 +100,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
             BuildableName = "House Hardy.app"
-            BlueprintName = "House Hardy"
-            ReferencedContainer = "container:House Hardy.xcodeproj">
+            BlueprintName = "Hardy House"
+            ReferencedContainer = "container:Hardy House.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
