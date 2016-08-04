@@ -19,22 +19,26 @@
     [super viewDidLoad];
     _selectedShow = @"archive.org/details/gd77-05-08.sbd.hicks.4982.sbeok.shnf";
     _showPickerData = @[@"Fillmore 1966-07-16",
+                        @"Academy of Music 1972-03-23",
                         @"Kezar Stadium 1973-05-26",
                         @"Dillon Stadium 1974-07-31",
                         @"Cornell 1977-05-08",
                         @"Buffalo 1977-05-09",
                         @"Augusta 1984-10-12",
                         @"Oxford Plains 1988-07-02",
-                        @"Oxford Plains 1988-07-03"];
+                        @"Oxford Plains 1988-07-03",
+                        @"Soldier Fiedl 1995-07-09"];
     
     _showURLStrings = @[@"archive.org/details/gd1966-07-16.sbd.miller.89555.sbeok.flac16",
+                        @"archive.org/details/gd1972-03-23.sbd.miller.100000.sbeok.flac16",
                         @"archive.org/details/gd1973-05-26.sbd.miller.patched.83535.flac16",
                         @"archive.org/details/gd1974-07-31.sbd.miller.32353.sbeok.flac16",
                         @"archive.org/details/gd77-05-08.sbd.hicks.4982.sbeok.shnf",
                         @"archive.org/details/gd77-05-09.sbd.connor.8304.sbeok.shnf",
                         @"archive.org/details/gd1984-10-12.mtx.seamons.117573.flac16",
                         @"archive.org/details/gd1988-07-02.132394.Nak100CP4.Seremetcc.Keo.Flac2496",
-                        @"archive.org/details/gd1988-07-03.Nak300CP4.Fitzy.Keo.124855.Flac2496"];
+                        @"archive.org/details/gd1988-07-03.Nak300CP4.Fitzy.Keo.124855.Flac2496",
+                        @"archive.org/details/gd1995-07-09.sbd.miller.114369.flac16"];
 
     self.showPickerView.dataSource = self;
     self.showPickerView.delegate = self;
