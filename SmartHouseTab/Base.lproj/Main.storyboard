@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -65,6 +65,15 @@
                                     <action selector="requestLocationButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ybK-Z7-57Y"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zeg-lu-sO7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Weather" id="cna-Xa-cUF"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -76,9 +85,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.5" y="-320.5"/>
+            <point key="canvasLocation" x="749.5" y="-308.5"/>
         </scene>
-        <!--Utilities-->
+        <!--Music-->
         <scene sceneID="2q6-wC-XGI">
             <objects>
                 <viewController id="hoR-Gt-oAL" customClass="ThirdViewController" sceneMemberID="viewController">
@@ -91,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-q1-sC7">
-                                <rect key="frame" x="73" y="163" width="56" height="37"/>
+                                <rect key="frame" x="63" y="295" width="56" height="37"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Spotify"/>
                                 <connections>
@@ -99,22 +108,68 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha7-fA-41y">
-                                <rect key="frame" x="235" y="163" width="60" height="37"/>
+                                <rect key="frame" x="157" y="550" width="60" height="37"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Archive"/>
                                 <connections>
                                     <action selector="archiveButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="LQ6-Y3-Dq6"/>
-                                    <action selector="spotifyButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="uch-cz-vNS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sb-Ef-8kx">
+                                <rect key="frame" x="224" y="204" width="94" height="37"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Notification"/>
+                                <connections>
+                                    <action selector="notificationButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="nNZ-9f-HEx"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-fH-TnC">
+                                <rect key="frame" x="0.0" y="331" width="375" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYW-R2-SHI">
+                                <rect key="frame" x="63" y="204" width="83" height="37"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Stereo On"/>
+                                <connections>
+                                    <action selector="stereoOnButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="zJ0-dt-NPM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-si-EtX">
+                                <rect key="frame" x="63" y="249" width="83" height="38"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Stereo Off"/>
+                                <connections>
+                                    <action selector="stereoOffButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="odP-Vz-h4w"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ready" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x22-R1-OMu">
+                                <rect key="frame" x="73" y="93" width="240" height="109"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="liv-sb-Chs">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Music" id="YAF-rd-F2j"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Utilities" image="first" id="8My-fi-fOW"/>
+                    <tabBarItem key="tabBarItem" title="Music" image="note" selectedImage="first" id="8My-fi-fOW"/>
+                    <connections>
+                        <outlet property="showPickerView" destination="oFx-fH-TnC" id="nTM-hb-Uy1"/>
+                        <outlet property="textView" destination="x22-R1-OMu" id="JGG-gq-WZd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGD-iX-Ia2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278.5" y="874.5"/>
+            <point key="canvasLocation" x="276.5" y="917.5"/>
         </scene>
         <!--BART-->
         <scene sceneID="wg7-f3-ORb">
@@ -135,27 +190,36 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-So-s6c">
-                                <rect key="frame" x="213" y="519" width="88" height="30"/>
+                                <rect key="frame" x="208" y="515" width="99" height="37"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Bart Home"/>
+                                <state key="normal" title="BART Home"/>
                                 <connections>
                                     <action selector="bartHomeButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Ojo-42-uIh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSw-s4-JvQ">
-                                <rect key="frame" x="59" y="519" width="83" height="30"/>
+                                <rect key="frame" x="55" y="515" width="92" height="37"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Bart Work"/>
+                                <state key="normal" title="BART Work"/>
                                 <connections>
                                     <action selector="bartWorkButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="3fl-fD-SxG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bart Times" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-t9-Izz">
-                                <rect key="frame" x="139" y="149" width="89" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BART Times" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-t9-Izz">
+                                <rect key="frame" x="136" y="149" width="92" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJJ-Ib-Qwa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="BART" id="NUy-OL-tQi"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -181,9 +245,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="hoR-Gt-oAL" kind="relationship" relationship="viewControllers" id="fS6-RM-lt9"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -194,6 +258,7 @@
     <resources>
         <image name="bart_icon" width="28" height="23"/>
         <image name="first" width="30" height="30"/>
+        <image name="note" width="33" height="33"/>
         <image name="weather_icon" width="34" height="34"/>
     </resources>
 </document>

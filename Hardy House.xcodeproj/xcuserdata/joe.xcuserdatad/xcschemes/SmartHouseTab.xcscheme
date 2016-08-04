@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D87B4C401D3338C10076B16E"
-               BuildableName = "House Hardy.app"
+               BuildableName = "Hardy House.app"
                BlueprintName = "Hardy House"
                ReferencedContainer = "container:Hardy House.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
-            BuildableName = "House Hardy.app"
+            BuildableName = "Hardy House.app"
             BlueprintName = "Hardy House"
             ReferencedContainer = "container:Hardy House.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
-            BuildableName = "House Hardy.app"
+            BuildableName = "Hardy House.app"
             BlueprintName = "Hardy House"
             ReferencedContainer = "container:Hardy House.xcodeproj">
          </BuildableReference>
@@ -99,7 +99,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D87B4C401D3338C10076B16E"
-            BuildableName = "House Hardy.app"
+            BuildableName = "Hardy House.app"
             BlueprintName = "Hardy House"
             ReferencedContainer = "container:Hardy House.xcodeproj">
          </BuildableReference>

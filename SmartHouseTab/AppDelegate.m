@@ -19,6 +19,13 @@
     // Override point for customization after application launch.
    // [LocationManager sharedInstance];
     //return true;
+    UIUserNotificationType types = (UIUserNotificationType) (UIUserNotificationTypeBadge |
+                                                             UIUserNotificationTypeSound | UIUserNotificationTypeAlert);
+    
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
     return YES;
 }
 
