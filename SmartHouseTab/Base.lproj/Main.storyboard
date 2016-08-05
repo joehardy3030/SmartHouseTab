@@ -161,7 +161,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Music" image="note" selectedImage="first" id="8My-fi-fOW"/>
+                    <tabBarItem key="tabBarItem" title="Music" image="note" selectedImage="note" id="8My-fi-fOW"/>
                     <connections>
                         <outlet property="showPickerView" destination="oFx-fH-TnC" id="nTM-hb-Uy1"/>
                         <outlet property="textView" destination="x22-R1-OMu" id="JGG-gq-WZd"/>
@@ -245,19 +245,18 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hoR-Gt-oAL" kind="relationship" relationship="viewControllers" id="fS6-RM-lt9"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="hoR-Gt-oAL" kind="relationship" relationship="viewControllers" id="fS6-RM-lt9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-39.5" y="47.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="bart_icon" width="28" height="23"/>
-        <image name="first" width="30" height="30"/>
         <image name="note" width="33" height="33"/>
         <image name="weather_icon" width="34" height="34"/>
     </resources>
