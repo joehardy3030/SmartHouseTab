@@ -129,6 +129,7 @@
     [self.locationManager stopUpdatingLocation];
 }
 
+
 - (IBAction)WeatherTest:(UIButton *)sender {
     
     NSString *dataUrl;
@@ -163,5 +164,42 @@
         });
     }];
    }
+
+- (IBAction)hourlyForecastButton:(UIButton *)sender {
+   
+    NSString *dataUrl;
+    if (self.currentLocation != NULL) {
+        NSLog(@"Current location instance variable: %@",self.currentLocation);
+        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/";
+        dataUrl = [dataUrl stringByAppendingString:self.currentLatitude];
+        dataUrl = [dataUrl stringByAppendingString:@","];
+        dataUrl = [dataUrl stringByAppendingString:self.currentLongitude];
+        dataUrl = [dataUrl stringByAppendingString:@".json"];
+    }
+    else {
+        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/CA/El_Cerrito.json";
+    }
+
+    NSLog(@"Current location instance variable: %@",dataUrl);
+    
+    NSURL *url = [NSURL URLWithString:dataUrl];
+    
+    JLHWunderground *wundergroundSimpleForecast = [[JLHWunderground alloc] init];
+    
+    [wundergroundSimpleForecast getWundergroudHourlyForecast:url success:^(NSMutableArray *weatherResponse) {
+        NSLog(@"%@",weatherResponse);
+        self.weatherArray = weatherResponse;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.weatherTableView reloadData];
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+        self.weatherArray[0] = @"error";
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.weatherTableView reloadData];
+        });
+    }];
+}
+
 
 @end
