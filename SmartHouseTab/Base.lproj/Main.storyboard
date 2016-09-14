@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -101,8 +101,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ready" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECW-Za-CFj">
+                                <rect key="frame" x="34" y="298" width="311" height="174"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZG-di-7sx">
-                                <rect key="frame" x="62" y="216" width="50" height="30"/>
+                                <rect key="frame" x="34" y="194" width="70" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Garage"/>
                                 <connections>
                                     <action selector="GarageButton:" destination="uzc-Df-fdp" eventType="touchUpInside" id="jFi-la-2wN"/>
@@ -111,7 +118,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Utilities" id="Xdh-pn-Jes"/>
+                    <tabBarItem key="tabBarItem" title="Utilities" image="utilities_icon" id="Xdh-pn-Jes"/>
+                    <connections>
+                        <outlet property="UtilitiesTextView" destination="ECW-Za-CFj" id="V8o-gA-ZKC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j72-q6-BGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -308,7 +318,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" id="lc8-FO-pCL"/>
+                    <tabBarItem key="tabBarItem" title="More" image="more_icon" id="lc8-FO-pCL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UE3-Rd-tww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,7 +327,9 @@
     </scenes>
     <resources>
         <image name="bart_icon" width="28" height="23"/>
+        <image name="more_icon" width="31" height="31"/>
         <image name="note" width="33" height="33"/>
+        <image name="utilities_icon" width="32" height="32"/>
         <image name="weather_icon" width="34" height="34"/>
     </resources>
 </document>

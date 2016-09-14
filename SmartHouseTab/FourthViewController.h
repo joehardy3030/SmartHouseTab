@@ -10,4 +10,5 @@
 
 @interface FourthViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *UtilitiesTextView;
 @end
