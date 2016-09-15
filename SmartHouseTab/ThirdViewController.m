@@ -123,16 +123,48 @@
 }
 
 - (IBAction)spotifyButton:(UIButton *)sender {
-    [[UIApplication sharedApplication] openURL:
-     [NSURL URLWithString:
-      @"spotify://http://open.spotify.com/"]];
+    
+    NSDictionary *optionsDict;
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"spotify://http://open.spotify.com/"]
+                                       options:optionsDict
+                             completionHandler: ^(BOOL success){
+                                 // 4: Handle response here
+                                 if(success == true)
+                                 {
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         self.textView.text = @"Opened Spotify";
+                                     });
+                                 }
+                                 else{
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         self.textView.text = @"error";
+                                     });
+                                 }
+                             }];
+
 }
 
 - (IBAction)archiveButton:(UIButton *)sender {
+
+    NSDictionary *optionsDict;
     NSString *urlString = @"googlechrome://";
     urlString = [urlString stringByAppendingString:_selectedShow];
-    [[UIApplication sharedApplication] openURL:
-     [NSURL URLWithString:urlString]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]
+                                       options:optionsDict
+                             completionHandler: ^(BOOL success){
+                                 // 4: Handle response here
+                                 if(success == true)
+                                 {
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         self.textView.text = _selectedShow;
+                                     });
+                                 }
+                                 else{
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         self.textView.text = @"error";
+                                     });
+                                 }
+                             }];
 
 }
 

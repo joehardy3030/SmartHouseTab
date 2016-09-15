@@ -13,7 +13,7 @@
 
 //@property (nonatomic) UIButton *bartHomeButton;
 
-@property (weak, nonatomic) IBOutlet UITextView *utilitiesTextView;
+@property (weak, nonatomic) IBOutlet UILabel *utilitiesTextView;
 
 @end
 
