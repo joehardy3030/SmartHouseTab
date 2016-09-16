@@ -129,6 +129,13 @@
     [self.locationManager stopUpdatingLocation];
 }
 
+- (IBAction)resetLocationButton:(UIButton *)sender {
+    self.currentLocation = NULL;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.locationTextView.text = NULL;
+    });
+}
+
 
 - (IBAction)WeatherTest:(UIButton *)sender {
     
