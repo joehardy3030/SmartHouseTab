@@ -130,7 +130,7 @@
 }
 
 - (IBAction)resetLocationButton:(UIButton *)sender {
-    self.currentLocation = NULL;
+    self.currentLocation = nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         self.locationTextView.text = NULL;
     });
@@ -140,7 +140,7 @@
 - (IBAction)WeatherTest:(UIButton *)sender {
     
     NSString *dataUrl;
-    if (self.currentLocation != NULL) {
+    if (self.currentLocation != nil) {
         NSLog(@"Current location instance variable: %@",self.currentLocation);
         dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/";
         dataUrl = [dataUrl stringByAppendingString:self.currentLatitude];
@@ -175,7 +175,7 @@
 - (IBAction)hourlyForecastButton:(UIButton *)sender {
    
     NSString *dataUrl;
-    if (self.currentLocation != NULL) {
+    if (self.currentLocation != nil) {
         NSLog(@"Current location instance variable: %@",self.currentLocation);
         dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/";
         dataUrl = [dataUrl stringByAppendingString:self.currentLatitude];
