@@ -88,11 +88,19 @@
 
     self.showPickerView.dataSource = self;
     self.showPickerView.delegate = self;
+    self.textView.delegate = self;
  }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Close the keyboard when the user touches the view outside the keyboard
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touchesBegan:withEvent:");
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
 }
 
 // The number of columns of data

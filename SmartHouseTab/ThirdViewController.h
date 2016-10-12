@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThirdViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ThirdViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIPickerView *showPickerView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
