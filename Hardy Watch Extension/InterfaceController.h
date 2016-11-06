@@ -8,9 +8,10 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface InterfaceController : WKInterfaceController
+@interface InterfaceController : WKInterfaceController <WCSessionDelegate>
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *orangeLineLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *redLineLabe;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *redLineLabel;
 
 @end

@@ -20,7 +20,7 @@
                                         <label alignment="left" text="8, 15" id="OFR-qP-tfH">
                                             <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label alignment="left" text="12, 25" id="fFX-fk-SdC">
+                                        <label alignment="left" text="12, 24" id="eaS-o1-OWz" userLabel="Red Line Labe">
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </items>
@@ -38,7 +38,7 @@
                     </items>
                     <connections>
                         <outlet property="orangeLineLabel" destination="OFR-qP-tfH" id="hFt-tr-2Kh"/>
-                        <outlet property="redLineLabe" destination="fFX-fk-SdC" id="Ki1-Cu-Rmn"/>
+                        <outlet property="redLineLabel" destination="eaS-o1-OWz" id="nsy-n2-a3k"/>
                     </connections>
                 </controller>
             </objects>

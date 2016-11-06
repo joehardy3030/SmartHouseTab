@@ -26,8 +26,23 @@
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+    
     return YES;
 }
+
+- (void)sessionDidDeactivate:(WCSession *)session {
+    NSLog(@"session did deactivate");
+}
+
+- (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
+    NSLog(@"%@",error);
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
