@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <WatchConnectivity/WatchConnectivity.h>
+#import "JLHBartTimes.h"
 
 //#import "LocationManager.h"
 

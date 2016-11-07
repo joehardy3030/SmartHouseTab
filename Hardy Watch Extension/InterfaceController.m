@@ -39,17 +39,17 @@
     NSLog(@"watch decativated");
 }
 
- /*- (void)session:(nonnull WCSession *)session didReceiveMessage:(nonnull NSDictionary *)message replyHandler:(nonnull void (^)(NSDictionary * __nonnull))replyHandler {
+//  If there is context received, capture it here
+// This happens when app is activated 
+- (void)session:(WCSession *)session didReceiveApplicationContext:(nonnull NSDictionary<NSString *,id> *)applicationContext {
+    //Print out the received dictionary
+    NSLog(@"%@",applicationContext);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.orangeLineLabel.text = applicationContext;
+        self.redLineLabel.text = @"5,25";
+    });
 
-    // NSString *counterValue = [message objectForKey:@"counterValue"];
-    
-  //  if (!self.counterData) {
-   //     self.counterData = [[NSMutableArray alloc] init];
-   // }
-    
-    //Use this to update the UI instantaneously (otherwise, takes a little while)
-
-   }*/
+}
 
 - (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
     

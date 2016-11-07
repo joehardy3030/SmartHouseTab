@@ -26,6 +26,8 @@
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
+    // Create a WCSession instance
+    // For communication with the Watch
     if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];
         session.delegate = self;
@@ -36,12 +38,41 @@
 }
 
 - (void)sessionDidDeactivate:(WCSession *)session {
-    NSLog(@"session did deactivate");
+    NSLog(@"App watch session did deactivate");
+    
 }
 
-- (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
-    NSLog(@"%@",error);
+- (void)sessionDidBecomeInactive:(WCSession *)session {
+    NSLog(@"App watch session did become incative");
 }
+
+
+- (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
+    NSLog(@"Phone side watch activation");
+    if (error) {
+        NSLog(@"%@",error);
+    }
+    
+    NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&dir=n&key=MW9S-E7SL-26DU-VV8V";
+    NSURL *url = [NSURL URLWithString:dataUrl];
+    JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
+    
+    [homeBartTimes parseBartTimeString:url success:^(NSString *responseString) {
+        NSLog(@"%@",responseString);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSDictionary *applicationDict = responseString;
+            [[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
+        });
+    } failure:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"%@",error);
+        });
+    }];
+    
+}
+
+//NSDictionary *applicationDict = // Create a dict of application data
+//[[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
