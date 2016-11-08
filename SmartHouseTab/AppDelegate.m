@@ -37,6 +37,13 @@
     return YES;
 }
 
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> *replyMessage))replyHandler {
+    //NSString *counterValue = [message objectForKey:@"counterValue"];
+    replyHandler(message);
+    //NSLog(@"%@",message);
+}
+
+
 - (void)sessionDidDeactivate:(WCSession *)session {
     NSLog(@"App watch session did deactivate");
     

@@ -25,11 +25,32 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
-
+    NSLog(@"willActivate");
+    
     if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];
         session.delegate = self;
         [session activateSession];
+    }
+    
+    if ([[WCSession defaultSession] isReachable]) {
+        NSLog(@"watch side -- defaultSession isReachable");
+        NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&dir=n&key=MW9S-E7SL-26DU-VV8V";
+//        NSURL *url = [NSURL URLWithString:dataUrl];
+        
+        NSDictionary *applicationDict =  [NSDictionary dictionaryWithObject:dataUrl forKey:@"key1"];
+        if(applicationDict) {
+        [[WCSession defaultSession] sendMessage:applicationDict
+                                   replyHandler:^(NSDictionary *replyHandler) {
+                                       NSLog(@"replyHandler");
+                                       NSLog(@"%@",replyHandler);
+                                   }
+                                   errorHandler:^(NSError *error) {
+                                       NSLog(@"errorHandler");
+                                       NSLog(@"%@",error);
+                                   }
+         ];
+        }
     }
 }
 
