@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -12,10 +15,7 @@
                     <items>
                         <group width="1" alignment="left" id="KkL-hV-UeF">
                             <items>
-                                <imageView width="40" height="40" alignment="left" image="utilities_icon" id="hGi-CR-Nr1">
-                                    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </imageView>
-                                <group alignment="left" layout="vertical" spacing="0.0" id="A5P-Ph-gBw">
+                                <group width="128" alignment="left" layout="vertical" spacing="0.0" id="A5P-Ph-gBw">
                                     <items>
                                         <label alignment="left" text="8, 15" id="OFR-qP-tfH">
                                             <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,13 +28,20 @@
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="6" bottom="0.0"/>
                         </group>
-                        <group width="1" alignment="left" id="7Bd-WW-M50">
+                        <group width="1" height="82" alignment="left" layout="vertical" id="7Bd-WW-M50">
                             <items>
-                                <label alignment="left" text="Thing 1" id="Jdg-ic-3zq"/>
+                                <button width="1" alignment="left" title="Work" id="8IT-oQ-C2C">
+                                    <connections>
+                                        <action selector="workButton" destination="AgC-eL-Hgc" id="b0r-Dz-yE1"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Home" id="KlP-V8-egy">
+                                    <connections>
+                                        <action selector="homeButton" destination="AgC-eL-Hgc" id="YD7-EX-l4P"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
-                        <label alignment="left" text="Thing 2" id="hJM-Sy-j0N"/>
-                        <label alignment="left" text="Thing 3" id="PBP-3x-eHZ"/>
                     </items>
                     <connections>
                         <outlet property="orangeLineLabel" destination="OFR-qP-tfH" id="hFt-tr-2Kh"/>

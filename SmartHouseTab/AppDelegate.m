@@ -38,8 +38,31 @@
 }
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> *replyMessage))replyHandler {
-    //NSString *counterValue = [message objectForKey:@"counterValue"];
-    replyHandler(message);
+
+    NSURL *url = [NSURL URLWithString:message[@"key1"]];
+    JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
+    
+  /*  [homeBartTimes parseBartTimeDictionary:url success:^(NSDictionary *responseDict) {
+        NSLog(@"%@",responseDict);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            replyHandler(responseDict);
+        }); */
+        
+    [homeBartTimes parseBartTimeDictionary:url success:^(NSDictionary *responseDict) {
+        NSLog(@"parseBartTimeDictionary success");
+        NSLog(@"%@",responseDict);
+        //NSLog(@"is dictionary? %d", [responseDict isKindOfClass:[NSDictionary class]]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            replyHandler(responseDict);
+            //replyHandler(repDict);
+        });
+        
+    } failure:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"%@",error);
+        });
+    }];
+    
     //NSLog(@"%@",message);
 }
 
@@ -60,26 +83,7 @@
         NSLog(@"%@",error);
     }
     
-    NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&dir=n&key=MW9S-E7SL-26DU-VV8V";
-    NSURL *url = [NSURL URLWithString:dataUrl];
-    JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
-    
-    [homeBartTimes parseBartTimeString:url success:^(NSString *responseString) {
-        NSLog(@"%@",responseString);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSDictionary *applicationDict = responseString;
-            [[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
-        });
-    } failure:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"%@",error);
-        });
-    }];
-    
 }
-
-//NSDictionary *applicationDict = // Create a dict of application data
-//[[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

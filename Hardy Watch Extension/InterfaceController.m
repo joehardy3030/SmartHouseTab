@@ -22,6 +22,54 @@
     // Configure interface objects here.
 }
 
+- (IBAction)homeButton {
+    if ([[WCSession defaultSession] isReachable]) {
+        NSLog(@"homeButton pressed on watch");
+        NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&dir=n&key=MW9S-E7SL-26DU-VV8V";
+        NSDictionary *applicationDict =  [NSDictionary dictionaryWithObject:dataUrl forKey:@"key1"];
+        if(applicationDict) {
+            [[WCSession defaultSession] sendMessage:applicationDict
+                                       replyHandler:^(NSDictionary *replyHandler) {
+                                           NSLog(@"replyHandler");
+                                           NSLog(@"%@",replyHandler);
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               self.orangeLineLabel.text = replyHandler[@"orangeMinKey"];
+                                               self.redLineLabel.text = replyHandler[@"redMinKey"];
+                                           });
+                                       }
+                                       errorHandler:^(NSError *error) {
+                                           NSLog(@"errorHandler");
+                                           NSLog(@"%@",error);
+                                       }
+             ];
+        }
+    }
+}
+
+- (IBAction)workButton {
+    if ([[WCSession defaultSession] isReachable]) {
+        NSLog(@"workButton pressed on watch");
+        NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=deln&dir=s&key=MW9S-E7SL-26DU-VV8V";
+        NSDictionary *applicationDict =  [NSDictionary dictionaryWithObject:dataUrl forKey:@"key1"];
+        if(applicationDict) {
+            [[WCSession defaultSession] sendMessage:applicationDict
+                                       replyHandler:^(NSDictionary *replyHandler) {
+                                           NSLog(@"replyHandler");
+                                           NSLog(@"%@",replyHandler);
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               self.orangeLineLabel.text = replyHandler[@"orangeMinKey"];
+                                               self.redLineLabel.text = replyHandler[@"redMinKey"];
+                                           });
+                                       }
+                                       errorHandler:^(NSError *error) {
+                                           NSLog(@"errorHandler");
+                                           NSLog(@"%@",error);
+                                       }
+             ];
+        }
+    }
+}
+
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
@@ -32,26 +80,6 @@
         session.delegate = self;
         [session activateSession];
     }
-    
-    if ([[WCSession defaultSession] isReachable]) {
-        NSLog(@"watch side -- defaultSession isReachable");
-        NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&dir=n&key=MW9S-E7SL-26DU-VV8V";
-//        NSURL *url = [NSURL URLWithString:dataUrl];
-        
-        NSDictionary *applicationDict =  [NSDictionary dictionaryWithObject:dataUrl forKey:@"key1"];
-        if(applicationDict) {
-        [[WCSession defaultSession] sendMessage:applicationDict
-                                   replyHandler:^(NSDictionary *replyHandler) {
-                                       NSLog(@"replyHandler");
-                                       NSLog(@"%@",replyHandler);
-                                   }
-                                   errorHandler:^(NSError *error) {
-                                       NSLog(@"errorHandler");
-                                       NSLog(@"%@",error);
-                                   }
-         ];
-        }
-    }
 }
 
 - (void)didDeactivate {
@@ -60,23 +88,18 @@
     NSLog(@"watch decativated");
 }
 
-//  If there is context received, capture it here
-// This happens when app is activated 
 - (void)session:(WCSession *)session didReceiveApplicationContext:(nonnull NSDictionary<NSString *,id> *)applicationContext {
+    //  If there is context received, capture it here
+    // This happens when app is activated
     //Print out the received dictionary
     NSLog(@"%@",applicationContext);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.orangeLineLabel.text = applicationContext;
-        self.redLineLabel.text = @"5,25";
-    });
-
 }
 
 - (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
-    
+    //When the session is first activated, do this
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.orangeLineLabel.text = @"10,30";
-        self.redLineLabel.text = @"5,25";
+        self.orangeLineLabel.text = @"Orange";
+        self.redLineLabel.text = @"Red";
     });
 
 }
