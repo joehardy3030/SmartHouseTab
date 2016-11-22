@@ -26,9 +26,9 @@
 
 - (IBAction)bartHomeButton:(UIButton *)sender {
     
-    self.utilitiesTextView.text = @"Get BART from 12th St\n";
+    self.utilitiesTextView.text = @"Get BART from 16th St\n";
     
-    NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&dir=n&key=MW9S-E7SL-26DU-VV8V";
+    NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=16th&dir=n&key=MW9S-E7SL-26DU-VV8V";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];

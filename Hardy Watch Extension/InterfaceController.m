@@ -25,7 +25,7 @@
 - (IBAction)homeButton {
     if ([[WCSession defaultSession] isReachable]) {
         NSLog(@"homeButton pressed on watch");
-        NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&dir=n&key=MW9S-E7SL-26DU-VV8V";
+        NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=16th&dir=n&key=MW9S-E7SL-26DU-VV8V";
         NSDictionary *applicationDict =  [NSDictionary dictionaryWithObject:dataUrl forKey:@"key1"];
         if(applicationDict) {
             [[WCSession defaultSession] sendMessage:applicationDict
