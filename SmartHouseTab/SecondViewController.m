@@ -46,6 +46,26 @@
     }];
 
 }
+- (IBAction)bartCivicCenterButton:(UIButton *)sender {
+    self.utilitiesTextView.text = @"Get BART from 16th St\n";
+    
+    NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=CIVC&dir=n&key=MW9S-E7SL-26DU-VV8V";
+    NSURL *url = [NSURL URLWithString:dataUrl];
+    
+    JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
+    
+    [homeBartTimes parseBartTimeString:url success:^(NSString *responseString) {
+        NSLog(@"%@",responseString);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.utilitiesTextView.text = responseString;
+        });
+    } failure:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.utilitiesTextView.text = @"error";
+            NSLog(@"%@",error);
+        });
+    }];
+}
 
 - (IBAction)bartWorkButton:(UIButton *)sender {
     
