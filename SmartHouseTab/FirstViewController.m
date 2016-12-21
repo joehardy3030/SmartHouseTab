@@ -177,7 +177,7 @@
     NSString *dataUrl;
     if (self.currentLocation != nil) {
         NSLog(@"Current location instance variable: %@",self.currentLocation);
-        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/";
+        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/";
         dataUrl = [dataUrl stringByAppendingString:self.currentLatitude];
         dataUrl = [dataUrl stringByAppendingString:@","];
         dataUrl = [dataUrl stringByAppendingString:self.currentLongitude];
