@@ -23,14 +23,69 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)HeaterButton:(id)sender {
+
+- (IBAction)HeaterOnButton:(UIButton *)sender {
+    // 1
+    NSString *dataUrl = @"http://10.0.0.12/arduino/on3";
+    NSURL *url = [NSURL URLWithString:dataUrl];
     
+    // 2
+    NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
+                                          dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                              // 4: Handle response here
+                                              if(error == nil)
+                                              {
+                                                  NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+                                                  NSLog(@"Data = %@",text);
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      self.UtilitiesTextView.text = text;
+                                                  });
+                                              }
+                                              else{
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      self.UtilitiesTextView.text = @"error";
+                                                  });
+                                              }
+                                          }];
+    
+    // 3
+    self.UtilitiesTextView.text = @"Heater On";
+    [downloadTask resume];
+}
+
+- (IBAction)HeaterOffButton:(UIButton *)sender {
+    // 1
+    NSString *dataUrl = @"http://10.0.0.12/arduino/off";
+    NSURL *url = [NSURL URLWithString:dataUrl];
+    
+    // 2
+    NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
+                                          dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                              // 4: Handle response here
+                                              if(error == nil)
+                                              {
+                                                  NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+                                                  NSLog(@"Data = %@",text);
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      self.UtilitiesTextView.text = text;
+                                                  });
+                                              }
+                                              else{
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      self.UtilitiesTextView.text = @"error";
+                                                  });
+                                              }
+                                          }];
+    
+    // 3
+    self.UtilitiesTextView.text = @"Heater Off";
+    [downloadTask resume];
 }
 
 - (IBAction)GarageButton:(UIButton *)sender {
     NSLog(@"error");
     // 1
-    NSString *dataUrl = @"http://10.0.0.11/arduino/press";
+    NSString *dataUrl = @"http://10.0.0.51/arduino/press";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     // 2
