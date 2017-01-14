@@ -187,7 +187,7 @@
 }
 
 - (IBAction)stereoOnButton:(UIButton *)sender {
-    NSString *dataUrl = @"http://10.0.0.12/arduino/outletOn";
+    NSString *dataUrl = @"http://10.0.0.11/arduino/outletOn";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     // 2
@@ -217,7 +217,7 @@
 }
 
 - (IBAction)stereoOffButton:(UIButton *)sender {
-    NSString *dataUrl = @"http://10.0.0.12/arduino/outletOff";
+    NSString *dataUrl = @"http://10.0.0.11/arduino/outletOff";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     // 2

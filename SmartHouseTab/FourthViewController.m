@@ -85,7 +85,7 @@
 - (IBAction)GarageButton:(UIButton *)sender {
     NSLog(@"error");
     // 1
-    NSString *dataUrl = @"http://10.0.0.51/arduino/press";
+    NSString *dataUrl = @"http://10.0.0.11/arduino/press";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     // 2
