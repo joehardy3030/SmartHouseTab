@@ -41,8 +41,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)convertCToFButton:(UIButton *)sender {
+}
+
+- (IBAction)convertFtoCButton:(UIButton *)sender {
+}
+
 - (IBAction)MoreButton:(UIButton *)sender {
-    NSLog(@"More Buttone");
+    NSLog(@"More Button");
 }
 
 /*

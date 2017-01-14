@@ -23,6 +23,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)HeaterButton:(id)sender {
+    
+}
+
 - (IBAction)GarageButton:(UIButton *)sender {
     NSLog(@"error");
     // 1
