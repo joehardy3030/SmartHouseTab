@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D83343781E2AEAE8004D461F /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D83343771E2AEAE8004D461F /* constants.m */; };
 		D87B4C461D3338C10076B16E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C451D3338C10076B16E /* main.m */; };
 		D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C481D3338C10076B16E /* AppDelegate.m */; };
 		D87B4C4C1D3338C10076B16E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C4B1D3338C10076B16E /* FirstViewController.m */; };
@@ -91,6 +92,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D83343761E2AEA69004D461F /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		D83343771E2AEAE8004D461F /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		D87B4C411D3338C10076B16E /* Hardy House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hardy House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B4C451D3338C10076B16E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D87B4C471D3338C10076B16E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 		D87B4C431D3338C10076B16E /* SmartHouseTab */ = {
 			isa = PBXGroup;
 			children = (
+				D83343761E2AEA69004D461F /* constants.h */,
+				D83343771E2AEAE8004D461F /* constants.m */,
 				D87B4C471D3338C10076B16E /* AppDelegate.h */,
 				D87B4C481D3338C10076B16E /* AppDelegate.m */,
 				D87B4C4A1D3338C10076B16E /* FirstViewController.h */,
@@ -494,6 +499,7 @@
 				D89762071D4EB9C200756800 /* ThirdViewController.m in Sources */,
 				D8D701761D371FD300D99D88 /* JLHBartTimes.m in Sources */,
 				D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */,
+				D83343781E2AEAE8004D461F /* constants.m in Sources */,
 				D87B4C4C1D3338C10076B16E /* FirstViewController.m in Sources */,
 				D8FC89A71D695AD7008945CF /* FourthViewController.m in Sources */,
 				D8D701791D371FDD00D99D88 /* XMLParser.m in Sources */,

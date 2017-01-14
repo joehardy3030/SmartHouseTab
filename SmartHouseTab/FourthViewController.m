@@ -26,7 +26,10 @@
 
 - (IBAction)HeaterOnButton:(UIButton *)sender {
     // 1
-    NSString *dataUrl = @"http://10.0.0.12/arduino/on3";
+    
+    NSString *dataUrl = DOWNSTAIRS_ARDUINO;
+    dataUrl = [dataUrl stringByAppendingString:@"/arduino/on"];
+    
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     // 2
@@ -55,7 +58,10 @@
 
 - (IBAction)HeaterOffButton:(UIButton *)sender {
     // 1
-    NSString *dataUrl = @"http://10.0.0.12/arduino/off";
+    
+    NSString *dataUrl = DOWNSTAIRS_ARDUINO;
+    dataUrl = [dataUrl stringByAppendingString:@"/arduino/off"];
+
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     // 2
@@ -85,7 +91,10 @@
 - (IBAction)GarageButton:(UIButton *)sender {
     NSLog(@"error");
     // 1
-    NSString *dataUrl = @"http://10.0.0.11/arduino/press";
+    NSString *dataUrl = UPSTAIRS_ARDUINO;
+    dataUrl = [dataUrl stringByAppendingString:@"/arduino/press"];
+
+  //  NSString *dataUrl = @"http://10.0.0.11/arduino/press";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     // 2
