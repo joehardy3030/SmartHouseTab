@@ -14,3 +14,4 @@
 
 extern NSString *const UPSTAIRS_ARDUINO;
 extern NSString *const DOWNSTAIRS_ARDUINO;
+extern NSString *const FLASK_URL;
