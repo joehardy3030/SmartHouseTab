@@ -23,6 +23,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)PostFlaskJSON:(UIButton *)sender {
+}
+
 - (IBAction)GetFlaskJSON:(UIButton *)sender {
     // 1
     
@@ -51,7 +55,7 @@
                                           }];
     
     // 3
-    self.UtilitiesTextView.text = @"Heater On";
+    self.UtilitiesTextView.text = @"Flask";
     [downloadTask resume];
 }
 
