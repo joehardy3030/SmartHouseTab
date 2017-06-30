@@ -89,7 +89,16 @@
     self.showPickerView.dataSource = self;
     self.showPickerView.delegate = self;
     self.textView.delegate = self;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+
  }
+
+-(void)dismissKeyboard
+{
+    [self.textView resignFirstResponder];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

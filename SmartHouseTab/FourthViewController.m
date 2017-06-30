@@ -17,14 +17,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
+
+-(void)dismissKeyboard
+{
+    [self.UtilitiesTextView resignFirstResponder];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)PostFlaskJSON:(UIButton *)sender {
 }
 
 - (IBAction)GetFlaskJSON:(UIButton *)sender {
