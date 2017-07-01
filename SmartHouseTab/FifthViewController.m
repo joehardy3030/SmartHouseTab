@@ -10,12 +10,9 @@
 
 @interface FifthViewController () <UITextFieldDelegate>
 
-
 @end
 
 @implementation FifthViewController
-
-
 
 
 - (void)viewDidLoad {
@@ -85,7 +82,7 @@
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
     [request setHTTPMethod:@"POST"];
-    NSDictionary *mapData = [[NSDictionary alloc] initWithObjectsAndKeys: @"task5", @"title",
+    NSDictionary *mapData = [[NSDictionary alloc] initWithObjectsAndKeys: self.moreTextView.text, @"title",
                              nil];
     NSData *postData = [NSJSONSerialization dataWithJSONObject:mapData options:0 error:&error];
     [request setHTTPBody:postData];
