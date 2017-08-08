@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "constants.h"
+
 
 @interface FifthViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITextView *moreTextView;
 
 @end
