@@ -176,6 +176,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D838C28F1F394D0A0040218C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D87B4C4A1D3338C10076B16E /* FirstViewController.h */,
+				D87B4C4B1D3338C10076B16E /* FirstViewController.m */,
+				D87B4C4D1D3338C10076B16E /* SecondViewController.h */,
+				D87B4C4E1D3338C10076B16E /* SecondViewController.m */,
+				D89762051D4EB9C200756800 /* ThirdViewController.h */,
+				D89762061D4EB9C200756800 /* ThirdViewController.m */,
+				D8FC89A51D695AD7008945CF /* FourthViewController.h */,
+				D8FC89A61D695AD7008945CF /* FourthViewController.m */,
+				D8FC89A81D695B09008945CF /* FifthViewController.h */,
+				D8FC89A91D695B09008945CF /* FifthViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D838C2901F394DD40040218C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D83343761E2AEA69004D461F /* constants.h */,
+				D83343771E2AEAE8004D461F /* constants.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		D838C2911F394DF70040218C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D8D701771D371FDD00D99D88 /* XMLParser.h */,
+				D8D701781D371FDD00D99D88 /* XMLParser.m */,
+				D8D701741D371FD300D99D88 /* JLHBartTimes.h */,
+				D8D701751D371FD300D99D88 /* JLHBartTimes.m */,
+				D8D7017A1D371FE700D99D88 /* JLHWunderground.h */,
+				D8D7017B1D371FE700D99D88 /* JLHWunderground.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D838C2921F394E0F0040218C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D87B4C501D3338C10076B16E /* Main.storyboard */,
+				D87B4C551D3338C10076B16E /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		D87B4C381D3338C10076B16E = {
 			isa = PBXGroup;
 			children = (
@@ -204,29 +252,13 @@
 		D87B4C431D3338C10076B16E /* SmartHouseTab */ = {
 			isa = PBXGroup;
 			children = (
-				D83343761E2AEA69004D461F /* constants.h */,
-				D83343771E2AEAE8004D461F /* constants.m */,
+				D838C28F1F394D0A0040218C /* Controllers */,
+				D838C2901F394DD40040218C /* Settings */,
+				D838C2921F394E0F0040218C /* Storyboards */,
+				D838C2911F394DF70040218C /* Utilities */,
 				D87B4C471D3338C10076B16E /* AppDelegate.h */,
 				D87B4C481D3338C10076B16E /* AppDelegate.m */,
-				D87B4C4A1D3338C10076B16E /* FirstViewController.h */,
-				D87B4C4B1D3338C10076B16E /* FirstViewController.m */,
-				D87B4C4D1D3338C10076B16E /* SecondViewController.h */,
-				D87B4C4E1D3338C10076B16E /* SecondViewController.m */,
-				D89762051D4EB9C200756800 /* ThirdViewController.h */,
-				D89762061D4EB9C200756800 /* ThirdViewController.m */,
-				D8FC89A51D695AD7008945CF /* FourthViewController.h */,
-				D8FC89A61D695AD7008945CF /* FourthViewController.m */,
-				D8FC89A81D695B09008945CF /* FifthViewController.h */,
-				D8FC89A91D695B09008945CF /* FifthViewController.m */,
-				D8D701771D371FDD00D99D88 /* XMLParser.h */,
-				D8D701781D371FDD00D99D88 /* XMLParser.m */,
-				D8D701741D371FD300D99D88 /* JLHBartTimes.h */,
-				D8D701751D371FD300D99D88 /* JLHBartTimes.m */,
-				D87B4C501D3338C10076B16E /* Main.storyboard */,
-				D8D7017A1D371FE700D99D88 /* JLHWunderground.h */,
-				D8D7017B1D371FE700D99D88 /* JLHWunderground.m */,
 				D87B4C531D3338C10076B16E /* Assets.xcassets */,
-				D87B4C551D3338C10076B16E /* LaunchScreen.storyboard */,
 				D87B4C581D3338C10076B16E /* Info.plist */,
 				D87B4C441D3338C10076B16E /* Supporting Files */,
 			);
