@@ -14,4 +14,6 @@
 
 extern NSString *const UPSTAIRS_ARDUINO;
 extern NSString *const DOWNSTAIRS_ARDUINO;
-extern NSString *const FLASK_URL;
+//extern NSString *const FLASK_URL;
+
+#define FLASK_URL                        @"http://52.36.134.72:5000";

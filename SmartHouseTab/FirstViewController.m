@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "JLHWunderground.h"
+#import "JLHNetworkManager.h"
 
 @interface FirstViewController ()
 //@property(nonatomic, strong) CLLocationManager* locationManager;
@@ -173,8 +174,10 @@
    }
 
 - (IBAction)hourlyForecastButton:(UIButton *)sender {
-   
+  //  JLHWunderground *hourlyForecast = [[JLHWunderground alloc] init];
+   // JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
     NSString *dataUrl;
+    
     if (self.currentLocation != nil) {
         NSLog(@"Current location instance variable: %@",self.currentLocation);
         dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/";
@@ -186,14 +189,13 @@
     else {
         dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/CA/El_Cerrito.json";
     }
-
-    NSLog(@"Current location instance variable: %@",dataUrl);
-    
     NSURL *url = [NSURL URLWithString:dataUrl];
+    NSLog(@"Current location instance variable: %@",dataUrl);
+
+
+    JLHWunderground *wundergroundHourlyForecast = [[JLHWunderground alloc] init];
     
-    JLHWunderground *wundergroundSimpleForecast = [[JLHWunderground alloc] init];
-    
-    [wundergroundSimpleForecast getWundergroudHourlyForecast:url success:^(NSMutableArray *weatherResponse) {
+    [wundergroundHourlyForecast getWundergroudHourlyForecast:url success:^(NSMutableArray *weatherResponse) {
         NSLog(@"%@",weatherResponse);
         self.weatherArray = weatherResponse;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -206,7 +208,16 @@
             [self.weatherTableView reloadData];
         });
     }];
-}
+
+    
+//    [hourlyForecast getWundergroudHourlyForecast:url];
+    
+ //   self.weatherData = hourlyForecast.weatherData;
+ //   dispatch_async(dispatch_get_main_queue(), ^{
+  //      [self.weatherTableView reloadData];
+   // });
+    
+    }
 
 
 @end

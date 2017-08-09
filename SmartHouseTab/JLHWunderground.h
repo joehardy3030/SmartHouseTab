@@ -10,6 +10,9 @@
 
 @interface JLHWunderground : NSObject
 
+@property (strong, nonatomic) NSData *weatherData;
+@property (strong, nonatomic) NSMutableArray *weatherArray;
+
 - (void)getWundergroudSimpleForecast: (NSURL *)url success:(void (^)(NSMutableArray *wuWeatherArray))success failure:(void(^)(NSError* error))failure;
 
 - (void)getWundergroudHourlyForecast: (NSURL *)url success:(void (^)(NSMutableArray *wuWeatherArray))success failure:(void(^)(NSError* error))failure;

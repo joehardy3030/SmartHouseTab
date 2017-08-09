@@ -12,6 +12,7 @@
 @interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
 
 //Data source and table view for displaying weather info
+@property (strong, nonatomic) NSData *weatherData;
 @property (strong, nonatomic) NSMutableArray *weatherArray;
 @property (weak, nonatomic) IBOutlet UITableView *weatherTableView;
 

@@ -7,8 +7,10 @@
 //
 
 #import "JLHWunderground.h"
+#import "JLHNetworkManager.h"
 
 @implementation JLHWunderground
+
 
 - (NSMutableArray *)parseWundergroundSimpleForecast: (NSData *) data {
     NSMutableArray *wuWeatherArray;
@@ -38,9 +40,6 @@
         
         //Get forecast for the next several days
         NSDictionary *forecast = [json objectForKey:@"forecast"];
-        //NSDictionary *textForecast = [forecast objectForKey:@"txt_forecast"];
-        //NSArray *forecastDay = [textForecast objectForKey:@"forecastday"];
-        //NSLog(@"%@",forecastDay);
         
         //Pull out the simpleforecast which has the discrete values
         NSDictionary *simpleForecast = [forecast objectForKey:@"simpleforecast"];
@@ -50,7 +49,6 @@
         //And add these to the UITableView through it's data source
         for (NSDictionary *forecastDayLoop in simpleForecastDay)
         {
-            //   NSLog(@"%@",forecastDayLoop);
             NSDictionary *forecastDayLoopDate = [forecastDayLoop objectForKey:@"date"];
             NSString *forecastDayLoopName = [forecastDayLoopDate objectForKey:@"weekday_short"];
             NSString *forecastDayLoopString = [forecastDayLoopName stringByAppendingString:@"    "];
@@ -71,7 +69,6 @@
             forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopMaxWindSpeed];
             forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" MPH"];
             [wuWeatherArray addObject:forecastDayLoopString];
-            //NSLog(@"%@",weatherArray[0]);
         }
     } //End if JSON count
     return(wuWeatherArray);
@@ -161,6 +158,7 @@
 
 - (void)getWundergroudHourlyForecast: (NSURL *)url success:(void (^)(NSMutableArray *wuWeatherArray))success failure:(void(^)(NSError* error))failure
 {
+ //   JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
                                           dataTaskWithURL:url completionHandler:^(NSData *data,
                                                                                   NSURLResponse *response,
@@ -186,5 +184,25 @@
     // 3
     [downloadTask resume];
 }
+
+
+
+/*- (JLHWunderground *): (NSURL *)url {
+
+JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
+[networkManager getDataWithURL:url
+ 
+                       success:^(NSData *weatherDataResponse) {
+    NSLog(@"%@",weatherDataResponse);
+    self.weatherData = weatherDataResponse;
+    }
+ 
+                       failure:^(NSError *error) {
+    NSLog(@"%@",error);
+    self.weatherArray[0] = @"error";}
+ ];
+    return(self);
+}
+*/
 
 @end
