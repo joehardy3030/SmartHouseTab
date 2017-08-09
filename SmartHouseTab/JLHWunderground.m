@@ -8,6 +8,7 @@
 
 #import "JLHWunderground.h"
 #import "JLHNetworkManager.h"
+#import "HourlyForecast.h"
 
 @implementation JLHWunderground
 
@@ -156,9 +157,11 @@
     return(wuWeatherArray);
 }
 
+//- (void)getWundergroudHourlyForecast: (NSURL *)url success:(void (^)(NSMutableArray *wuWeatherArray))success failure:(void(^)(NSError* error))failure
+//{
+ //   JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
 - (void)getWundergroudHourlyForecast: (NSURL *)url success:(void (^)(NSMutableArray *wuWeatherArray))success failure:(void(^)(NSError* error))failure
 {
- //   JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
                                           dataTaskWithURL:url completionHandler:^(NSData *data,
                                                                                   NSURLResponse *response,
@@ -167,10 +170,12 @@
                                               // 4: Handle response here
                                               if(error == nil)
                                               {
-                                                  NSMutableArray *wuWeatherArray;
-                                                  wuWeatherArray = [[NSMutableArray alloc] init];
-                                                  wuWeatherArray = [self parseWundergroundHourlyForecast:data];
-                                                  success(wuWeatherArray);
+                                                  HourlyForecast *hourlyForecast = [[HourlyForecast alloc] initFromData:data];
+                                                //  NSMutableArray *wuWeatherArray = [[NSMutableArray alloc] init];
+                                                //  wuWeatherArray = [self parseWundergroundHourlyForecast:data];
+                                 //                 wuWeatherArray = hourlyForecast.weatherArray;
+                                                  //success(wuWeatherArray);
+                                                  success(hourlyForecast.weatherArray);
                                                   NSLog(@"success");
                                               } //End if error == nil
                                               

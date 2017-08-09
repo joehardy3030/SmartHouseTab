@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "JLHWunderground.h"
 #import "JLHNetworkManager.h"
+#import "HourlyForecast.h"
 
 @interface FirstViewController ()
 //@property(nonatomic, strong) CLLocationManager* locationManager;
@@ -196,7 +197,9 @@
     JLHWunderground *wundergroundHourlyForecast = [[JLHWunderground alloc] init];
     
     [wundergroundHourlyForecast getWundergroudHourlyForecast:url success:^(NSMutableArray *weatherResponse) {
-        NSLog(@"%@",weatherResponse);
+  //  [wundergroundHourlyForecast getWundergroudHourlyForecast:url success:^(HourlyForecast *weatherResponse) {
+        
+    // NSLog(@"%@",weatherResponse);
         self.weatherArray = weatherResponse;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.weatherTableView reloadData];
