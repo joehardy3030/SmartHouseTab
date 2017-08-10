@@ -185,15 +185,6 @@
 
 }
 
-- (IBAction)notificationButton:(UIButton *)sender {
-    UILocalNotification *note = [[UILocalNotification alloc] init];
-    note.alertBody = @"Notification set";
-    note.fireDate = [NSDate date];
-    note.fireDate = [note.fireDate dateByAddingTimeInterval:15];
-
-    [[UIApplication sharedApplication] scheduleLocalNotification:note];
-    NSLog(@"%@",note);
-}
 
 - (IBAction)stereoOnButton:(UIButton *)sender {
 //    NSString *dataUrl = @"http://10.0.0.11/arduino/outletOn";
