@@ -21,15 +21,6 @@
 		D87B4C621D3338C10076B16E /* SmartHouseTabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C611D3338C10076B16E /* SmartHouseTabTests.m */; };
 		D87B4C6D1D3338C10076B16E /* SmartHouseTabUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */; };
 		D88309481D47F92900EED546 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88309471D47F92900EED546 /* CoreLocation.framework */; };
-		D886A2C91DA896B80064EBF7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D886A2C71DA896B80064EBF7 /* Interface.storyboard */; };
-		D886A2CB1DA896B80064EBF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D886A2CA1DA896B80064EBF7 /* Assets.xcassets */; };
-		D886A2D21DA896B90064EBF7 /* Hardy Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D886A2D11DA896B90064EBF7 /* Hardy Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D886A2DA1DA896B90064EBF7 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D886A2D91DA896B90064EBF7 /* InterfaceController.m */; };
-		D886A2DD1DA896B90064EBF7 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D886A2DC1DA896B90064EBF7 /* ExtensionDelegate.m */; };
-		D886A2E01DA896B90064EBF7 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D886A2DF1DA896B90064EBF7 /* NotificationController.m */; };
-		D886A2E31DA896B90064EBF7 /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D886A2E21DA896B90064EBF7 /* ComplicationController.m */; };
-		D886A2E51DA896B90064EBF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D886A2E41DA896B90064EBF7 /* Assets.xcassets */; };
-		D886A2E91DA896B90064EBF7 /* Hardy Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D886A2C51DA896B80064EBF7 /* Hardy Watch.app */; };
 		D89762071D4EB9C200756800 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D89762061D4EB9C200756800 /* ThirdViewController.m */; };
 		D8D701761D371FD300D99D88 /* JLHBartTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D701751D371FD300D99D88 /* JLHBartTimes.m */; };
 		D8D701791D371FDD00D99D88 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D701781D371FDD00D99D88 /* XMLParser.m */; };
@@ -53,41 +44,15 @@
 			remoteGlobalIDString = D87B4C401D3338C10076B16E;
 			remoteInfo = SmartHouseTab;
 		};
-		D886A2D31DA896B90064EBF7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D87B4C391D3338C10076B16E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D886A2D01DA896B90064EBF7;
-			remoteInfo = "Hardy Watch Extension";
-		};
-		D886A2E71DA896B90064EBF7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D87B4C391D3338C10076B16E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D886A2C41DA896B80064EBF7;
-			remoteInfo = "Hardy Watch";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D886A2EF1DA896B90064EBF7 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				D886A2D21DA896B90064EBF7 /* Hardy Watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D886A2F11DA896B90064EBF7 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				D886A2E91DA896B90064EBF7 /* Hardy Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,22 +87,6 @@
 		D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHouseTabUITests.m; sourceTree = "<group>"; };
 		D87B4C6E1D3338C10076B16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D88309471D47F92900EED546 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D886A2C51DA896B80064EBF7 /* Hardy Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hardy Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D886A2C81DA896B80064EBF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		D886A2CA1DA896B80064EBF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D886A2CC1DA896B80064EBF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D886A2D11DA896B90064EBF7 /* Hardy Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Hardy Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D886A2D71DA896B90064EBF7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		D886A2D81DA896B90064EBF7 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		D886A2D91DA896B90064EBF7 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		D886A2DB1DA896B90064EBF7 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
-		D886A2DC1DA896B90064EBF7 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
-		D886A2DE1DA896B90064EBF7 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		D886A2DF1DA896B90064EBF7 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		D886A2E11DA896B90064EBF7 /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
-		D886A2E21DA896B90064EBF7 /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
-		D886A2E41DA896B90064EBF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D886A2E61DA896B90064EBF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D89762051D4EB9C200756800 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		D89762061D4EB9C200756800 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		D8D701741D371FD300D99D88 /* JLHBartTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLHBartTimes.h; sourceTree = "<group>"; };
@@ -169,13 +118,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D87B4C651D3338C10076B16E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D886A2CE1DA896B90064EBF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,8 +195,6 @@
 				D87B4C431D3338C10076B16E /* SmartHouseTab */,
 				D87B4C601D3338C10076B16E /* SmartHouseTabTests */,
 				D87B4C6B1D3338C10076B16E /* SmartHouseTabUITests */,
-				D886A2C61DA896B80064EBF7 /* Hardy Watch */,
-				D886A2D51DA896B90064EBF7 /* Hardy Watch Extension */,
 				D87B4C421D3338C10076B16E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -265,8 +205,6 @@
 				D87B4C411D3338C10076B16E /* Hardy House.app */,
 				D87B4C5D1D3338C10076B16E /* Hardy House.xctest */,
 				D87B4C681D3338C10076B16E /* Hardy House.xctest */,
-				D886A2C51DA896B80064EBF7 /* Hardy Watch.app */,
-				D886A2D11DA896B90064EBF7 /* Hardy Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,10 +212,10 @@
 		D87B4C431D3338C10076B16E /* SmartHouseTab */ = {
 			isa = PBXGroup;
 			children = (
+				D838C2901F394DD40040218C /* Settings */,
 				D838C2931F3960470040218C /* Models */,
 				D838C2921F394E0F0040218C /* Storyboards */,
 				D838C28F1F394D0A0040218C /* Controllers */,
-				D838C2901F394DD40040218C /* Settings */,
 				D838C2911F394DF70040218C /* Utilities */,
 				D87B4C471D3338C10076B16E /* AppDelegate.h */,
 				D87B4C481D3338C10076B16E /* AppDelegate.m */,
@@ -314,42 +252,6 @@
 			path = SmartHouseTabUITests;
 			sourceTree = "<group>";
 		};
-		D886A2C61DA896B80064EBF7 /* Hardy Watch */ = {
-			isa = PBXGroup;
-			children = (
-				D886A2C71DA896B80064EBF7 /* Interface.storyboard */,
-				D886A2CA1DA896B80064EBF7 /* Assets.xcassets */,
-				D886A2CC1DA896B80064EBF7 /* Info.plist */,
-			);
-			path = "Hardy Watch";
-			sourceTree = "<group>";
-		};
-		D886A2D51DA896B90064EBF7 /* Hardy Watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D886A2D81DA896B90064EBF7 /* InterfaceController.h */,
-				D886A2D91DA896B90064EBF7 /* InterfaceController.m */,
-				D886A2DB1DA896B90064EBF7 /* ExtensionDelegate.h */,
-				D886A2DC1DA896B90064EBF7 /* ExtensionDelegate.m */,
-				D886A2DE1DA896B90064EBF7 /* NotificationController.h */,
-				D886A2DF1DA896B90064EBF7 /* NotificationController.m */,
-				D886A2E11DA896B90064EBF7 /* ComplicationController.h */,
-				D886A2E21DA896B90064EBF7 /* ComplicationController.m */,
-				D886A2E41DA896B90064EBF7 /* Assets.xcassets */,
-				D886A2E61DA896B90064EBF7 /* Info.plist */,
-				D886A2D61DA896B90064EBF7 /* Supporting Files */,
-			);
-			path = "Hardy Watch Extension";
-			sourceTree = "<group>";
-		};
-		D886A2D61DA896B90064EBF7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D886A2D71DA896B90064EBF7 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,7 +267,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D886A2E81DA896B90064EBF7 /* PBXTargetDependency */,
 			);
 			name = "Hardy House";
 			productName = SmartHouseTab;
@@ -408,40 +309,6 @@
 			productReference = D87B4C681D3338C10076B16E /* Hardy House.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		D886A2C41DA896B80064EBF7 /* Hardy Watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D886A2F01DA896B90064EBF7 /* Build configuration list for PBXNativeTarget "Hardy Watch" */;
-			buildPhases = (
-				D886A2C31DA896B80064EBF7 /* Resources */,
-				D886A2EF1DA896B90064EBF7 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D886A2D41DA896B90064EBF7 /* PBXTargetDependency */,
-			);
-			name = "Hardy Watch";
-			productName = "Hardy Watch";
-			productReference = D886A2C51DA896B80064EBF7 /* Hardy Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		D886A2D01DA896B90064EBF7 /* Hardy Watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D886A2EE1DA896B90064EBF7 /* Build configuration list for PBXNativeTarget "Hardy Watch Extension" */;
-			buildPhases = (
-				D886A2CD1DA896B90064EBF7 /* Sources */,
-				D886A2CE1DA896B90064EBF7 /* Frameworks */,
-				D886A2CF1DA896B90064EBF7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Hardy Watch Extension";
-			productName = "Hardy Watch Extension";
-			productReference = D886A2D11DA896B90064EBF7 /* Hardy Watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -466,16 +333,6 @@
 						DevelopmentTeam = 9HA3P2ES79;
 						TestTargetID = D87B4C401D3338C10076B16E;
 					};
-					D886A2C41DA896B80064EBF7 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 9HA3P2ES79;
-						ProvisioningStyle = Automatic;
-					};
-					D886A2D01DA896B90064EBF7 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 9HA3P2ES79;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = D87B4C3C1D3338C10076B16E /* Build configuration list for PBXProject "Hardy House" */;
@@ -494,8 +351,6 @@
 				D87B4C401D3338C10076B16E /* Hardy House */,
 				D87B4C5C1D3338C10076B16E /* Hardy HouseTests */,
 				D87B4C671D3338C10076B16E /* Hardy HouseUITests */,
-				D886A2C41DA896B80064EBF7 /* Hardy Watch */,
-				D886A2D01DA896B90064EBF7 /* Hardy Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -522,23 +377,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D886A2C31DA896B80064EBF7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D886A2CB1DA896B80064EBF7 /* Assets.xcassets in Resources */,
-				D886A2C91DA896B80064EBF7 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D886A2CF1DA896B90064EBF7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D886A2E51DA896B90064EBF7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,17 +420,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D886A2CD1DA896B90064EBF7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D886A2DD1DA896B90064EBF7 /* ExtensionDelegate.m in Sources */,
-				D886A2E31DA896B90064EBF7 /* ComplicationController.m in Sources */,
-				D886A2DA1DA896B90064EBF7 /* InterfaceController.m in Sources */,
-				D886A2E01DA896B90064EBF7 /* NotificationController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -605,16 +432,6 @@
 			isa = PBXTargetDependency;
 			target = D87B4C401D3338C10076B16E /* Hardy House */;
 			targetProxy = D87B4C691D3338C10076B16E /* PBXContainerItemProxy */;
-		};
-		D886A2D41DA896B90064EBF7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D886A2D01DA896B90064EBF7 /* Hardy Watch Extension */;
-			targetProxy = D886A2D31DA896B90064EBF7 /* PBXContainerItemProxy */;
-		};
-		D886A2E81DA896B90064EBF7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D886A2C41DA896B80064EBF7 /* Hardy Watch */;
-			targetProxy = D886A2E71DA896B90064EBF7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -633,14 +450,6 @@
 				D87B4C561D3338C10076B16E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		D886A2C71DA896B80064EBF7 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D886A2C81DA896B80064EBF7 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -814,80 +623,6 @@
 			};
 			name = Release;
 		};
-		D886A2EA1DA896B90064EBF7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9HA3P2ES79;
-				IBSC_MODULE = Hardy_Watch_Extension;
-				INFOPLIST_FILE = "Hardy Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTab.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Debug;
-		};
-		D886A2EB1DA896B90064EBF7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9HA3P2ES79;
-				IBSC_MODULE = Hardy_Watch_Extension;
-				INFOPLIST_FILE = "Hardy Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTab.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Release;
-		};
-		D886A2EC1DA896B90064EBF7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				INFOPLIST_FILE = "Hardy Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTab.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Debug;
-		};
-		D886A2ED1DA896B90064EBF7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				INFOPLIST_FILE = "Hardy Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Carquinez.SmartHouseTab.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -923,24 +658,6 @@
 			buildConfigurations = (
 				D87B4C781D3338C10076B16E /* Debug */,
 				D87B4C791D3338C10076B16E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D886A2EE1DA896B90064EBF7 /* Build configuration list for PBXNativeTarget "Hardy Watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D886A2EC1DA896B90064EBF7 /* Debug */,
-				D886A2ED1DA896B90064EBF7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D886A2F01DA896B90064EBF7 /* Build configuration list for PBXNativeTarget "Hardy Watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D886A2EA1DA896B90064EBF7 /* Debug */,
-				D886A2EB1DA896B90064EBF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

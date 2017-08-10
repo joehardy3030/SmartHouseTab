@@ -28,26 +28,21 @@
     
     // Create a WCSession instance
     // For communication with the Watch
-    if ([WCSession isSupported]) {
+/*    if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];
         session.delegate = self;
         [session activateSession];
     }
-    
+  */
     return YES;
 }
 
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> *replyMessage))replyHandler {
+/*- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> *replyMessage))replyHandler {
 
     NSURL *url = [NSURL URLWithString:message[@"key1"]];
     JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
-    
-  /*  [homeBartTimes parseBartTimeDictionary:url success:^(NSDictionary *responseDict) {
-        NSLog(@"%@",responseDict);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            replyHandler(responseDict);
-        }); */
-        
+ 
+
     [homeBartTimes parseBartTimeDictionary:url success:^(NSDictionary *responseDict) {
         NSLog(@"parseBartTimeDictionary success");
         NSLog(@"%@",responseDict);
@@ -66,16 +61,19 @@
     //NSLog(@"%@",message);
 }
 
-
-- (void)sessionDidDeactivate:(WCSession *)session {
+*/
+/*
+-(void)sessionDidDeactivate:(WCSession *)session {
     NSLog(@"App watch session did deactivate");
     
 }
-
+*/
+/*
 - (void)sessionDidBecomeInactive:(WCSession *)session {
     NSLog(@"App watch session did become incative");
 }
-
+*/
+/*
 
 - (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
     NSLog(@"Phone side watch activation");
@@ -84,7 +82,7 @@
     }
     
 }
-
+*/
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
