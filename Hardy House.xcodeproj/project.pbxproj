@@ -10,6 +10,7 @@
 		D83343781E2AEAE8004D461F /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D83343771E2AEAE8004D461F /* constants.m */; };
 		D838C29B1F3A6BCC0040218C /* JLHNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D838C29A1F3A6BCC0040218C /* JLHNetworkManager.m */; };
 		D838C29F1F3A816E0040218C /* HourlyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = D838C29E1F3A816E0040218C /* HourlyForecast.m */; };
+		D838C2A11F3B84BE0040218C /* SimpleForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = D838C2A01F3B84BE0040218C /* SimpleForecast.m */; };
 		D87B4C461D3338C10076B16E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C451D3338C10076B16E /* main.m */; };
 		D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C481D3338C10076B16E /* AppDelegate.m */; };
 		D87B4C4C1D3338C10076B16E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C4B1D3338C10076B16E /* FirstViewController.m */; };
@@ -100,6 +101,8 @@
 		D838C29C1F3A6BDF0040218C /* JLHNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLHNetworkManager.h; sourceTree = "<group>"; };
 		D838C29D1F3A81560040218C /* HourlyForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HourlyForecast.h; sourceTree = "<group>"; };
 		D838C29E1F3A816E0040218C /* HourlyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyForecast.m; sourceTree = "<group>"; };
+		D838C2A01F3B84BE0040218C /* SimpleForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleForecast.m; sourceTree = "<group>"; };
+		D838C2A21F3B84CF0040218C /* SimpleForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleForecast.h; sourceTree = "<group>"; };
 		D87B4C411D3338C10076B16E /* Hardy House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hardy House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B4C451D3338C10076B16E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D87B4C471D3338C10076B16E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 		D838C2911F394DF70040218C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D8D7017A1D371FE700D99D88 /* JLHWunderground.h */,
+				D8D7017B1D371FE700D99D88 /* JLHWunderground.m */,
 				D8D701771D371FDD00D99D88 /* XMLParser.h */,
 				D8D701781D371FDD00D99D88 /* XMLParser.m */,
 				D838C29A1F3A6BCC0040218C /* JLHNetworkManager.m */,
@@ -233,8 +238,8 @@
 			children = (
 				D8D701741D371FD300D99D88 /* JLHBartTimes.h */,
 				D8D701751D371FD300D99D88 /* JLHBartTimes.m */,
-				D8D7017A1D371FE700D99D88 /* JLHWunderground.h */,
-				D8D7017B1D371FE700D99D88 /* JLHWunderground.m */,
+				D838C2A21F3B84CF0040218C /* SimpleForecast.h */,
+				D838C2A01F3B84BE0040218C /* SimpleForecast.m */,
 				D838C29D1F3A81560040218C /* HourlyForecast.h */,
 				D838C29E1F3A816E0040218C /* HourlyForecast.m */,
 			);
@@ -548,6 +553,7 @@
 				D8D7017C1D371FE700D99D88 /* JLHWunderground.m in Sources */,
 				D89762071D4EB9C200756800 /* ThirdViewController.m in Sources */,
 				D8D701761D371FD300D99D88 /* JLHBartTimes.m in Sources */,
+				D838C2A11F3B84BE0040218C /* SimpleForecast.m in Sources */,
 				D838C29F1F3A816E0040218C /* HourlyForecast.m in Sources */,
 				D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */,
 				D83343781E2AEAE8004D461F /* constants.m in Sources */,
