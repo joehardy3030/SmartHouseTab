@@ -20,6 +20,12 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    
+    UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    navBar.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:navBar];
+
+
 }
 
 -(void)dismissKeyboard
