@@ -105,6 +105,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    // Overwrite preferred status bar style and return ENUM LightContent
+    return UIStatusBarStyleLightContent;
+}
+
 // Close the keyboard when the user touches the view outside the keyboard
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"touchesBegan:withEvent:");

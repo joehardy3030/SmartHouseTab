@@ -40,6 +40,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    // Overwrite preferred status bar style and return ENUM LightContent
+    return UIStatusBarStyleLightContent;
+}
+
 - (IBAction)GetFlaskJSON:(UIButton *)sender {
     // 1
     

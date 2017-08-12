@@ -24,6 +24,11 @@
 }
 
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    // Overwrite preferred status bar style and return ENUM LightContent
+    return UIStatusBarStyleLightContent;
+}
+
 - (IBAction)bartHomeButton:(UIButton *)sender {
     
     self.utilitiesTextView.text = @"Get BART from 16th St\n";

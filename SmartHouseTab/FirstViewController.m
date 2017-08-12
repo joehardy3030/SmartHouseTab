@@ -7,7 +7,6 @@
 //
 
 #import "FirstViewController.h"
-//#import "JLHWunderground.h"
 #import "JLHNetworkManager.h"
 #import "HourlyForecast.h"
 #import "SimpleForecast.h"
@@ -27,6 +26,11 @@
     [self.locationManager requestWhenInUseAuthorization];
     [self initializeTextViewDataSource];
  }
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    // Overwrite preferred status bar style and return ENUM LightContent
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
