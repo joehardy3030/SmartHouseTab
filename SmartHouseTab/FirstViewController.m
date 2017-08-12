@@ -7,9 +7,10 @@
 //
 
 #import "FirstViewController.h"
-#import "JLHWunderground.h"
+//#import "JLHWunderground.h"
 #import "JLHNetworkManager.h"
 #import "HourlyForecast.h"
+#import "SimpleForecast.h"
 
 @interface FirstViewController ()
 //@property(nonatomic, strong) CLLocationManager* locationManager;
@@ -140,8 +141,9 @@
 
 
 - (IBAction)WeatherTest:(UIButton *)sender {
-    
     NSString *dataUrl;
+    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
+
     if (self.currentLocation != nil) {
         NSLog(@"Current location instance variable: %@",self.currentLocation);
         dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/";
@@ -157,9 +159,9 @@
 
     NSURL *url = [NSURL URLWithString:dataUrl];
     
-    JLHWunderground *wundergroundSimpleForecast = [[JLHWunderground alloc] init];
+   // JLHWunderground *wundergroundSimpleForecast = [[JLHWunderground alloc] init];
     
-    [wundergroundSimpleForecast getWundergroudSimpleForecast:url success:^(NSMutableArray *weatherResponse) {
+ /*   [wundergroundSimpleForecast getWundergroudSimpleForecast:url success:^(NSMutableArray *weatherResponse) {
         NSLog(@"%@",weatherResponse);
         self.weatherArray = weatherResponse;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -172,13 +174,30 @@
             [self.weatherTableView reloadData];
         });
     }];
+   */
+    [networkManager getDataWithURL:url
+                           success:^(NSData* weatherSuccess) {
+                               SimpleForecast *hourlyForecast = [[SimpleForecast alloc] initFromData:weatherSuccess];
+                               self.weatherArray = hourlyForecast.weatherArray;
+                               dispatch_async(dispatch_get_main_queue(), ^{
+                                   [self.weatherTableView reloadData];
+                               });
+                           }
+                           failure:^(NSError *error) {
+                               NSLog(@"%@",error);
+                               self.weatherArray[0] = @"error";
+                               dispatch_async(dispatch_get_main_queue(), ^{
+                                   [self.weatherTableView reloadData];
+                               });
+                           }];
+
    }
 
 - (IBAction)hourlyForecastButton:(UIButton *)sender {
-  //  JLHWunderground *hourlyForecast = [[JLHWunderground alloc] init];
-   // JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
     NSString *dataUrl;
-    
+//    JLHWunderground *wundergroundHourlyForecast = [[JLHWunderground alloc] init];
+    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
+
     if (self.currentLocation != nil) {
         NSLog(@"Current location instance variable: %@",self.currentLocation);
         dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/";
@@ -192,34 +211,22 @@
     }
     NSURL *url = [NSURL URLWithString:dataUrl];
     NSLog(@"Current location instance variable: %@",dataUrl);
-
-
-    JLHWunderground *wundergroundHourlyForecast = [[JLHWunderground alloc] init];
     
-    [wundergroundHourlyForecast getWundergroudHourlyForecast:url success:^(NSMutableArray *weatherResponse) {
-  //  [wundergroundHourlyForecast getWundergroudHourlyForecast:url success:^(HourlyForecast *weatherResponse) {
-        
-    // NSLog(@"%@",weatherResponse);
-        self.weatherArray = weatherResponse;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.weatherTableView reloadData];
-        });
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-        self.weatherArray[0] = @"error";
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.weatherTableView reloadData];
-        });
-    }];
-
-    
-//    [hourlyForecast getWundergroudHourlyForecast:url];
-    
- //   self.weatherData = hourlyForecast.weatherData;
- //   dispatch_async(dispatch_get_main_queue(), ^{
-  //      [self.weatherTableView reloadData];
-   // });
-    
+    [networkManager getDataWithURL:url
+                           success:^(NSData* weatherSuccess) {
+                               HourlyForecast *hourlyForecast = [[HourlyForecast alloc] initFromData:weatherSuccess];
+                               self.weatherArray = hourlyForecast.weatherArray;
+                               dispatch_async(dispatch_get_main_queue(), ^{
+                                   [self.weatherTableView reloadData];
+                               });
+                           }
+                           failure:^(NSError *error) {
+                               NSLog(@"%@",error);
+                               self.weatherArray[0] = @"error";
+                               dispatch_async(dispatch_get_main_queue(), ^{
+                                   [self.weatherTableView reloadData];
+                               });
+                           }];
     }
 
 

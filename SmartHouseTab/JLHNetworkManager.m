@@ -10,12 +10,15 @@
 
 @implementation JLHNetworkManager;
 
-- (void)getDataWithURL: (NSURL *)url success:(void (^)(NSData *data))success failure:(void(^)(NSError* error))failure
+- (void)getDataWithURL: (NSURL *)url
+               success:(void (^)(NSData *data))success
+               failure:(void(^)(NSError* error))failure
 {
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
-                                           dataTaskWithURL:url completionHandler:^(NSData *data,
-                                                                                   NSURLResponse *response,
-                                                                                   NSError *error) {
+                                           dataTaskWithURL:url
+                                         completionHandler:^(NSData *data,
+                                                             NSURLResponse *response,
+                                                             NSError *error) {
                                                // 4: Handle response here
                                                if(error == nil)
                                                {
