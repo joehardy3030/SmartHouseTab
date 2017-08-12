@@ -159,22 +159,6 @@
 
     NSURL *url = [NSURL URLWithString:dataUrl];
     
-   // JLHWunderground *wundergroundSimpleForecast = [[JLHWunderground alloc] init];
-    
- /*   [wundergroundSimpleForecast getWundergroudSimpleForecast:url success:^(NSMutableArray *weatherResponse) {
-        NSLog(@"%@",weatherResponse);
-        self.weatherArray = weatherResponse;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.weatherTableView reloadData];
-        });
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-        self.weatherArray[0] = @"error";
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.weatherTableView reloadData];
-        });
-    }];
-   */
     [networkManager getDataWithURL:url
                            success:^(NSData* weatherSuccess) {
                                SimpleForecast *hourlyForecast = [[SimpleForecast alloc] initFromData:weatherSuccess];
