@@ -79,9 +79,22 @@
     NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=deln&dir=s&key=MW9S-E7SL-26DU-VV8V";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
-    JLHBartTimes *workBartTimes = [[JLHBartTimes alloc] init];
+    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
     
-    [workBartTimes parseBartTimeString:url success:^(NSString *responseString) {
+    [networkManager getDataWithURL:url success:^(NSData *data) {
+        BartTimes *bartTimes = [[BartTimes alloc] initFromData:data];
+        NSLog(@"%@",bartTimes.printString);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.utilitiesTextView.text = bartTimes.printString;
+        });
+    } failure:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.utilitiesTextView.text = @"error";
+            NSLog(@"%@",error);
+        });
+    }];
+
+/*    [workBartTimes parseBartTimeString:url success:^(NSString *responseString) {
         NSLog(@"%@",responseString);
         dispatch_async(dispatch_get_main_queue(), ^{
             self.utilitiesTextView.text = responseString;
@@ -91,7 +104,7 @@
             self.utilitiesTextView.text = @"error";
             NSLog(@"%@",error);
         });
-    }];
+    }]; */
 }
 
 @end

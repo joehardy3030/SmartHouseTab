@@ -13,5 +13,4 @@
 
 - (void)parseBartTimeString: (NSURL *)url success:(void (^)(NSString *responseString))success failure:(void(^)(NSError* error))failure;
 
-
 @end

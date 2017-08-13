@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BartTimes.h"
 #import "JLHBartTimes.h"
+#import "JLHNetworkManager.h"
 
 @interface SecondViewController : UIViewController
 
