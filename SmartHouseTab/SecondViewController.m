@@ -85,7 +85,7 @@
         BartTimes *bartTimes = [[BartTimes alloc] initFromData:data];
         NSLog(@"%@",bartTimes.printString);
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = bartTimes.printString;
+            self.utilitiesTextView.text = bartTimes.    printString;
         });
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{

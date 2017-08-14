@@ -297,21 +297,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSw-s4-JvQ">
-                                <rect key="frame" x="68" y="444" width="92" height="37"/>
+                                <rect key="frame" x="68" y="102" width="30" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="BART Work"/>
+                                <state key="normal" title="In"/>
                                 <connections>
                                     <action selector="bartWorkButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="3fl-fD-SxG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BART Times" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-t9-Izz">
-                                <rect key="frame" x="136" y="149" width="92" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="NewBlueRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="IvE-Vp-aKH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -328,27 +321,31 @@
                                     <navigationItem title="BART" id="NUy-OL-tQi"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGJ-bM-zEI">
-                                <rect key="frame" x="62" y="181" width="271" height="225"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGJ-bM-zEI">
+                                <rect key="frame" x="55" y="173" width="259" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bartMap" translatesAutoresizingMaskIntoConstraints="NO" id="0oZ-eW-bCw">
+                                <rect key="frame" x="50" y="337" width="274" height="273"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSi-Dj-1Du">
-                                <rect key="frame" x="203" y="507" width="160" height="41"/>
+                                <rect key="frame" x="185" y="124" width="160" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="BART Civic Center"/>
+                                <state key="normal" title="Out Civic Center"/>
                                 <connections>
                                     <action selector="bartCivicCenterButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="BWx-z3-aGH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-So-s6c">
-                                <rect key="frame" x="203" y="444" width="123" height="37"/>
+                                <rect key="frame" x="185" y="83" width="123" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="BART 16th St"/>
+                                <state key="normal" title="Out 16th St"/>
                                 <connections>
                                     <action selector="bartHomeButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Ojo-42-uIh"/>
                                 </connections>
@@ -363,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="-580"/>
+            <point key="canvasLocation" x="812" y="-580.65967016491754"/>
         </scene>
         <!--WeatherViewController-->
         <scene sceneID="yl2-sM-qoP">
@@ -481,6 +478,7 @@
     </scenes>
     <resources>
         <image name="NewBlueRectangle" width="375" height="64"/>
+        <image name="bartMap" width="274" height="273"/>
         <image name="bart_icon" width="28" height="23"/>
         <image name="more_icon" width="31" height="31"/>
         <image name="note" width="33" height="33"/>
