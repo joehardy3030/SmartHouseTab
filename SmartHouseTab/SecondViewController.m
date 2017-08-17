@@ -69,10 +69,7 @@
     
     self.firstPickerView.dataSource = self;
     self.firstPickerView.delegate = self;
-   // self.utilitiesTextView.delegate = self;
-  //  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    
-//    [self.view addGestureRecognizer:tap];
+    [self initializeBARTViewDataSource];
     }
 
 - (void)didReceiveMemoryWarning {
@@ -85,6 +82,57 @@
     // Overwrite preferred status bar style and return ENUM LightContent
     return UIStatusBarStyleLightContent;
 }
+
+- (void)initializeBARTViewDataSource
+{
+    // Set up the weatherArray and set the dataSource for the current
+    self.BARTArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
+    self.BARTTableView.dataSource = self;
+}
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // typically you need know which item the user has selected.
+    // this method allows you to keep track of the selection
+    
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return UITableViewCellEditingStyleDelete;
+}
+
+// This will tell your UITableView how many rows you wish to have in each section.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.BARTArray count];
+}
+
+// This will tell your UITableView what data to put in which cells in your table.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifer = @"CellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    
+    // Using a cell identifier will allow your app to reuse cells as they come and go from the screen.
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+    }
+    
+    // Deciding which data to put into this particular cell.
+    // If it the first row, the data input will be "Data1" from the array.
+    NSUInteger row = [indexPath row];
+    cell.textLabel.text = [self.BARTArray objectAtIndex:row];
+    cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
+    
+    return cell;
+}
+
 
 // The number of columns of data
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -122,8 +170,29 @@
     dataUrl = [dataUrl stringByAppendingString:_selectedStation];
     dataUrl = [dataUrl stringByAppendingString:@"&dir=n&key=MW9S-E7SL-26DU-VV8V"];
 
-        NSURL *url = [NSURL URLWithString:dataUrl];
+    NSURL *url = [NSURL URLWithString:dataUrl];
     
+    //This whole thing should be a method...
+    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
+    
+    [networkManager getDataWithURL:url success:^(NSData *data) {
+        BartTimes *bartTimes = [[BartTimes alloc] initFromData:data];
+        NSLog(@"%@",bartTimes.displayTextArray);
+        
+        self.BARTArray = bartTimes.displayTextArray;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.BARTTableView reloadData];
+        });
+        
+    } failure:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.BARTArray[0] = @"error";
+            NSLog(@"%@",error);
+        });
+    }];
+    
+
+    /*
     JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
     
     [homeBartTimes parseBartTimeString:url success:^(NSString *responseString) {
@@ -137,9 +206,9 @@
             NSLog(@"%@",error);
         });
     }];
-
+*/
 }
-- (IBAction)bartCivicCenterButton:(UIButton *)sender {
+/*- (IBAction)bartCivicCenterButton:(UIButton *)sender {
     self.utilitiesTextView.text = @"Get BART from 16th St\n";
     
     NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=CIVC&dir=n&key=MW9S-E7SL-26DU-VV8V";
@@ -159,7 +228,7 @@
         });
     }];
 }
-
+*/
 - (IBAction)bartWorkButton:(UIButton *)sender {
     
     self.utilitiesTextView.text = @"Get BART from El Cerrito del Norte\n";
@@ -171,13 +240,16 @@
     
     [networkManager getDataWithURL:url success:^(NSData *data) {
         BartTimes *bartTimes = [[BartTimes alloc] initFromData:data];
-        NSLog(@"%@",bartTimes.printString);
+        NSLog(@"%@",bartTimes.displayTextArray);
+        
+        self.BARTArray = bartTimes.displayTextArray;
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = bartTimes.    printString;
+            [self.BARTTableView reloadData];
         });
+
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = @"error";
+            self.BARTArray[0] = @"error";
             NSLog(@"%@",error);
         });
     }];

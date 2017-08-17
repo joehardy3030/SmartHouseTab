@@ -23,7 +23,6 @@
 		D87B4C6D1D3338C10076B16E /* SmartHouseTabUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C6C1D3338C10076B16E /* SmartHouseTabUITests.m */; };
 		D88309481D47F92900EED546 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88309471D47F92900EED546 /* CoreLocation.framework */; };
 		D89762071D4EB9C200756800 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D89762061D4EB9C200756800 /* ThirdViewController.m */; };
-		D8D701761D371FD300D99D88 /* JLHBartTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D701751D371FD300D99D88 /* JLHBartTimes.m */; };
 		D8D701791D371FDD00D99D88 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D701781D371FDD00D99D88 /* XMLParser.m */; };
 		D8FC89A71D695AD7008945CF /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FC89A61D695AD7008945CF /* FourthViewController.m */; };
 		D8FC89AA1D695B09008945CF /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FC89A91D695B09008945CF /* FifthViewController.m */; };
@@ -91,8 +90,6 @@
 		D88309471D47F92900EED546 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D89762051D4EB9C200756800 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		D89762061D4EB9C200756800 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		D8D701741D371FD300D99D88 /* JLHBartTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLHBartTimes.h; sourceTree = "<group>"; };
-		D8D701751D371FD300D99D88 /* JLHBartTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLHBartTimes.m; sourceTree = "<group>"; };
 		D8D701771D371FDD00D99D88 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		D8D701781D371FDD00D99D88 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		D8FC89A51D695AD7008945CF /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
@@ -178,8 +175,6 @@
 			children = (
 				D8673E601F401DB800C244E5 /* BartTimes.h */,
 				D8673E611F401DC800C244E5 /* BartTimes.m */,
-				D8D701741D371FD300D99D88 /* JLHBartTimes.h */,
-				D8D701751D371FD300D99D88 /* JLHBartTimes.m */,
 				D838C2A21F3B84CF0040218C /* SimpleForecast.h */,
 				D838C2A01F3B84BE0040218C /* SimpleForecast.m */,
 				D838C29D1F3A81560040218C /* HourlyForecast.h */,
@@ -389,7 +384,6 @@
 			files = (
 				D87B4C4F1D3338C10076B16E /* SecondViewController.m in Sources */,
 				D89762071D4EB9C200756800 /* ThirdViewController.m in Sources */,
-				D8D701761D371FD300D99D88 /* JLHBartTimes.m in Sources */,
 				D838C2A11F3B84BE0040218C /* SimpleForecast.m in Sources */,
 				D838C29F1F3A816E0040218C /* HourlyForecast.m in Sources */,
 				D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */,

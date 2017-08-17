@@ -16,6 +16,7 @@
     if (self = [super init]) {
         self.fullText = [[NSString alloc] initWithData:data
                                                encoding:NSUTF8StringEncoding];
+        self.displayTextArray = [[NSMutableArray alloc] init];
         NSLog(@"%@",self.fullText);
         
         // create and init NSXMLParser object
@@ -40,8 +41,10 @@
         }
         
         self.bartsArray = [parser barts];
-        // get array of users here
+        
         self.printString = @"Min     Line     Cars\n";
+        self.displayTextArray[0] = @"Min     Line     Cars\n";
+
         for (NSDictionary* bartDict in self.bartsArray)
         {
             
@@ -50,12 +53,15 @@
             {
                 NSString *minutesString = [bartDict objectForKey:@"minutes"];
                 NSString *carsString = [bartDict objectForKey:@"length"];
-                self.printString = [self.printString stringByAppendingString:minutesString];
-                self.printString = [self.printString stringByAppendingString:@"     "];
-                self.printString = [self.printString stringByAppendingString:colorString];
-                self.printString = [self.printString stringByAppendingString:@"     "];
-                self.printString = [self.printString stringByAppendingString:carsString];
-                self.printString = [self.printString stringByAppendingString:@"\n"];
+                NSString *bartLoopString = @"";
+                
+                bartLoopString = [bartLoopString stringByAppendingString:minutesString];
+                bartLoopString = [bartLoopString stringByAppendingString:@"     "];
+                bartLoopString = [bartLoopString stringByAppendingString:colorString];
+                bartLoopString = [bartLoopString stringByAppendingString:@"     "];
+                bartLoopString = [bartLoopString stringByAppendingString:carsString];
+                
+                [self.displayTextArray addObject:bartLoopString];
             }
         }
         
