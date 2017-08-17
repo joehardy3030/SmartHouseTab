@@ -70,9 +70,9 @@
     self.firstPickerView.dataSource = self;
     self.firstPickerView.delegate = self;
    // self.utilitiesTextView.delegate = self;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+  //  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
-    [self.view addGestureRecognizer:tap];
+//    [self.view addGestureRecognizer:tap];
     }
 
 - (void)didReceiveMemoryWarning {
