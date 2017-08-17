@@ -11,11 +11,17 @@
 #import "JLHBartTimes.h"
 #import "JLHNetworkManager.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate>
 
 //@property (nonatomic) UIButton *bartHomeButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *utilitiesTextView;
+@property (weak, nonatomic) IBOutlet UIPickerView *firstPickerView;
+
+@property (strong, nonatomic) NSArray *stationPickerData;
+//@property (strong, nonatomic) NSArray *stationURLStrings;
+@property (strong, nonatomic) NSString *selectedStation;
+
 
 @end
 

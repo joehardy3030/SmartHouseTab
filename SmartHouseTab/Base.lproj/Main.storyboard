@@ -296,11 +296,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSw-s4-JvQ">
-                                <rect key="frame" x="68" y="102" width="30" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSw-s4-JvQ">
+                                <rect key="frame" x="47" y="82" width="86" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="In"/>
+                                <state key="normal" title="Away"/>
                                 <connections>
                                     <action selector="bartWorkButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="3fl-fD-SxG"/>
                                 </connections>
@@ -321,8 +321,17 @@
                                     <navigationItem title="BART" id="NUy-OL-tQi"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-So-s6c">
+                                <rect key="frame" x="47" y="127" width="89" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="bartHomeButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Ojo-42-uIh"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGJ-bM-zEI">
-                                <rect key="frame" x="55" y="173" width="259" height="165"/>
+                                <rect key="frame" x="50" y="173" width="259" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -332,29 +341,16 @@
                                 <rect key="frame" x="50" y="337" width="274" height="273"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSi-Dj-1Du">
-                                <rect key="frame" x="185" y="124" width="160" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Out Civic Center"/>
-                                <connections>
-                                    <action selector="bartCivicCenterButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="BWx-z3-aGH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-So-s6c">
-                                <rect key="frame" x="185" y="83" width="123" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Out 16th St"/>
-                                <connections>
-                                    <action selector="bartHomeButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Ojo-42-uIh"/>
-                                </connections>
-                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-XJ-MEx" userLabel="Picker View Inbound">
+                                <rect key="frame" x="164" y="64" width="153" height="109"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="BART" image="bart_icon" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="firstPickerView" destination="OjX-XJ-MEx" id="vs2-tI-UHV"/>
                         <outlet property="utilitiesTextView" destination="zGJ-bM-zEI" id="aW3-qg-Qey"/>
                     </connections>
                 </viewController>
