@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationTextView;
 @property (nonatomic, strong) CLLocationManager* locationManager;
 
+
 @end
 

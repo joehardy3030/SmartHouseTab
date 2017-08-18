@@ -70,6 +70,13 @@
     self.firstPickerView.dataSource = self;
     self.firstPickerView.delegate = self;
     [self initializeBARTViewDataSource];
+    
+// Initialize with an "Away" BART
+    NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=deln&dir=s&key=MW9S-E7SL-26DU-VV8V";
+    NSURL *url = [NSURL URLWithString:dataUrl];
+    
+    [self getAndDisplayBARTData:url];
+
     }
 
 - (void)didReceiveMemoryWarning {
@@ -164,78 +171,29 @@
 
 - (IBAction)bartHomeButton:(UIButton *)sender {
     
-    self.utilitiesTextView.text = @"Get BART Home\n";
+    //self.utilitiesTextView.text = @"Get BART Home\n";
     NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=";
 
     dataUrl = [dataUrl stringByAppendingString:_selectedStation];
     dataUrl = [dataUrl stringByAppendingString:@"&dir=n&key=MW9S-E7SL-26DU-VV8V"];
 
     NSURL *url = [NSURL URLWithString:dataUrl];
-    
-    //This whole thing should be a method...
-    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
-    
-    [networkManager getDataWithURL:url success:^(NSData *data) {
-        BartTimes *bartTimes = [[BartTimes alloc] initFromData:data];
-        NSLog(@"%@",bartTimes.displayTextArray);
-        
-        self.BARTArray = bartTimes.displayTextArray;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.BARTTableView reloadData];
-        });
-        
-    } failure:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.BARTArray[0] = @"error";
-            NSLog(@"%@",error);
-        });
-    }];
-    
+  
+    [self getAndDisplayBARTData:url];
+}
 
-    /*
-    JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
-    
-    [homeBartTimes parseBartTimeString:url success:^(NSString *responseString) {
-        NSLog(@"%@",responseString);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = responseString;
-        });
-    } failure:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = @"error";
-            NSLog(@"%@",error);
-        });
-    }];
-*/
-}
-/*- (IBAction)bartCivicCenterButton:(UIButton *)sender {
-    self.utilitiesTextView.text = @"Get BART from 16th St\n";
-    
-    NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=CIVC&dir=n&key=MW9S-E7SL-26DU-VV8V";
-    NSURL *url = [NSURL URLWithString:dataUrl];
-    
-    JLHBartTimes *homeBartTimes = [[JLHBartTimes alloc] init];
-    
-    [homeBartTimes parseBartTimeString:url success:^(NSString *responseString) {
-        NSLog(@"%@",responseString);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = responseString;
-        });
-    } failure:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.utilitiesTextView.text = @"error";
-            NSLog(@"%@",error);
-        });
-    }];
-}
-*/
+
+
 - (IBAction)bartWorkButton:(UIButton *)sender {
-    
-    self.utilitiesTextView.text = @"Get BART from El Cerrito del Norte\n";
     
     NSString *dataUrl = @"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=deln&dir=s&key=MW9S-E7SL-26DU-VV8V";
     NSURL *url = [NSURL URLWithString:dataUrl];
     
+    [self getAndDisplayBARTData:url];
+}
+
+- (void)getAndDisplayBARTData:(NSURL *)url {
+    
     JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
     
     [networkManager getDataWithURL:url success:^(NSData *data) {
@@ -246,14 +204,14 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.BARTTableView reloadData];
         });
-
+        
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.BARTArray[0] = @"error";
             NSLog(@"%@",error);
         });
     }];
-
+    
 }
 
 @end
