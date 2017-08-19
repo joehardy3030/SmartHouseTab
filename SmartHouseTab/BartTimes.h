@@ -18,6 +18,8 @@
 //@property (strong, nonatomic) NSDictionary *displayLocation;
 @property (strong, nonatomic) NSMutableArray *bartsArray;
 @property (strong, nonatomic) NSMutableArray *displayTextArray;
+@property (strong, nonatomic) NSMutableArray *cellItemArray;
+//@property (strong, nonatomic) NSDictionary *bartCellDict;
 //@property (strong, nonatomic) NSArray *hourlyForecast;
 
 - (instancetype)initFromData: (NSData *)data;

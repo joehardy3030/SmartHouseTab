@@ -17,6 +17,8 @@
         self.fullText = [[NSString alloc] initWithData:data
                                                encoding:NSUTF8StringEncoding];
         self.displayTextArray = [[NSMutableArray alloc] init];
+        self.cellItemArray = [[NSMutableArray alloc] init];
+        
         NSLog(@"%@",self.fullText);
         
         // create and init NSXMLParser object
@@ -54,12 +56,19 @@
                 NSString *minutesString = [bartDict objectForKey:@"minutes"];
                 NSString *carsString = [bartDict objectForKey:@"length"];
                 NSString *bartLoopString = @"";
+            //    NSDictionary *bartCellDict = [[NSDictionary alloc] init];
                 
                 bartLoopString = [bartLoopString stringByAppendingString:minutesString];
                 bartLoopString = [bartLoopString stringByAppendingString:@"     "];
                 bartLoopString = [bartLoopString stringByAppendingString:colorString];
                 bartLoopString = [bartLoopString stringByAppendingString:@"     "];
                 bartLoopString = [bartLoopString stringByAppendingString:carsString];
+            
+                //logic for image path based on colorString
+                NSDictionary *bartCellDict = [NSDictionary dictionaryWithObjectsAndKeys:bartLoopString,@"displayString",
+                                              nil];
+
+                [self.cellItemArray addObject:bartCellDict];
                 
                 [self.displayTextArray addObject:bartLoopString];
             }

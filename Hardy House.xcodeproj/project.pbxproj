@@ -12,6 +12,7 @@
 		D838C29F1F3A816E0040218C /* HourlyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = D838C29E1F3A816E0040218C /* HourlyForecast.m */; };
 		D838C2A11F3B84BE0040218C /* SimpleForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = D838C2A01F3B84BE0040218C /* SimpleForecast.m */; };
 		D8673E621F401DC800C244E5 /* BartTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = D8673E611F401DC800C244E5 /* BartTimes.m */; };
+		D8673E6C1F4789EE00C244E5 /* BARTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8673E6B1F4789EE00C244E5 /* BARTCell.m */; };
 		D87B4C461D3338C10076B16E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C451D3338C10076B16E /* main.m */; };
 		D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C481D3338C10076B16E /* AppDelegate.m */; };
 		D87B4C4C1D3338C10076B16E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C4B1D3338C10076B16E /* FirstViewController.m */; };
@@ -69,6 +70,8 @@
 		D838C2A21F3B84CF0040218C /* SimpleForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleForecast.h; sourceTree = "<group>"; };
 		D8673E601F401DB800C244E5 /* BartTimes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartTimes.h; sourceTree = "<group>"; };
 		D8673E611F401DC800C244E5 /* BartTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BartTimes.m; sourceTree = "<group>"; };
+		D8673E6A1F4789EE00C244E5 /* BARTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARTCell.h; sourceTree = "<group>"; };
+		D8673E6B1F4789EE00C244E5 /* BARTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BARTCell.m; sourceTree = "<group>"; };
 		D87B4C411D3338C10076B16E /* Hardy House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hardy House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B4C451D3338C10076B16E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D87B4C471D3338C10076B16E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -183,6 +186,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		D8673E661F46A23900C244E5 /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				D8673E6A1F4789EE00C244E5 /* BARTCell.h */,
+				D8673E6B1F4789EE00C244E5 /* BARTCell.m */,
+			);
+			name = "View Components";
+			sourceTree = "<group>";
+		};
 		D87B4C381D3338C10076B16E = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +219,7 @@
 		D87B4C431D3338C10076B16E /* SmartHouseTab */ = {
 			isa = PBXGroup;
 			children = (
+				D8673E661F46A23900C244E5 /* View Components */,
 				D838C2901F394DD40040218C /* Settings */,
 				D838C2931F3960470040218C /* Models */,
 				D838C2921F394E0F0040218C /* Storyboards */,
@@ -394,6 +407,7 @@
 				D838C29B1F3A6BCC0040218C /* JLHNetworkManager.m in Sources */,
 				D8673E621F401DC800C244E5 /* BartTimes.m in Sources */,
 				D8FC89AA1D695B09008945CF /* FifthViewController.m in Sources */,
+				D8673E6C1F4789EE00C244E5 /* BARTCell.m in Sources */,
 				D87B4C461D3338C10076B16E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

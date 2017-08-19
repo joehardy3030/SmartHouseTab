@@ -93,7 +93,8 @@
 - (void)initializeBARTViewDataSource
 {
     // Set up the weatherArray and set the dataSource for the current
-    self.BARTArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
+  //  self.BARTArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
+    self.BARTArray = [[NSMutableArray alloc] init];
     self.BARTTableView.dataSource = self;
 }
 
@@ -134,8 +135,22 @@
     // Deciding which data to put into this particular cell.
     // If it the first row, the data input will be "Data1" from the array.
     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [self.BARTArray objectAtIndex:row];
+    
+    NSDictionary *item = (NSDictionary *)[self.BARTArray objectAtIndex:row];
+   // NSDictionary *item = [self.BARTArray objectAtIndex:row];
+   // NSLog(@"@",item);
+    cell.textLabel.text = [item objectForKey:@"displayString"];
+    //cell.textLabel.text = [self.BARTArray objectAtIndex:row];
     cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
+    
+    /*
+     NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
+     cell.textLabel.text = [item objectForKey:@"mainTitleKey"];
+     cell.detailTextLabel.text = [item objectForKey:@"secondaryTitleKey"];
+     NSString *path = [[NSBundle mainBundle] pathForResource:[item objectForKey:@"imageKey"] ofType:@"png"];
+     UIImage *theImage = [UIImage imageWithContentsOfFile:path];
+     cell.imageView.image = theImage;
+     */
     
     return cell;
 }
@@ -198,9 +213,11 @@
     
     [networkManager getDataWithURL:url success:^(NSData *data) {
         BartTimes *bartTimes = [[BartTimes alloc] initFromData:data];
-        NSLog(@"%@",bartTimes.displayTextArray);
+        NSLog(@"%@",bartTimes.cellItemArray);
         
-        self.BARTArray = bartTimes.displayTextArray;
+      //  cell.imageView.image = [UIImage imageNamed:@"image.png"];
+        self.BARTArray = bartTimes.cellItemArray;
+        //self.BARTArray = bartTimes.displayTextArray;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.BARTTableView reloadData];
         });
