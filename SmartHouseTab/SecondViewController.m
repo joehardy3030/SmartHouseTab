@@ -134,27 +134,13 @@
     
     // Deciding which data to put into this particular cell.
     // If it the first row, the data input will be "Data1" from the array.
-    NSUInteger row = [indexPath row];
-    
-    NSDictionary *item = (NSDictionary *)[self.BARTArray objectAtIndex:row];
-   // NSDictionary *item = [self.BARTArray objectAtIndex:row];
-   // NSLog(@"@",item);
-    cell.textLabel.text = [item objectForKey:@"displayString"];
-    //cell.textLabel.text = [self.BARTArray objectAtIndex:row];
+    NSUInteger row = [indexPath row]; //get the row number
+    NSDictionary *item = (NSDictionary *)[self.BARTArray objectAtIndex:row]; //item Dictionary for row
+    cell.textLabel.text = [item objectForKey:@"displayString"]; //textLabel text from Dictionary
     cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
-    
-    /*
-     NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
-     cell.textLabel.text = [item objectForKey:@"mainTitleKey"];
-     cell.detailTextLabel.text = [item objectForKey:@"secondaryTitleKey"]; */
-    
-    NSString *imageName = [item objectForKey:@"imageKey"];
-    //NSString *path = [[NSBundle mainBundle] pathForResource:@"orange" ofType:@"png"];
-    //NSLog(@"path %@",path);
-    //UIImage *theImage = [UIImage imageWithContentsOfFile:path];
-    UIImage *theImage = [UIImage imageNamed:imageName];
-    
-    cell.imageView.image = theImage;
+    NSString *imageName = [item objectForKey:@"imageKey"]; //name of image for UIImageView
+    UIImage *theImage = [UIImage imageNamed:imageName]; //UIImage for UIImageView
+    cell.imageView.image = theImage; 
     
     return cell;
 }

@@ -56,26 +56,28 @@
                 NSString *minutesString = [bartDict objectForKey:@"minutes"];
                 NSString *carsString = [bartDict objectForKey:@"length"];
                 NSString *bartLoopString = @"";
-            //    NSDictionary *bartCellDict = [[NSDictionary alloc] init];
                 
                 bartLoopString = [bartLoopString stringByAppendingString:minutesString];
-                bartLoopString = [bartLoopString stringByAppendingString:@"     "];
-                bartLoopString = [bartLoopString stringByAppendingString:colorString];
-                bartLoopString = [bartLoopString stringByAppendingString:@"     "];
+                bartLoopString = [bartLoopString stringByAppendingString:@" min, "];
+             //   bartLoopString = [bartLoopString stringByAppendingString:colorString];
                 bartLoopString = [bartLoopString stringByAppendingString:carsString];
+                bartLoopString = [bartLoopString stringByAppendingString:@" cars"];
             
                 //logic for image path based on colorString
-                NSDictionary *bartCellDict = [NSDictionary dictionaryWithObjectsAndKeys:bartLoopString,@"displayString",@"orange.png",@"imageKey",
+                NSString *imageName = @"";
+                if ([colorString isEqual: @"ORANGE"])
+                    imageName = @"orange.png";
+                else if ([colorString isEqual: @"YELLOW"])
+                    imageName = @"yellow.png";
+                else if ([colorString isEqual: @"RED"])
+                    imageName = @"red.png";
+                else
+                    imageName = @"black.png";;
+
+                NSDictionary *bartCellDict = [NSDictionary dictionaryWithObjectsAndKeys:bartLoopString,@"displayString",imageName,@"imageKey",
                                               nil];
 
                 [self.cellItemArray addObject:bartCellDict];
-                
-                //NSString *path = [[NSBundle mainBundle] pathForResource:[item objectForKey:@"imageKey"] ofType:@"png"];
-                //UIImage *theImage = [UIImage imageWithContentsOfFile:path];
-                //cell.imageView.image = theImage;
-
-                
-             //   [self.displayTextArray addObject:bartLoopString];
             }
         }
         
