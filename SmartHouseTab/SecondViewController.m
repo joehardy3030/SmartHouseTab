@@ -146,11 +146,15 @@
     /*
      NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
      cell.textLabel.text = [item objectForKey:@"mainTitleKey"];
-     cell.detailTextLabel.text = [item objectForKey:@"secondaryTitleKey"];
-     NSString *path = [[NSBundle mainBundle] pathForResource:[item objectForKey:@"imageKey"] ofType:@"png"];
-     UIImage *theImage = [UIImage imageWithContentsOfFile:path];
-     cell.imageView.image = theImage;
-     */
+     cell.detailTextLabel.text = [item objectForKey:@"secondaryTitleKey"]; */
+    
+    NSString *imageName = [item objectForKey:@"imageKey"];
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"orange" ofType:@"png"];
+    //NSLog(@"path %@",path);
+    //UIImage *theImage = [UIImage imageWithContentsOfFile:path];
+    UIImage *theImage = [UIImage imageNamed:imageName];
+    
+    cell.imageView.image = theImage;
     
     return cell;
 }

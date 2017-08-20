@@ -45,7 +45,7 @@
         self.bartsArray = [parser barts];
         
         self.printString = @"Min     Line     Cars\n";
-        self.displayTextArray[0] = @"Min     Line     Cars\n";
+   //     self.displayTextArray[0] = @"Min     Line     Cars\n";
 
         for (NSDictionary* bartDict in self.bartsArray)
         {
@@ -65,12 +65,17 @@
                 bartLoopString = [bartLoopString stringByAppendingString:carsString];
             
                 //logic for image path based on colorString
-                NSDictionary *bartCellDict = [NSDictionary dictionaryWithObjectsAndKeys:bartLoopString,@"displayString",
+                NSDictionary *bartCellDict = [NSDictionary dictionaryWithObjectsAndKeys:bartLoopString,@"displayString",@"orange.png",@"imageKey",
                                               nil];
 
                 [self.cellItemArray addObject:bartCellDict];
                 
-                [self.displayTextArray addObject:bartLoopString];
+                //NSString *path = [[NSBundle mainBundle] pathForResource:[item objectForKey:@"imageKey"] ofType:@"png"];
+                //UIImage *theImage = [UIImage imageWithContentsOfFile:path];
+                //cell.imageView.image = theImage;
+
+                
+             //   [self.displayTextArray addObject:bartLoopString];
             }
         }
         
