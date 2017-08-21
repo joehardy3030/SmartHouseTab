@@ -19,12 +19,16 @@
 @implementation FirstViewController
 
 - (void)viewDidLoad {
+    NSURL *url;
     [super viewDidLoad];
+    [self initializeTextViewDataSource];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestWhenInUseAuthorization];
-    [self initializeTextViewDataSource];
+  //  [self.locationManager requestLocation];
+    url = [self getURLForHourlyForecast];
+    [self getAndDisplayHourlyForecast:url];
  }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -176,6 +180,7 @@
                                self.weatherArray = hourlyForecast.weatherDictArray;
                                //self.weatherArray = hourlyForecast.weatherArray;
                                dispatch_async(dispatch_get_main_queue(), ^{
+                                   self.currentLocationLabel.text = hourlyForecast.displayLocationFull;
                                    [self.weatherTableView reloadData];
                                });
                            }
@@ -239,7 +244,9 @@
                            success:^(NSData* weatherSuccess) {
                                HourlyForecast *hourlyForecast = [[HourlyForecast alloc] initFromData:weatherSuccess];
                                self.weatherArray = hourlyForecast.weatherDictArray;
+                               //NSString *locationString = hourlyForecast.displayLocationFull;
                                dispatch_async(dispatch_get_main_queue(), ^{
+                                   self.currentLocationLabel.text = hourlyForecast.displayLocationFull;
                                    [self.weatherTableView reloadData];
                                });
                            }
@@ -247,6 +254,7 @@
                                NSLog(@"%@",error);
                                self.weatherArray[0] = @"error";
                                dispatch_async(dispatch_get_main_queue(), ^{
+                                   self.currentLocationLabel.text = @"Error";
                                    [self.weatherTableView reloadData];
                                });
                            }];

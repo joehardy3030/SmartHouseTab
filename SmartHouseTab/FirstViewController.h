@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *weatherTableView;
 
 //Data and text view for location information
+@property (weak, nonatomic) IBOutlet UILabel *currentLocationLabel;
 @property (strong, nonatomic) CLLocation *currentLocation;
 @property (strong, nonatomic) NSString *currentLongitude;
 @property (strong, nonatomic) NSString *currentLatitude;
