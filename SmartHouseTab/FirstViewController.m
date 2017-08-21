@@ -40,7 +40,7 @@
 - (void)initializeTextViewDataSource
 {
     // Set up the weatherArray and set the dataSource for the current
-    self.weatherArray = [[NSMutableArray alloc] initWithObjects:@"", nil];
+    self.weatherArray = [[NSMutableArray alloc] init];
     self.weatherTableView.dataSource = self;
 }
 
@@ -115,9 +115,16 @@
     // Deciding which data to put into this particular cell.
     // If it the first row, the data input will be "Data1" from the array.
     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [self.weatherArray objectAtIndex:row];
-    cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
+    //cell.textLabel.text = [self.weatherArray objectAtIndex:row];
+    // cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
     
+    NSDictionary *item = (NSDictionary *)[self.weatherArray objectAtIndex:row]; //item Dictionary for row
+    cell.textLabel.text = [item objectForKey:@"displayString"]; //textLabel text from Dictionary
+    cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
+    NSString *imageName = [item objectForKey:@"imageKey"]; //name of image for UIImageView
+    UIImage *theImage = [UIImage imageNamed:imageName]; //UIImage for UIImageView
+    cell.imageView.image = theImage;
+
     return cell;
 }
 
@@ -166,7 +173,8 @@
     [networkManager getDataWithURL:url
                            success:^(NSData* weatherSuccess) {
                                SimpleForecast *hourlyForecast = [[SimpleForecast alloc] initFromData:weatherSuccess];
-                               self.weatherArray = hourlyForecast.weatherArray;
+                               self.weatherArray = hourlyForecast.weatherDictArray;
+                               //self.weatherArray = hourlyForecast.weatherArray;
                                dispatch_async(dispatch_get_main_queue(), ^{
                                    [self.weatherTableView reloadData];
                                });
@@ -182,9 +190,7 @@
    }
 
 - (IBAction)hourlyForecastButton:(UIButton *)sender {
-    NSString *dataUrl;
-//    JLHWunderground *wundergroundHourlyForecast = [[JLHWunderground alloc] init];
-    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
+/*    NSString *dataUrl;
 
     if (self.currentLocation != nil) {
         NSLog(@"Current location instance variable: %@",self.currentLocation);
@@ -199,11 +205,40 @@
     }
     NSURL *url = [NSURL URLWithString:dataUrl];
     NSLog(@"Current location instance variable: %@",dataUrl);
+  */
+    NSURL *url;
+    url = [self getURLForHourlyForecast];
+    [self getAndDisplayHourlyForecast:url];
+ }
+
+- (NSURL *)getURLForHourlyForecast {
+    NSString *dataUrl;
+    NSURL *url;
+    
+    if (self.currentLocation != nil) {
+        NSLog(@"Current location instance variable: %@",self.currentLocation);
+        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/";
+        dataUrl = [dataUrl stringByAppendingString:self.currentLatitude];
+        dataUrl = [dataUrl stringByAppendingString:@","];
+        dataUrl = [dataUrl stringByAppendingString:self.currentLongitude];
+        dataUrl = [dataUrl stringByAppendingString:@".json"];
+    }
+    else {
+        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/CA/El_Cerrito.json";
+    }
+    url = [NSURL URLWithString:dataUrl];
+    NSLog(@"Current location instance variable: %@",dataUrl);
+    return url;
+}
+
+- (void)getAndDisplayHourlyForecast:(NSURL *)url {
+    
+    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
     
     [networkManager getDataWithURL:url
                            success:^(NSData* weatherSuccess) {
                                HourlyForecast *hourlyForecast = [[HourlyForecast alloc] initFromData:weatherSuccess];
-                               self.weatherArray = hourlyForecast.weatherArray;
+                               self.weatherArray = hourlyForecast.weatherDictArray;
                                dispatch_async(dispatch_get_main_queue(), ^{
                                    [self.weatherTableView reloadData];
                                });
@@ -215,7 +250,6 @@
                                    [self.weatherTableView reloadData];
                                });
                            }];
-    }
-
+}
 
 @end

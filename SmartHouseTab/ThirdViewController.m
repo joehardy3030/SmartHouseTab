@@ -90,7 +90,7 @@
     self.showPickerView.delegate = self;
     self.textView.delegate = self;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    
+   
     [self.view addGestureRecognizer:tap];
     
 }
@@ -144,7 +144,7 @@
     NSLog(@"%@",_showPickerData[row]);
 }
 
-- (IBAction)spotifyButton:(UIButton *)sender {
+/*- (IBAction)spotifyButton:(UIButton *)sender {
     
     NSDictionary *optionsDict;
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"spotify://http://open.spotify.com/"]
@@ -165,6 +165,7 @@
                              }];
 
 }
+*/
 
 - (IBAction)archiveButton:(UIButton *)sender {
 

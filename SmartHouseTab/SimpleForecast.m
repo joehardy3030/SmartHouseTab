@@ -14,6 +14,7 @@
 - (instancetype)initFromData: (NSData*) data {
     if (self = [super init]) {
         self.weatherArray = [[NSMutableArray alloc] init];
+        self.weatherDictArray = [[NSMutableArray alloc] init];
         NSString *text = [[NSString alloc] initWithData:data
                                            encoding:NSUTF8StringEncoding];
         NSData *jData = [text dataUsingEncoding:NSUTF8StringEncoding];
@@ -67,6 +68,27 @@
                 forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopMaxWindSpeed];
                 forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" MPH"];
                 [self.weatherArray addObject:forecastDayLoopString];
+                
+
+                //logic for image path based on colorString
+                NSString *imageName = @"";
+                if ([forecastDayLoopIcon isEqual: @"Clear"])
+                    imageName = @"clear.png";
+                else if ([forecastDayLoopIcon isEqual: @"Fog"])
+                    imageName = @"fog.png";
+                else if ([forecastDayLoopIcon isEqual: @"Partly Cloudy"])
+                    imageName = @"partlycloudy.png";
+                else if ([forecastDayLoopIcon isEqual: @"Mostly Cloudy"])
+                    imageName = @"mostlycloudy.png";
+                else if ([forecastDayLoopIcon isEqual: @"Rain Cloudy"])
+                    imageName = @"rain.png";
+                else
+                    imageName = @"clear.png";;
+                
+                NSDictionary *weatherCellDict = [NSDictionary dictionaryWithObjectsAndKeys:forecastDayLoopString,@"displayString",imageName,@"imageKey",nil];
+            
+                [self.weatherDictArray addObject:weatherCellDict];
+
             }
         } //End if JSON count
     }

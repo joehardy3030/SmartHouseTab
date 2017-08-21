@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="33" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NIw-bi-th8">
-                                <rect key="frame" x="27" y="89" width="323" height="268"/>
+                                <rect key="frame" x="9" y="89" width="358" height="268"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
@@ -129,41 +129,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ready" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECW-Za-CFj">
-                                <rect key="frame" x="34" y="298" width="311" height="174"/>
+                                <rect key="frame" x="48" y="436" width="311" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZG-di-7sx">
-                                <rect key="frame" x="34" y="194" width="70" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuO-vZ-hrc">
+                                <rect key="frame" x="67" y="236" width="100" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Garage"/>
-                                <connections>
-                                    <action selector="GarageButton:" destination="uzc-Df-fdp" eventType="touchUpInside" id="jFi-la-2wN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuO-vZ-hrc">
-                                <rect key="frame" x="254" y="187" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Heater On"/>
+                                <state key="normal" title="Heater On" image="heater-on-100"/>
                                 <connections>
                                     <action selector="HeaterOnButton:" destination="uzc-Df-fdp" eventType="touchUpInside" id="T6Q-1H-hwB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-VU-ySC">
-                                <rect key="frame" x="254" y="121" width="64" height="30"/>
+                                <rect key="frame" x="48" y="383" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Flask Get"/>
                                 <connections>
                                     <action selector="GetFlaskJSON:" destination="uzc-Df-fdp" eventType="touchUpInside" id="oSN-SE-hhg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJe-a9-4uz">
-                                <rect key="frame" x="254" y="250" width="72" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJe-a9-4uz">
+                                <rect key="frame" x="222" y="233" width="100" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Heater Off"/>
+                                <state key="normal" title="Heater Off" image="heater-off-100"/>
                                 <connections>
                                     <action selector="HeaterOffButton:" destination="uzc-Df-fdp" eventType="touchUpInside" id="qfF-Lq-YjQ"/>
                                 </connections>
@@ -183,6 +174,14 @@
                                     <navigationItem title="Utilities" id="RQ5-CD-a2W"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZG-di-7sx">
+                                <rect key="frame" x="67" y="104" width="100" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Garage" image="garage-100"/>
+                                <connections>
+                                    <action selector="GarageButton:" destination="uzc-Df-fdp" eventType="touchUpInside" id="jFi-la-2wN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -208,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-fH-TnC">
-                                <rect key="frame" x="-19" y="297" width="375" height="216"/>
+                                <rect key="frame" x="-5" y="422" width="375" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="NewBlueRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="noh-uN-fJ4">
@@ -229,23 +228,14 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ready" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x22-R1-OMu">
-                                <rect key="frame" x="53" y="101" width="240" height="109"/>
+                                <rect key="frame" x="67" y="242" width="240" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-q1-sC7">
-                                <rect key="frame" x="209" y="212" width="56" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Spotify"/>
-                                <connections>
-                                    <action selector="spotifyButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="gOx-rR-EwP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha7-fA-41y">
-                                <rect key="frame" x="209" y="257" width="60" height="37"/>
+                                <rect key="frame" x="53" y="377" width="60" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Archive"/>
@@ -253,22 +243,20 @@
                                     <action selector="archiveButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="LQ6-Y3-Dq6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYW-R2-SHI">
-                                <rect key="frame" x="77" y="212" width="83" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-si-EtX">
+                                <rect key="frame" x="219" y="88" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Stereo On"/>
-                                <connections>
-                                    <action selector="stereoOnButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="zJ0-dt-NPM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-si-EtX">
-                                <rect key="frame" x="77" y="257" width="83" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="Stereo Off"/>
+                                <state key="normal" title="Stereo Off" image="stereo-Off-100"/>
                                 <connections>
                                     <action selector="stereoOffButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="odP-Vz-h4w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYW-R2-SHI">
+                                <rect key="frame" x="67" y="88" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stereo On" image="stereo-On-100"/>
+                                <connections>
+                                    <action selector="stereoOnButton:" destination="hoR-Gt-oAL" eventType="touchUpInside" id="zJ0-dt-NPM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -282,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGD-iX-Ia2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825" y="237"/>
+            <point key="canvasLocation" x="824.79999999999995" y="236.13193403298354"/>
         </scene>
         <!--BART-->
         <scene sceneID="wg7-f3-ORb">
@@ -337,7 +325,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="28" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WNq-yv-BmB">
-                                <rect key="frame" x="0.0" y="335" width="375" height="165"/>
+                                <rect key="frame" x="0.0" y="338" width="375" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -473,9 +461,14 @@
         <image name="bartMap" width="274" height="273"/>
         <image name="bart_icon" width="28" height="23"/>
         <image name="city50" width="42" height="43"/>
+        <image name="garage-100" width="100" height="95"/>
+        <image name="heater-off-100" width="92" height="98"/>
+        <image name="heater-on-100" width="70" height="91"/>
         <image name="home50" width="46" height="40"/>
         <image name="more_icon" width="31" height="31"/>
         <image name="note" width="33" height="33"/>
+        <image name="stereo-Off-100" width="100" height="98"/>
+        <image name="stereo-On-100" width="100" height="84"/>
         <image name="utilities_icon" width="32" height="32"/>
         <image name="weather_icon" width="34" height="34"/>
     </resources>

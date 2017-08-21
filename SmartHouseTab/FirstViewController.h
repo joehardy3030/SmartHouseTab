@@ -23,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationTextView;
 @property (nonatomic, strong) CLLocationManager* locationManager;
 
+- (void)getAndDisplayHourlyForecast:(NSURL *)url;
+//- (void)getLocationForURL:(NSURL *)url; //TBD
+- (NSURL *)getURLForHourlyForecast; //TBD
 
 @end
 

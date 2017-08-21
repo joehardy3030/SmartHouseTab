@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSDictionary *displayLocation;
 @property (strong, nonatomic) NSString *displayLocationFull;
 @property (strong, nonatomic) NSMutableArray *weatherArray;
+@property (strong, nonatomic) NSMutableArray *weatherDictArray;
 @property (strong, nonatomic) NSString *currentTemp;
 @property (strong, nonatomic) NSString *currentTempString;
 @property (strong, nonatomic) NSDictionary *forecast;

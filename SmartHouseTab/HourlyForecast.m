@@ -14,6 +14,7 @@
 - (instancetype)initFromData: (NSData*) data {
     if (self = [super init]) {
         self.weatherArray = [[NSMutableArray alloc] init];
+        self.weatherDictArray = [[NSMutableArray alloc] init];
         NSString *text = [[NSString alloc] initWithData:data
                                                encoding:NSUTF8StringEncoding];
         
@@ -60,7 +61,28 @@
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:windSpd];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:@" MPH"];
                 [self.weatherArray addObject:forecastHourLoopString];
-                NSLog(@"%@",self.weatherArray);
+            //    NSLog(@"%@",self.weatherArray);
+                
+                NSString *imageName = @"";
+                if ([forecastHourLoopIcon isEqual: @"Clear"])
+                    imageName = @"clear.png";
+                else if ([forecastHourLoopIcon isEqual: @"Fog"])
+                    imageName = @"fog.png";
+                else if ([forecastHourLoopIcon isEqual: @"Partly Cloudy"])
+                    imageName = @"partlycloudy.png";
+                else if ([forecastHourLoopIcon isEqual: @"Mostly Cloudy"])
+                    imageName = @"mostlycloudy.png";
+                else if ([forecastHourLoopIcon isEqual: @"Rain Cloudy"])
+                    imageName = @"rain.png";
+                else
+                    imageName = @"clear.png";;
+                
+                NSDictionary *weatherCellDict = [NSDictionary dictionaryWithObjectsAndKeys:forecastHourLoopString,@"displayString",imageName,@"imageKey",nil];
+                NSLog(@"%@",weatherCellDict);
+
+                [self.weatherDictArray addObject:weatherCellDict];
+                NSLog(@"%@",self.weatherDictArray);
+
             }
             
     }
