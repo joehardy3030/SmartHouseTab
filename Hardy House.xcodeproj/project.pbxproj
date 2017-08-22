@@ -11,6 +11,8 @@
 		D838C29B1F3A6BCC0040218C /* JLHNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D838C29A1F3A6BCC0040218C /* JLHNetworkManager.m */; };
 		D838C29F1F3A816E0040218C /* HourlyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = D838C29E1F3A816E0040218C /* HourlyForecast.m */; };
 		D838C2A11F3B84BE0040218C /* SimpleForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = D838C2A01F3B84BE0040218C /* SimpleForecast.m */; };
+		D839823A1F4B97A400DAFF66 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83982381F4B97A400DAFF66 /* WeatherTableViewCell.m */; };
+		D839823B1F4B97A400DAFF66 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83982391F4B97A400DAFF66 /* WeatherTableViewCell.xib */; };
 		D8673E621F401DC800C244E5 /* BartTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = D8673E611F401DC800C244E5 /* BartTimes.m */; };
 		D8673E6C1F4789EE00C244E5 /* BARTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8673E6B1F4789EE00C244E5 /* BARTCell.m */; };
 		D87B4C461D3338C10076B16E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D87B4C451D3338C10076B16E /* main.m */; };
@@ -68,6 +70,9 @@
 		D838C29E1F3A816E0040218C /* HourlyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyForecast.m; sourceTree = "<group>"; };
 		D838C2A01F3B84BE0040218C /* SimpleForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleForecast.m; sourceTree = "<group>"; };
 		D838C2A21F3B84CF0040218C /* SimpleForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleForecast.h; sourceTree = "<group>"; };
+		D83982371F4B97A400DAFF66 /* WeatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewCell.h; sourceTree = "<group>"; };
+		D83982381F4B97A400DAFF66 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
+		D83982391F4B97A400DAFF66 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		D8673E601F401DB800C244E5 /* BartTimes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartTimes.h; sourceTree = "<group>"; };
 		D8673E611F401DC800C244E5 /* BartTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BartTimes.m; sourceTree = "<group>"; };
 		D8673E6A1F4789EE00C244E5 /* BARTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARTCell.h; sourceTree = "<group>"; };
@@ -164,13 +169,14 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		D838C2921F394E0F0040218C /* Storyboards */ = {
+		D838C2921F394E0F0040218C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D87B4C501D3338C10076B16E /* Main.storyboard */,
 				D87B4C551D3338C10076B16E /* LaunchScreen.storyboard */,
+				D83982391F4B97A400DAFF66 /* WeatherTableViewCell.xib */,
 			);
-			name = Storyboards;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		D838C2931F3960470040218C /* Models */ = {
@@ -191,6 +197,8 @@
 			children = (
 				D8673E6A1F4789EE00C244E5 /* BARTCell.h */,
 				D8673E6B1F4789EE00C244E5 /* BARTCell.m */,
+				D83982371F4B97A400DAFF66 /* WeatherTableViewCell.h */,
+				D83982381F4B97A400DAFF66 /* WeatherTableViewCell.m */,
 			);
 			name = "View Components";
 			sourceTree = "<group>";
@@ -222,7 +230,7 @@
 				D8673E661F46A23900C244E5 /* View Components */,
 				D838C2901F394DD40040218C /* Settings */,
 				D838C2931F3960470040218C /* Models */,
-				D838C2921F394E0F0040218C /* Storyboards */,
+				D838C2921F394E0F0040218C /* Views */,
 				D838C28F1F394D0A0040218C /* Controllers */,
 				D838C2911F394DF70040218C /* Utilities */,
 				D87B4C471D3338C10076B16E /* AppDelegate.h */,
@@ -368,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D839823B1F4B97A400DAFF66 /* WeatherTableViewCell.xib in Resources */,
 				D87B4C571D3338C10076B16E /* LaunchScreen.storyboard in Resources */,
 				D87B4C541D3338C10076B16E /* Assets.xcassets in Resources */,
 				D87B4C521D3338C10076B16E /* Main.storyboard in Resources */,
@@ -400,6 +409,7 @@
 				D838C2A11F3B84BE0040218C /* SimpleForecast.m in Sources */,
 				D838C29F1F3A816E0040218C /* HourlyForecast.m in Sources */,
 				D87B4C491D3338C10076B16E /* AppDelegate.m in Sources */,
+				D839823A1F4B97A400DAFF66 /* WeatherTableViewCell.m in Sources */,
 				D83343781E2AEAE8004D461F /* constants.m in Sources */,
 				D87B4C4C1D3338C10076B16E /* FirstViewController.m in Sources */,
 				D8FC89A71D695AD7008945CF /* FourthViewController.m in Sources */,

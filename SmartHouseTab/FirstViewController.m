@@ -10,6 +10,7 @@
 #import "JLHNetworkManager.h"
 #import "HourlyForecast.h"
 #import "SimpleForecast.h"
+#import "WeatherTableViewCell.h"
 
 @interface FirstViewController ()
 //@property(nonatomic, strong) CLLocationManager* locationManager;
@@ -22,6 +23,10 @@
     NSURL *url;
     [super viewDidLoad];
     [self initializeTextViewDataSource];
+    // load NIB file for cells
+    UINib *nib = [UINib nibWithNibName:@"WeatherTableViewCell" bundle:nil];
+    // Register the NIB, which contains the cell
+    [self.weatherTableView registerNib:nib forCellReuseIdentifier:@"WeatherTableViewCell"];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -107,13 +112,15 @@
 // This will tell your UITableView what data to put in which cells in your table.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifer = @"CellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+   // static NSString *CellIdentifer = @"CellIdentifier";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeatherTableViewCell"];
     
     // Using a cell identifier will allow your app to reuse cells as they come and go from the screen.
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+      //  cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+          cell = [[WeatherTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WeatherTableViewCell"];
     }
     
     // Deciding which data to put into this particular cell.
@@ -156,9 +163,15 @@
 
 
 - (IBAction)WeatherTest:(UIButton *)sender {
-    NSString *dataUrl;
-    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
+    NSURL *url;
+    url = [self getURLForSimpleForecast];
+    [self getAndDisplaySimpleForecast:url];
+}
 
+- (NSURL *)getURLForSimpleForecast {
+    NSString *dataUrl;
+    NSURL *url;
+    
     if (self.currentLocation != nil) {
         NSLog(@"Current location instance variable: %@",self.currentLocation);
         dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/";
@@ -168,17 +181,24 @@
         dataUrl = [dataUrl stringByAppendingString:@".json"];
     }
     else {
-    dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/CA/El_Cerrito.json";
+        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/q/CA/El_Cerrito.json";
     }
     NSLog(@"Current location instance variable: %@",dataUrl);
+    
+    url = [NSURL URLWithString:dataUrl];
+    NSLog(@"Current location instance variable: %@",dataUrl);
+    return url;
+}
 
-    NSURL *url = [NSURL URLWithString:dataUrl];
+- (void)getAndDisplaySimpleForecast:(NSURL *)url {
+    
+    JLHNetworkManager *networkManager = [[JLHNetworkManager alloc] init];
     
     [networkManager getDataWithURL:url
                            success:^(NSData* weatherSuccess) {
                                SimpleForecast *hourlyForecast = [[SimpleForecast alloc] initFromData:weatherSuccess];
                                self.weatherArray = hourlyForecast.weatherDictArray;
-                               //self.weatherArray = hourlyForecast.weatherArray;
+                               //NSString *locationString = hourlyForecast.displayLocationFull;
                                dispatch_async(dispatch_get_main_queue(), ^{
                                    self.currentLocationLabel.text = hourlyForecast.displayLocationFull;
                                    [self.weatherTableView reloadData];
@@ -188,29 +208,13 @@
                                NSLog(@"%@",error);
                                self.weatherArray[0] = @"error";
                                dispatch_async(dispatch_get_main_queue(), ^{
+                                   self.currentLocationLabel.text = @"Error";
                                    [self.weatherTableView reloadData];
                                });
                            }];
-
-   }
+}
 
 - (IBAction)hourlyForecastButton:(UIButton *)sender {
-/*    NSString *dataUrl;
-
-    if (self.currentLocation != nil) {
-        NSLog(@"Current location instance variable: %@",self.currentLocation);
-        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/";
-        dataUrl = [dataUrl stringByAppendingString:self.currentLatitude];
-        dataUrl = [dataUrl stringByAppendingString:@","];
-        dataUrl = [dataUrl stringByAppendingString:self.currentLongitude];
-        dataUrl = [dataUrl stringByAppendingString:@".json"];
-    }
-    else {
-        dataUrl = @"http://api.wunderground.com/api/ffd1b93b6a497308/conditions/forecast/hourly/q/CA/El_Cerrito.json";
-    }
-    NSURL *url = [NSURL URLWithString:dataUrl];
-    NSLog(@"Current location instance variable: %@",dataUrl);
-  */
     NSURL *url;
     url = [self getURLForHourlyForecast];
     [self getAndDisplayHourlyForecast:url];

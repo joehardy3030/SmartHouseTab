@@ -68,6 +68,8 @@
                     imageName = @"clear.png";
                 else if ([forecastHourLoopIcon isEqual: @"Fog"])
                     imageName = @"fog.png";
+                else if ([forecastHourLoopIcon isEqual: @"Overcast"])
+                    imageName = @"fog.png";
                 else if ([forecastHourLoopIcon isEqual: @"Partly Cloudy"])
                     imageName = @"partlycloudy.png";
                 else if ([forecastHourLoopIcon isEqual: @"Mostly Cloudy"])

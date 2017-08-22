@@ -25,8 +25,10 @@
 @property (nonatomic, strong) CLLocationManager* locationManager;
 
 - (void)getAndDisplayHourlyForecast:(NSURL *)url;
+- (void)getAndDisplaySimpleForecast:(NSURL *)url;
 //- (void)getLocationForURL:(NSURL *)url; //TBD
-- (NSURL *)getURLForHourlyForecast; //TBD
+- (NSURL *)getURLForHourlyForecast;
+- (NSURL *)getURLForSimpleForecast;
 
 @end
 
