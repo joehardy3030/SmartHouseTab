@@ -44,14 +44,17 @@
                 NSDictionary *forecastHourLoopDate = [forecastHourLoop objectForKey:@"FCTTIME"];
                 NSString *forecastHourLoopName = [forecastHourLoopDate objectForKey:@"civil"];
                 NSString *forecastHourLoopString = [forecastHourLoopName stringByAppendingString:@"   "];
+                
                 NSDictionary *forecastHourLoopTemp = [forecastHourLoop objectForKey:@"temp"];
                 NSString *forecastHourLoopTempF = [forecastHourLoopTemp objectForKey:@"english"];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:forecastHourLoopTempF];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:@" F"];
+                
                 NSString *forecastHourLoopIcon = [forecastHourLoop objectForKey:@"condition"];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:@"   "];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:forecastHourLoopIcon];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:@"   "];
+                
                 NSDictionary *forecastHourLoopWindDir = [forecastHourLoop objectForKey:@"wdir"];
                 NSString *forecastHourLoopWindDirString = [forecastHourLoopWindDir objectForKey:@"dir"];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:forecastHourLoopWindDirString];
@@ -60,6 +63,12 @@
                 NSString *windSpd = [forecastHourLoopWindSpeed objectForKey:@"english"];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:windSpd];
                 forecastHourLoopString = [forecastHourLoopString stringByAppendingString:@" MPH"];
+                
+                NSString *windString = forecastHourLoopWindDirString;
+                windString = [windString stringByAppendingString:@" "];
+                windString = [windString stringByAppendingString:windSpd];
+                windString = [windString stringByAppendingString:@" MPH"];
+                
                 [self.weatherArray addObject:forecastHourLoopString];
             //    NSLog(@"%@",self.weatherArray);
                 
@@ -79,7 +88,7 @@
                 else
                     imageName = @"clear.png";;
                 
-                NSDictionary *weatherCellDict = [NSDictionary dictionaryWithObjectsAndKeys:forecastHourLoopString,@"displayString",imageName,@"imageKey",nil];
+                NSDictionary *weatherCellDict = [NSDictionary dictionaryWithObjectsAndKeys:forecastHourLoopString,@"displayString",imageName,@"imageKey",forecastHourLoopTempF,@"tempF",forecastHourLoopIcon,@"condition",forecastHourLoopName,@"time",windString,@"wind",nil];
                 NSLog(@"%@",weatherCellDict);
 
                 [self.weatherDictArray addObject:weatherCellDict];

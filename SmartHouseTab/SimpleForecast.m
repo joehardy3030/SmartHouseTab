@@ -67,6 +67,12 @@
                 NSString *forecastDayLoopMaxWindSpeed = [maxWind stringValue];
                 forecastDayLoopString = [forecastDayLoopString stringByAppendingString:forecastDayLoopMaxWindSpeed];
                 forecastDayLoopString = [forecastDayLoopString stringByAppendingString:@" MPH"];
+
+                NSString *windString = forecastDayLoopWindDir;
+                windString = [windString stringByAppendingString:@" "];
+                windString = [windString stringByAppendingString:[maxWind stringValue]];
+                windString = [windString stringByAppendingString:@" MPH"];
+
                 [self.weatherArray addObject:forecastDayLoopString];
                 
 
@@ -87,8 +93,8 @@
                 else
                     imageName = @"clear.png";;
                 
-                NSDictionary *weatherCellDict = [NSDictionary dictionaryWithObjectsAndKeys:forecastDayLoopString,@"displayString",imageName,@"imageKey",nil];
-            
+                NSDictionary *weatherCellDict = [NSDictionary dictionaryWithObjectsAndKeys:forecastDayLoopString,@"displayString",imageName,@"imageKey",forecastDayLoopHighF,@"tempF",forecastDayLoopIcon,@"condition",forecastDayLoopName,@"time",windString,@"wind",nil];
+                
                 [self.weatherDictArray addObject:weatherCellDict];
 
             }

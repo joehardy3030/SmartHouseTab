@@ -126,15 +126,23 @@
     // Deciding which data to put into this particular cell.
     // If it the first row, the data input will be "Data1" from the array.
     NSUInteger row = [indexPath row];
-    //cell.textLabel.text = [self.weatherArray objectAtIndex:row];
-    // cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
     
     NSDictionary *item = (NSDictionary *)[self.weatherArray objectAtIndex:row]; //item Dictionary for row
-    cell.textLabel.text = [item objectForKey:@"displayString"]; //textLabel text from Dictionary
-    cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
+    
+//    cell.textLabel.text = [item objectForKey:@"displayString"]; //textLabel text from Dictionary
+  //  cell.textLabel.font = [UIFont fontWithName: @"Avenir" size:14];
+//    cell.temperatureLabel.text = [item objectForKey:@"displayString"]; //textLabel text from Dictionary
+    cell.timeLabel.text = [item objectForKey:@"time"]; //textLabel text from Dictionary
+    cell.conditionLabel.text = [item objectForKey:@"condition"]; //textLabel text from Dictionary
+    cell.temperatureLabel.text = [[item objectForKey:@"tempF"] stringByAppendingString:@" F"]; //textLabel text from Dictionary
+    cell.windLabel.text = [item objectForKey:@"wind"]; //textLabel text from Dictionary
+
+    //    cell.temperatureLabel.font = [UIFont fontWithName: @"Avenir" size:14];
+
     NSString *imageName = [item objectForKey:@"imageKey"]; //name of image for UIImageView
     UIImage *theImage = [UIImage imageNamed:imageName]; //UIImage for UIImageView
-    cell.imageView.image = theImage;
+//    cell.imageView.image = theImage;
+    cell.weatherIcon.image = theImage;
 
     return cell;
 }
