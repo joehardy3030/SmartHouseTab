@@ -75,7 +75,7 @@
     // 1
     NSError *error;
     NSString *dataUrl = FLASK_URL;
-    dataUrl = [dataUrl stringByAppendingString:@"/todo/api/v1.0/tasks/p"];
+    dataUrl = [dataUrl stringByAppendingString:@"/api/v1.0/tasks/p"];
     
     NSURL *url = [NSURL URLWithString:dataUrl];
     
