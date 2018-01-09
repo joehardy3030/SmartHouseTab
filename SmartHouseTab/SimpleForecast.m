@@ -88,7 +88,9 @@
                     imageName = @"partlycloudy.png";
                 else if ([forecastDayLoopIcon isEqual: @"Mostly Cloudy"])
                     imageName = @"mostlycloudy.png";
-                else if ([forecastDayLoopIcon isEqual: @"Rain Cloudy"])
+                else if ([forecastDayLoopIcon isEqual: @"Rain"])
+                    imageName = @"rain.png";
+                else if ([forecastDayLoopIcon isEqual: @"Chance of Rain"])
                     imageName = @"rain.png";
                 else
                     imageName = @"clear.png";;
