@@ -11,6 +11,6 @@
 
 
 // Prefs.m
-NSString *const UPSTAIRS_ARDUINO = @"http://10.0.0.11";
-NSString *const DOWNSTAIRS_ARDUINO = @"http://10.0.0.12";
+NSString *const UPSTAIRS_ARDUINO = @"http://10.0.0.17";
+NSString *const DOWNSTAIRS_ARDUINO = @"http://10.0.0.18";
 //NSString *const FLASK_URL = @"http://52.36.134.72:5000";
